@@ -382,7 +382,8 @@
         width: 96%;
         top: calc(10 / 16 * 1rem);
         border-radius: 15px;
-        justify-self: anchor-center;
+        left: 50%;
+        transform: translateX(-50%);
         transition: top 0.3s ease-in-out 0s, width 0.3s ease-in-out 0s, border-radius 0.3s ease-in-out 0s;
 
         .cs-container {
@@ -954,7 +955,8 @@
         width: 96%;
         top: calc(20 / 16 * 1rem);
         border-radius: 15px;
-        justify-self: anchor-center;
+        left: 50%;
+        transform: translateX(-50%);        
         transition: top 0.3s ease-in-out 0s, width 0.3s ease-in-out 0s, border-radius 0.3s ease-in-out 0s;
 
         .cs-container {
