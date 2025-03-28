@@ -21,8 +21,6 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* creates parallax effect on background image */
-    background-attachment: fixed;
     top: 0;
     left: 0;
     bottom: 0;
@@ -179,8 +177,6 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* creates parallax effect on background image */
-    background-attachment: fixed;
     top: 0;
     left: 0;
     bottom: 0;
