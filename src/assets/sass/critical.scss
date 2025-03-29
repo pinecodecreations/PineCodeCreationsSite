@@ -18,7 +18,7 @@
         text-align: center;
         &:after{
           content: "";
-          background: url("/assets/images/landing-m.webp");
+          background: url("/assets/images/landing-m.jpg");
           background-position: center;
           background-size: cover;
           background-repeat: no-repeat;
@@ -287,6 +287,7 @@
             margin: auto;
             margin-bottom: calc(50 / 16 * 1em);
             max-width: calc(357 / 16 * 1em);
+            min-width: calc(50 / 16 * 1em);
             width: 100%;
             background: white;
             padding: calc(50 / 16 * 1em) calc(20 / 16 * 1em);
@@ -331,7 +332,6 @@
                 text-align: center;
             }
             &:last-of-type {
-                margin-bottom: 0;
             }
         }
         }
@@ -349,7 +349,6 @@
         .card-stack {
           display: flex;
           justify-content: space-evenly;
-          align-items: flex-start;
           .card {
             margin: calc(13 / 20 * 1em);
           }
@@ -362,7 +361,7 @@
     .services {
         padding: calc(50 / 16 * 1em) calc(80 / 16 * 1em);
       .card-stack {
-        height: calc(357 / 16 * 1em);
+        // height: calc(357 / 16 * 1em);
         .card {
           max-width: calc(357 / 16 * 1em);
         }
