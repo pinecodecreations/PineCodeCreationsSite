@@ -829,7 +829,7 @@
   #cs-navigation .cs-li-link:before {
     position: absolute;
     bottom: 0rem;
-    left: 0;
+    left: 50%;
     /* active state underline */
     content: "";
     opacity: 1;
@@ -837,6 +837,7 @@
     background: var(--primary);
     height: 2px;
     width: 0%;
+    transform: translateX(-50%);
     transition: width 0.3s;
   }
   #cs-navigation .cs-li-link.cs-active:before {
@@ -1152,16 +1153,16 @@
     height: 0.125rem;
     width: 6.0625rem;
   }
-  #footer .right-section .lists ul:nth-of-type(3) {
+  #footer .right-section .lists ul:nth-of-type(2) {
     margin-top: 3.125rem;
   }
-  #footer .right-section .lists ul:nth-of-type(3) li {
+  #footer .right-section .lists ul:nth-of-type(2) li {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 1rem;
   }
-  #footer .right-section .lists ul:nth-of-type(3) li:last-of-type {
+  #footer .right-section .lists ul:nth-of-type(2) li:last-of-type {
     margin-bottom: 0;
   }
   #footer .right-section .buttons {
@@ -1235,19 +1236,23 @@
     max-width: 48.0625rem;
     width: 96%;
   }
+  #footer .right-section .lists ul {
+    margin-top: 0 !important;
+  }
   #footer .right-section .lists ul li a {
     position: relative;
   }
   #footer .right-section .lists ul li a:before {
     position: absolute;
     bottom: -0.1875rem;
-    left: 0;
+    left: 50%;
     content: "";
     opacity: 1;
     display: block;
     background: var(--primary);
     height: 0.125rem;
     width: 0%;
+    transform: translateX(-50%);
     transition: width 0.3s;
   }
   #footer .right-section .lists ul li a:hover:before {
@@ -1269,7 +1274,8 @@
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
   body.dark-mode #footer {
-    background: #061623;
+    background: var(--dark);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 24px;
   }
 }
 
