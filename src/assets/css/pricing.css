@@ -1,0 +1,103 @@
+@media only screen and (min-width: 0rem) {
+  .pricing-section {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 80rem;
+    width: 100%;
+    padding: var(--sectionPadding);
+  }
+  .pricing-section .pricing-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .pricing-section .pricing-cards .pricing-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+    width: 320px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .pricing-section .pricing-cards .pricing-card h2 {
+    margin-bottom: 0.5rem;
+    color: var(--headerColor);
+  }
+  .pricing-section .pricing-cards .pricing-card a {
+    margin-top: auto;
+  }
+  .pricing-section .pricing-cards .pricing-card .value-tag {
+    position: absolute;
+    top: 35px;
+    right: -40px;
+    transform: rotate(45deg);
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.4rem 0.75rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: 175px;
+  }
+  .pricing-section .pricing-cards .pricing-card .price {
+    font-size: var(--headerFontSize);
+    font-weight: bold;
+    color: var(--primary);
+    margin: 1rem 0;
+  }
+  .pricing-section .pricing-cards .pricing-card .price .price-small {
+    font-size: var(--bodyFontSize);
+    font-weight: 500;
+    display: block;
+  }
+  .pricing-section .pricing-cards .pricing-card .features,
+  .pricing-section .pricing-cards .pricing-card .addons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+  }
+  .pricing-section .pricing-cards .pricing-card .features li,
+  .pricing-section .pricing-cards .pricing-card .addons ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    color: var(--bodyTextColor);
+  }
+  .pricing-section .pricing-cards .pricing-card .addons {
+    margin-top: 1rem;
+    text-align: left;
+  }
+  .pricing-section .pricing-cards .pricing-card .addons h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #34495E;
+  }
+  .pricing-section .pricing-cards .pricing-card .addons ul li {
+    font-size: var(--bodyFontSize);
+    color: var(--bodyTextColor);
+  }
+}
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #pricing .pricing-card {
+    background: var(--medium);
+  }
+  body.dark-mode #pricing .pricing-card .price {
+    filter: brightness(110%);
+  }
+  body.dark-mode #pricing .pricing-card h4 {
+    color: #587ca0;
+  }
+  body.dark-mode #pricing .pricing-card h2, body.dark-mode #pricing .pricing-card li {
+    color: #fff;
+  }
+}
+
+/*# sourceMappingURL=pricing.css.map */

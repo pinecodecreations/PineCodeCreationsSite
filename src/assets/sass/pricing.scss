@@ -1,0 +1,118 @@
+@media only screen and (min-width: 0rem) {
+  .pricing-section{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 80rem;
+    width: 100%;
+    padding: var(--sectionPadding);
+    .pricing-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      padding: 2rem;
+    
+      .pricing-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+        padding: 2rem;
+        width: 320px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    
+        h2 {
+          margin-bottom: 0.5rem;
+          color: var(--headerColor);
+        }
+  
+        a{
+          margin-top: auto;
+        }
+  
+        .value-tag{
+          position: absolute;
+          top: 35px;
+          right: -40px;
+          transform: rotate(45deg);
+          background-color: var(--primary); // Or your primary accent color
+          color: #fff;
+          font-size: 0.75rem;
+          font-weight: bold;
+          padding: 0.4rem 0.75rem;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          width: 175px;
+        }
+    
+        .price {
+          font-size: var(--headerFontSize);
+          font-weight: bold;
+          color: var(--primary);
+          margin: 1rem 0;
+          .price-small{
+            font-size: var(--bodyFontSize);
+            font-weight: 500;
+            display: block;
+          }
+        }
+    
+        .features,
+        .addons ul {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 1rem 0;
+    
+          li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            color: var(--bodyTextColor);
+    
+          }
+        }
+    
+        .addons {
+          margin-top: 1rem;
+          text-align: left;
+    
+          h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #34495E;
+          }
+    
+          ul li {
+            font-size: var(--bodyFontSize);
+            color: var(--bodyTextColor);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Dark Mode
+@media only screen and (min-width: 0rem) {
+  body.dark-mode{
+    #pricing{
+      .pricing-card{
+        background: var(--medium);
+        .price {
+          filter: brightness(110%);
+        }
+        h4{
+          color: lighten($color: #34495E, $amount: 20);
+        }
+        h2, li{
+          color: #fff;
+        }
+      }
+    }
+  }
+
+}
