@@ -84,7 +84,7 @@
     width: 1px;
   }
   #hero .cs-flex-group {
-    padding-top: clamp(19em, 10vw, 35.125em);
+    padding-top: clamp(15em, 10vw, 35.125em);
     margin-left: auto;
     margin-right: auto;
     display: flex;
