@@ -637,7 +637,10 @@
 @media only screen and (min-width: 0rem) {
   body.dark-mode {
     #hero {
-      background-color: rgba(0, 0, 0, 0.2);
+      background: linear-gradient(to right, #0a0f1a, #000814);
+      .pinetree {
+        background: linear-gradient(to right, #0a0f1a, #000814);
+      }
     }
   }
 }
