@@ -51,7 +51,7 @@
   }
   .cs-title {
     position: relative;
-    margin: 0 0 1rem 0;
+    margin: 0 auto 1rem auto;
     max-width: 43.75rem;
     font-size: var(--headerFontSize);
     line-height: 1.2em;
@@ -60,7 +60,7 @@
     text-align: inherit;
   }
   .cs-text {
-    margin: 0;
+    margin: 0 auto 0 auto;
     max-width: 40.625rem;
     width: 100%;
     font-size: var(--bodyFontSize);
