@@ -387,7 +387,7 @@
 
 
 
-    .cs-picture {
+    .pc-picture {
       position: absolute;
       top: 0;
       left: 0;
@@ -409,7 +409,7 @@
       }
     }
 
-    .cs-container {
+    .pc-container {
       position: relative;
       margin: auto;
       max-width: calc(1280 / 16 * 1em);
@@ -432,7 +432,7 @@
       }
     }
 
-    .cs-flex-group {
+    .pc-flex-group {
       padding-top: calc(48 / 16 * 1em);
       display: flex;
       flex-wrap: wrap;
@@ -457,7 +457,7 @@
       }
     }
 
-    .cs-flex-group:nth-child(2) {
+    .pc-flex-group:nth-child(2) {
 
       span,
       h1,
@@ -468,7 +468,7 @@
 
     }
 
-    .cs-flex-group:nth-child(3) {
+    .pc-flex-group:nth-child(3) {
 
       span,
       h1,
@@ -478,19 +478,19 @@
       }
     }
 
-    .cs-topper {
+    .pc-topper {
       margin-bottom: calc(16 / 16 * 1rem);
       color: #fff;
       text-align: center;
     }
 
-    .cs-title {
+    .pc-title {
       width: 100%;
       color: #fff;
       text-align: center;
     }
 
-    .cs-text {
+    .pc-text {
       /* 32px - 40px */
       margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
       /* 40px - 48px */
@@ -499,13 +499,13 @@
       text-align: center;
     }
 
-    .cs-button-solid {
+    .pc-button-solid {
       margin-bottom: calc(16 / 16 * 1rem);
       height: initial;
       line-height: clamp(2.875em, 5.5vw, 3.5em);
     }
 
-    .cs-button-transparent {
+    .pc-button-transparent {
       z-index: 1;
       position: relative;
       display: inline-flex;
@@ -526,7 +526,7 @@
       font-weight: 700;
       color: #fff;
 
-      .cs-img {
+      .pc-img {
         display: block;
         margin-right: calc(12 / 16 * 1rem);
       }
@@ -580,7 +580,7 @@
       z-index: -1;
     }
 
-    .cs-container {
+    .pc-container {
       &:after {
         position: absolute;
         top: 0;
@@ -600,22 +600,22 @@
 
     }
 
-    .cs-flex-group {
+    .pc-flex-group {
       padding-top: calc(170 / 16 * 1em);
 
-      .cs-topper {
+      .pc-topper {
         color: #fff;
       }
 
-      .cs-title {
+      .pc-title {
         color: #fff;
       }
 
-      .cs-text {
+      .pc-text {
         color: #fff;
       }
 
-      .cs-button-solid {
+      .pc-button-solid {
         margin-right: calc(20 / 16 * 1rem);
         margin-bottom: 0;
       }
@@ -661,7 +661,7 @@
     max-width: calc(1320 / 16 * 1em);
     width: 90%;
 
-    .cs-flex-group {
+    .pc-flex-group {
       padding: var(--sectionPadding);
       text-align: -webkit-center;
 
@@ -755,6 +755,13 @@
 @media only screen and (min-width: 1300px) {
   .services {
     padding: calc(50 / 16 * 1em) calc(80 / 16 * 1em);
+    .pc-flex-group {
+      padding-bottom: 0;
+      .pc-text {
+        margin: 0 auto 1rem auto;
+        padding: 0;
+      }
+    }
 
     .card-stack {
 
@@ -771,8 +778,8 @@
   body.dark-mode {
     #services {
 
-      .cs-flex-group {
-        .cs-topper {
+      .pc-flex-group {
+        .pc-topper {
           color: var(--primaryLight);
         }
       }

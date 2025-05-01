@@ -25,7 +25,7 @@
     /* 60px - 100px top and bottom */
     --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
   }
-  .cs-navigation-scrolled {
+  .pc-navigation-scrolled {
     top: 0 !important;
     width: 100% !important;
     border-radius: 0% !important;
@@ -38,7 +38,7 @@
     height: 100%;
     width: 100%;
   }
-  .cs-topper {
+  .pc-topper {
     display: block;
     margin-bottom: 0.25rem;
     text-transform: uppercase;
@@ -49,7 +49,7 @@
     color: var(--secondaryLight);
     text-align: inherit;
   }
-  .cs-title {
+  .pc-title {
     position: relative;
     margin: 0 auto 1rem auto;
     max-width: 43.75rem;
@@ -59,7 +59,7 @@
     color: var(--headerColor);
     text-align: inherit;
   }
-  .cs-text {
+  .pc-text {
     margin: 0 auto 0 auto;
     max-width: 40.625rem;
     width: 100%;
@@ -68,7 +68,7 @@
     color: var(--bodyTextColor);
     text-align: inherit;
   }
-  .cs-button-solid {
+  .pc-button-solid {
     z-index: 1;
     margin-top: -2px;
     position: relative;
@@ -90,14 +90,14 @@
     background: rgb(233, 247, 236);
     border: 2px solid rgb(59, 165, 84);
   }
-  .cs-button-solid:hover {
+  .pc-button-solid:hover {
     transform: translate(-2px, 0.25em);
   }
-  .cs-button-solid:hover:before {
+  .pc-button-solid:hover:before {
     box-sizing: border-box;
     transform: translate3d(-1px, 0.3em, -1em);
   }
-  .cs-button-solid:before {
+  .pc-button-solid:before {
     background: rgb(158, 220, 172);
     box-shadow: rgb(59, 165, 84) 0px 0px 0px 2px;
     position: absolute;
@@ -109,16 +109,16 @@
     transform: translate3d(-1px, 0.5em, -1em);
     transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
   }
-  .cs-hide-on-mobile {
+  .pc-hide-on-mobile {
     display: none;
   }
 }
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-  .cs-hide-on-mobile {
+  .pc-hide-on-mobile {
     display: block;
   }
-  .cs-hide-on-desktop {
+  .pc-hide-on-desktop {
     display: none;
   }
 }
@@ -224,11 +224,11 @@
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  body.dark-mode #dark-mode-toggle .cs-sun {
+  body.dark-mode #dark-mode-toggle .pc-sun {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
-  body.dark-mode #dark-mode-toggle .cs-moon {
+  body.dark-mode #dark-mode-toggle .pc-moon {
     opacity: 0;
     transform: translate(-50%, -150%);
     fill: #fff;
@@ -256,11 +256,11 @@
     width: 1.25rem;
     pointer-events: none;
   }
-  #dark-mode-toggle .cs-moon {
+  #dark-mode-toggle .pc-moon {
     z-index: 2;
     transition: transform 0.3s, opacity 0.3s;
   }
-  #dark-mode-toggle .cs-sun {
+  #dark-mode-toggle .pc-sun {
     z-index: 1;
     opacity: 0;
     transform: translate(-50%, 100%);
@@ -285,10 +285,10 @@
 <--- -------------------------- -*/
 /* Mobile - 1023px */
 @media only screen and (max-width: 63.9375rem) {
-  body.cs-open {
+  body.pc-open {
     overflow: hidden;
   }
-  #cs-navigation {
+  #pc-navigation {
     z-index: 10000;
     position: fixed;
     background-color: #fff;
@@ -305,13 +305,13 @@
     transform: translateX(-50%);
     transition: top 0.3s ease-in-out 0s, width 0.3s ease-in-out 0s, border-radius 0.3s ease-in-out 0s;
   }
-  #cs-navigation .cs-container {
+  #pc-navigation .pc-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     width: 100%;
   }
-  #cs-navigation .cs-logo {
+  #pc-navigation .pc-logo {
     z-index: 10;
     display: flex;
     justify-content: center;
@@ -324,7 +324,7 @@
     box-sizing: border-box;
     padding: 0;
   }
-  #cs-navigation .cs-logo img {
+  #pc-navigation .pc-logo img {
     height: 100%;
     width: 100%;
     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
@@ -332,7 +332,7 @@
     /* places the image to the left edge of the parent */
     object-position: left;
   }
-  #cs-navigation .cs-toggle {
+  #pc-navigation .pc-toggle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -344,27 +344,27 @@
     /* 44px - 48px */
     width: clamp(2.75rem, 6vw, 3rem);
   }
-  #cs-navigation .cs-active .cs-line1 {
+  #pc-navigation .pc-active .pc-line1 {
     top: 50%;
     transform: translate(-50%, -50%) rotate(225deg);
   }
-  #cs-navigation .cs-active .cs-line2 {
+  #pc-navigation .pc-active .pc-line2 {
     top: 50%;
     transform: translate(-50%, -50%) translateY(0) rotate(-225deg);
     transform-origin: center;
   }
-  #cs-navigation .cs-active .cs-line3 {
+  #pc-navigation .pc-active .pc-line3 {
     bottom: 100%;
     opacity: 0;
   }
-  #cs-navigation .cs-box {
+  #pc-navigation .pc-box {
     position: relative;
     /* 14px - 16px */
     height: clamp(0.875rem, 1.5vw, 1rem);
     /* 24px - 28px */
     width: clamp(1.5rem, 2vw, 1.75rem);
   }
-  #cs-navigation .cs-line {
+  #pc-navigation .pc-line {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -373,7 +373,7 @@
     height: 2px;
     width: 100%;
   }
-  #cs-navigation .cs-line1 {
+  #pc-navigation .pc-line1 {
     top: 0;
     transition: transform 0.5s, top 0.3s, left 0.3s;
     animation-duration: 0.7s;
@@ -382,7 +382,7 @@
     animation-fill-mode: forwards;
     transform-origin: center;
   }
-  #cs-navigation .cs-line2 {
+  #pc-navigation .pc-line2 {
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
     transition: top 0.3s, left 0.3s, transform 0.5s;
@@ -391,11 +391,11 @@
     animation-direction: normal;
     animation-fill-mode: forwards;
   }
-  #cs-navigation .cs-line3 {
+  #pc-navigation .pc-line3 {
     bottom: 0;
     transition: bottom 0.3s, opacity 0.3s;
   }
-  #cs-navigation .cs-ul-wrapper {
+  #pc-navigation .pc-ul-wrapper {
     z-index: -1;
     position: absolute;
     top: 100%;
@@ -411,7 +411,7 @@
     box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
     transform-origin: top right;
   }
-  #cs-navigation .cs-ul {
+  #pc-navigation .pc-ul {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -425,7 +425,7 @@
     padding: 3rem clamp(1.75rem, 3vw, 2.5rem) 2rem 4.375rem;
     gap: 1.25rem;
   }
-  #cs-navigation .cs-li {
+  #pc-navigation .pc-li {
     opacity: 0;
     /* transition from these values */
     transform: translateX(-2.5rem);
@@ -435,34 +435,34 @@
     transition: transform 0.6s, opacity 0.9s;
     text-align: right;
   }
-  #cs-navigation .cs-li:nth-of-type(1) {
+  #pc-navigation .pc-li:nth-of-type(1) {
     transition-delay: 0.05s;
   }
-  #cs-navigation .cs-li:nth-of-type(2) {
+  #pc-navigation .pc-li:nth-of-type(2) {
     transition-delay: 0.1s;
   }
-  #cs-navigation .cs-li:nth-of-type(3) {
+  #pc-navigation .pc-li:nth-of-type(3) {
     transition-delay: 0.15s;
   }
-  #cs-navigation .cs-li:nth-of-type(4) {
+  #pc-navigation .pc-li:nth-of-type(4) {
     transition-delay: 0.2s;
   }
-  #cs-navigation .cs-li:nth-of-type(5) {
+  #pc-navigation .pc-li:nth-of-type(5) {
     transition-delay: 0.25s;
   }
-  #cs-navigation .cs-li:nth-of-type(6) {
+  #pc-navigation .pc-li:nth-of-type(6) {
     transition-delay: 0.3s;
   }
-  #cs-navigation .cs-li:nth-of-type(7) {
+  #pc-navigation .pc-li:nth-of-type(7) {
     transition-delay: 0.35s;
   }
-  #cs-navigation .cs-li:nth-of-type(8) {
+  #pc-navigation .pc-li:nth-of-type(8) {
     transition-delay: 0.4s;
   }
-  #cs-navigation .cs-li:nth-of-type(9) {
+  #pc-navigation .pc-li:nth-of-type(9) {
     transition-delay: 0.45s;
   }
-  #cs-navigation .cs-li-link {
+  #pc-navigation .pc-li-link {
     position: relative;
     display: inline-block;
     margin: 0;
@@ -472,7 +472,7 @@
     line-height: 1.2em;
     color: var(--headerColor);
   }
-  #cs-navigation .cs-li-link:before {
+  #pc-navigation .pc-li-link:before {
     position: absolute;
     bottom: -0.125rem;
     left: 0;
@@ -484,13 +484,13 @@
     height: 1px;
     width: 100%;
   }
-  #cs-navigation .cs-li-link.cs-active:before {
+  #pc-navigation .pc-li-link.pc-active:before {
     display: block;
   }
-  #cs-navigation .cs-button-solid {
+  #pc-navigation .pc-button-solid {
     display: none;
   }
-  #cs-navigation:before {
+  #pc-navigation:before {
     z-index: -11;
     position: absolute;
     top: 100%;
@@ -506,37 +506,37 @@
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
   }
-  #cs-navigation.cs-active .cs-ul-wrapper {
+  #pc-navigation.pc-active .pc-ul-wrapper {
     opacity: 1;
     visibility: visible;
     transform: scaleX(1);
     transition-delay: 0.2s;
   }
-  #cs-navigation.cs-active .cs-li {
+  #pc-navigation.pc-active .pc-li {
     opacity: 1;
     transform: translateX(0);
   }
-  #cs-navigation.cs-active:before {
+  #pc-navigation.pc-active:before {
     opacity: 1;
     width: 100%;
   }
 }
 /* Dark Mode */
 @media only screen and (max-width: 63.9375rem) {
-  body.dark-mode #cs-navigation {
+  body.dark-mode #pc-navigation {
     background-color: var(--dark);
   }
-  body.dark-mode #cs-navigation .cs-logo {
+  body.dark-mode #pc-navigation .pc-logo {
     /* makes it white */
     filter: grayscale(1) brightness(1000%);
   }
-  body.dark-mode #cs-navigation .cs-line {
+  body.dark-mode #pc-navigation .pc-line {
     background-color: #fff;
   }
-  body.dark-mode #cs-navigation .cs-ul-wrapper {
+  body.dark-mode #pc-navigation .pc-ul-wrapper {
     background-color: var(--medium);
   }
-  body.dark-mode #cs-navigation .cs-li-link {
+  body.dark-mode #pc-navigation .pc-li-link {
     color: var(--bodyTextColorWhite);
   }
 }
@@ -545,15 +545,15 @@
 <--- -------------------------- -*/
 /* Mobile - 1023px */
 @media only screen and (max-width: 63.9375rem) {
-  #cs-navigation .cs-dropdown {
+  #pc-navigation .pc-dropdown {
     position: relative;
     color: var(--bodyTextColorWhite);
   }
-  #cs-navigation .cs-dropdown .cs-li-link {
+  #pc-navigation .pc-dropdown .pc-li-link {
     position: relative;
     transition: opacity 0.3s;
   }
-  #cs-navigation .cs-dropdown.cs-active .cs-drop-ul {
+  #pc-navigation .pc-dropdown.pc-active .pc-drop-ul {
     visibility: visible;
     opacity: 1;
     transform: scale(1);
@@ -561,10 +561,10 @@
     height: auto;
     padding: 1.5rem;
   }
-  #cs-navigation .cs-dropdown.cs-active .cs-drop-link {
+  #pc-navigation .pc-dropdown.pc-active .pc-drop-link {
     opacity: 1;
   }
-  #cs-navigation .cs-dropdown-button {
+  #pc-navigation .pc-dropdown-button {
     border: none;
     background-color: transparent;
     font-family: inherit;
@@ -572,7 +572,7 @@
     cursor: pointer;
     appearance: none;
   }
-  #cs-navigation .cs-drop-icon {
+  #pc-navigation .pc-drop-icon {
     position: absolute;
     top: 50%;
     right: -1.25rem;
@@ -580,7 +580,7 @@
     height: auto;
     width: 0.9375rem;
   }
-  #cs-navigation .cs-drop-ul {
+  #pc-navigation .pc-drop-ul {
     visibility: hidden;
     opacity: 0;
     transform: scale(0);
@@ -599,11 +599,11 @@
     gap: 0.75rem;
     transform-origin: top right;
   }
-  #cs-navigation .cs-drop-li {
+  #pc-navigation .pc-drop-li {
     list-style: none;
     text-align: inherit;
   }
-  #cs-navigation .cs-li-link.cs-drop-link {
+  #pc-navigation .pc-li-link.pc-drop-link {
     /* 14px - 16px */
     font-size: clamp(0.875rem, 2vw, 1.25rem);
     color: #fff;
@@ -611,22 +611,22 @@
 }
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-  #cs-navigation .cs-dropdown {
+  #pc-navigation .pc-dropdown {
     position: relative;
   }
-  #cs-navigation .cs-dropdown.cs-active, #cs-navigation .cs-dropdown:hover {
+  #pc-navigation .pc-dropdown.pc-active, #pc-navigation .pc-dropdown:hover {
     cursor: pointer;
   }
-  #cs-navigation .cs-dropdown.cs-active .cs-drop-ul, #cs-navigation .cs-dropdown:hover .cs-drop-ul {
+  #pc-navigation .pc-dropdown.pc-active .pc-drop-ul, #pc-navigation .pc-dropdown:hover .pc-drop-ul {
     visibility: visible;
     opacity: 1;
     transform: scaleY(1);
   }
-  #cs-navigation .cs-dropdown.cs-active .cs-drop-li, #cs-navigation .cs-dropdown:hover .cs-drop-li {
+  #pc-navigation .pc-dropdown.pc-active .pc-drop-li, #pc-navigation .pc-dropdown:hover .pc-drop-li {
     opacity: 1;
     transform: translateY(0);
   }
-  #cs-navigation .cs-dropdown-button {
+  #pc-navigation .pc-dropdown-button {
     border: none;
     background-color: transparent;
     font-family: inherit;
@@ -634,14 +634,14 @@
     cursor: pointer;
     appearance: none;
   }
-  #cs-navigation .cs-drop-icon {
+  #pc-navigation .pc-drop-icon {
     display: inline-block;
     height: auto;
     width: 0.9375rem;
   }
-  #cs-navigation .cs-drop-ul {
+  #pc-navigation .pc-drop-ul {
     z-index: -100;
-    /* if you have 8 or more links in your dropdown nav, uncomment the columns property to make the list into 2 even columns. Change it to 3 or 4 if you need extra columns. Then remove the transition delays on the cs-drop-li so they don't have weird scattered animations */
+    /* if you have 8 or more links in your dropdown nav, uncomment the columns property to make the list into 2 even columns. Change it to 3 or 4 if you need extra columns. Then remove the transition delays on the pc-drop-li so they don't have weird scattered animations */
     position: absolute;
     top: 100%;
     visibility: hidden;
@@ -657,7 +657,7 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 10px 16px;
     transform-origin: top;
   }
-  #cs-navigation .cs-drop-li {
+  #pc-navigation .pc-drop-li {
     opacity: 0;
     transform: translateY(-0.625rem);
     display: block;
@@ -669,46 +669,46 @@
     color: var(--bodyTextColor);
     transition: opacity 0.6s, transform 0.6s;
   }
-  #cs-navigation .cs-drop-li:nth-of-type(1) {
+  #pc-navigation .pc-drop-li:nth-of-type(1) {
     transition-delay: 0.05s;
   }
-  #cs-navigation .cs-drop-li:nth-of-type(2) {
+  #pc-navigation .pc-drop-li:nth-of-type(2) {
     transition-delay: 0.1s;
   }
-  #cs-navigation .cs-drop-li:nth-of-type(3) {
+  #pc-navigation .pc-drop-li:nth-of-type(3) {
     transition-delay: 0.15s;
   }
-  #cs-navigation .cs-drop-li:nth-of-type(4) {
+  #pc-navigation .pc-drop-li:nth-of-type(4) {
     transition-delay: 0.2s;
   }
-  #cs-navigation .cs-drop-li:nth-of-type(5) {
+  #pc-navigation .pc-drop-li:nth-of-type(5) {
     transition-delay: 0.25s;
   }
-  #cs-navigation .cs-drop-li:nth-of-type(6) {
+  #pc-navigation .pc-drop-li:nth-of-type(6) {
     transition-delay: 0.3s;
   }
-  #cs-navigation .cs-drop-li:nth-of-type(7) {
+  #pc-navigation .pc-drop-li:nth-of-type(7) {
     transition-delay: 0.35s;
   }
-  #cs-navigation .cs-drop-li:nth-of-type(8) {
+  #pc-navigation .pc-drop-li:nth-of-type(8) {
     transition-delay: 0.4s;
   }
-  #cs-navigation .cs-drop-li:nth-of-type(9) {
+  #pc-navigation .pc-drop-li:nth-of-type(9) {
     transition-delay: 0.45s;
   }
-  #cs-navigation .cs-drop-li:nth-of-type(10) {
+  #pc-navigation .pc-drop-li:nth-of-type(10) {
     transition-delay: 0.5s;
   }
-  #cs-navigation .cs-drop-li:nth-of-type(11) {
+  #pc-navigation .pc-drop-li:nth-of-type(11) {
     transition-delay: 0.55s;
   }
-  #cs-navigation .cs-drop-li:nth-of-type(12) {
+  #pc-navigation .pc-drop-li:nth-of-type(12) {
     transition-delay: 0.6s;
   }
-  #cs-navigation .cs-drop-li:nth-of-type(13) {
+  #pc-navigation .pc-drop-li:nth-of-type(13) {
     transition-delay: 0.65s;
   }
-  #cs-navigation .cs-li-link.cs-drop-link {
+  #pc-navigation .pc-li-link.pc-drop-link {
     display: block;
     width: 100%;
     /* prevents padding from affecting height and width */
@@ -721,26 +721,26 @@
     color: var(--bodyTextColor);
     transition: color 0.3s, background-color 0.3s;
   }
-  #cs-navigation .cs-li-link.cs-drop-link:hover {
+  #pc-navigation .pc-li-link.pc-drop-link:hover {
     background-color: #f7f7f7;
   }
-  #cs-navigation .cs-li-link.cs-drop-link:focus-visible {
+  #pc-navigation .pc-li-link.pc-drop-link:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: -4px;
   }
-  #cs-navigation .cs-li-link.cs-drop-link:before {
+  #pc-navigation .pc-li-link.pc-drop-link:before {
     display: none;
   }
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
-  body.dark-mode #cs-navigation .cs-drop-ul {
+  body.dark-mode #pc-navigation .pc-drop-ul {
     background-color: var(--dark);
   }
-  body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:hover {
+  body.dark-mode #pc-navigation .pc-li-link.pc-drop-link:hover {
     background-color: var(--medium);
   }
-  body.dark-mode #cs-navigation .cs-drop-icon {
+  body.dark-mode #pc-navigation .pc-drop-icon {
     /* turns it white */
     filter: grayscale(1) brightness(1000%);
   }
@@ -750,7 +750,7 @@
 <--- -------------------------- -*/
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-  #cs-navigation {
+  #pc-navigation {
     z-index: 10000;
     position: fixed;
     background-color: #fff;
@@ -767,7 +767,7 @@
     transform: translateX(-50%);
     transition: top 0.3s ease-in-out 0s, width 0.3s ease-in-out 0s, border-radius 0.3s ease-in-out 0s;
   }
-  #cs-navigation .cs-container {
+  #pc-navigation .pc-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -776,10 +776,10 @@
     width: 100%;
     gap: 1.5rem;
   }
-  #cs-navigation .cs-toggle {
+  #pc-navigation .pc-toggle {
     display: none;
   }
-  #cs-navigation .cs-logo {
+  #pc-navigation .pc-logo {
     z-index: 100;
     display: flex;
     justify-content: center;
@@ -791,13 +791,13 @@
     width: 18.4%;
     padding: 0;
   }
-  #cs-navigation .cs-logo img {
+  #pc-navigation .pc-logo img {
     height: 100%;
     width: 100%;
     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
     object-fit: contain;
   }
-  #cs-navigation .cs-ul {
+  #pc-navigation .pc-ul {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -807,13 +807,13 @@
     /* 20px - 36px */
     gap: clamp(1.25rem, 2.6vw, 2.25rem);
   }
-  #cs-navigation .cs-li {
+  #pc-navigation .pc-li {
     padding: 2rem 0;
     list-style: none;
     /* prevent flexbox from squishing it */
     flex: none;
   }
-  #cs-navigation .cs-li-link {
+  #pc-navigation .pc-li-link {
     position: relative;
     display: block;
     margin: 0;
@@ -823,10 +823,10 @@
     line-height: 1.5em;
     color: var(--bodyTextColor);
   }
-  #cs-navigation .cs-li-link:hover:before {
+  #pc-navigation .pc-li-link:hover:before {
     width: 100%;
   }
-  #cs-navigation .cs-li-link:before {
+  #pc-navigation .pc-li-link:before {
     position: absolute;
     bottom: 0rem;
     left: 50%;
@@ -840,23 +840,23 @@
     transform: translateX(-50%);
     transition: width 0.3s;
   }
-  #cs-navigation .cs-li-link.cs-active:before {
+  #pc-navigation .pc-li-link.pc-active:before {
     width: 100%;
   }
 }
 /* Dark Mode */
 @media only screen and (min-width: 64rem) {
-  body.dark-mode #cs-navigation {
+  body.dark-mode #pc-navigation {
     background-color: var(--dark);
   }
-  body.dark-mode #cs-navigation .cs-logo {
+  body.dark-mode #pc-navigation .pc-logo {
     /* makes it turn white */
     filter: grayscale(1) brightness(1000%);
   }
-  body.dark-mode #cs-navigation .cs-li-link {
+  body.dark-mode #pc-navigation .pc-li-link {
     color: var(--bodyTextColorWhite);
   }
-  body.dark-mode #cs-navigation .cs-li-link:before {
+  body.dark-mode #pc-navigation .pc-li-link:before {
     background-color: var(--primaryLight);
   }
 }
@@ -1169,7 +1169,7 @@
     display: flex;
     justify-content: center;
   }
-  #footer .right-section .cs-button-solid {
+  #footer .right-section .pc-button-solid {
     margin: 0;
     height: 3.3125rem;
     width: 15.625rem;

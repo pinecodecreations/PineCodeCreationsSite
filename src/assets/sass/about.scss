@@ -9,7 +9,7 @@
     #sbs {
         padding: var(--sectionPadding);
 
-        .cs-container {
+        .pc-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -20,7 +20,7 @@
             row-gap: calc(40 / 16 * 1rem);
         }
 
-        .cs-left {
+        .pc-left {
             position: relative;
             height: calc(636 / 16 * 1em);
             /* using ems so we can use font size to scale the whole section */
@@ -29,7 +29,7 @@
             font-size: min(2.31vw, 0.7em);
         }
 
-        .cs-picture {
+        .pc-picture {
             position: absolute;
             display: block;
             border-radius: calc(24 / 16 * 1em);
@@ -46,14 +46,14 @@
             }
         }
 
-        .cs-picture1 {
+        .pc-picture1 {
             top: 0;
             left: 0;
             height: calc(581 / 16 * 1em);
             width: calc(522 / 16 * 1em);
         }
 
-        .cs-picture2 {
+        .pc-picture2 {
             bottom: 0;
             right: 0;
             /* 6px - 12px */
@@ -64,23 +64,23 @@
             box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
         }
 
-        .cs-right {
+        .pc-right {
             margin: auto;
             max-width: calc(542 / 16 * 1rem);
         }
 
-        .cs-topper {
+        .pc-topper {
             margin-bottom: calc(4 / 16 * 1rem);
             text-align: left;
             color: var(--secondaryLight);
         }
 
-        .cs-title {
+        .pc-title {
             max-width: calc(800 / 16 * 1rem);
             text-align: left;
         }
 
-        .cs-text {
+        .pc-text {
             margin-bottom: calc(16 / 16 * 1rem);
             max-width: calc(750 / 16 * 1rem);
             color: var(--bodyTextColor);
@@ -91,7 +91,7 @@
             }
         }
 
-        .cs-flex-group {
+        .pc-flex-group {
             position: relative;
             border-radius: calc(16 / 16 * 1rem);
             background-color: #f7f7f7;
@@ -99,7 +99,7 @@
             padding: clamp(1rem, 3vw, 2rem);
         }
 
-        .cs-flex-p {
+        .pc-flex-p {
             margin: 0 0 calc(16 / 16 * 1rem);
             /* 14px - 16px */
             font-size: clamp(0.875rem, 1.5vw, 1rem);
@@ -107,7 +107,7 @@
             color: #353535;
         }
 
-        .cs-name {
+        .pc-name {
             display: block;
             margin: 0 0 calc(4 / 16 * 1rem);
             text-transform: uppercase;
@@ -117,14 +117,14 @@
             color: var(--headerColor);
         }
 
-        .cs-job {
+        .pc-job {
             display: block;
             font-size: calc(14 / 16 * 1rem);
             line-height: 1.5em;
             color: #353535;
         }
 
-        .cs-quote-icon {
+        .pc-quote-icon {
             position: absolute;
             bottom: calc(0 / 16 * 1rem);
             /* 16px - 32px */
@@ -134,7 +134,7 @@
             width: clamp(3.75rem, 10vw, 8.5rem);
         }
 
-        .cs-button-solid {
+        .pc-button-solid {
             margin-top: calc(32 / 16 * 1rem);
         }
     }
@@ -143,18 +143,18 @@
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
     #sbs {
-        .cs-container {
+        .pc-container {
             flex-flow: row;
             justify-content: space-between;
             gap: calc(52 / 16 * 1rem);
         }
 
-        .cs-left {
+        .pc-left {
             font-size: min(1.2vw, 1em);
             flex: none;
         }
 
-        .cs-right {
+        .pc-right {
             margin: 0;
         }
     }
@@ -164,41 +164,41 @@
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #sbs {
-            .cs-left {
+            .pc-left {
                 &:before,
                 &:after {
                     background: var(--accent);
                 }
             }
 
-            .cs-picture2 {
+            .pc-picture2 {
                 /* 6px - 12px */
                 border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
                 background-color: var(--dark);
             }
 
-            .cs-topper {
+            .pc-topper {
                 color: var(--primaryLight);
             }
 
-            .cs-title,
-            .cs-text,
-            .cs-h3,
-            .cs-flex-p,
-            .cs-name {
+            .pc-title,
+            .pc-text,
+            .pc-h3,
+            .pc-flex-p,
+            .pc-name {
                 color: var(--bodyTextColorWhite);
             }
 
-            .cs-flex-group {
+            .pc-flex-group {
                 background-color: var(--accent);
             }
 
-            .cs-job {
+            .pc-job {
                 opacity: 0.8;
                 color: var(--bodyTextColorWhite);
             }
 
-            .cs-quote-icon {
+            .pc-quote-icon {
                 opacity: 0.2;
             }
         }

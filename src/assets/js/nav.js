@@ -1,7 +1,7 @@
 // Select DOM elements
 const bodyElement = document.querySelector("body");
-const navbarMenu = document.querySelector("#cs-navigation");
-const hamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
+const navbarMenu = document.querySelector("#pc-navigation");
+const hamburgerMenu = document.querySelector("#pc-navigation .pc-toggle");
 
 // Function to toggle the aria-expanded attribute
 function toggleAriaExpanded(element) {
@@ -14,9 +14,9 @@ function toggleAriaExpanded(element) {
 
 // Function to toggle the menu open or closed
 function toggleMenu() {
-    hamburgerMenu.classList.toggle("cs-active");
-    navbarMenu.classList.toggle("cs-active");
-    bodyElement.classList.toggle("cs-open");
+    hamburgerMenu.classList.toggle("pc-active");
+    navbarMenu.classList.toggle("pc-active");
+    bodyElement.classList.toggle("pc-open");
     toggleAriaExpanded(hamburgerMenu);
 }
 
@@ -27,7 +27,7 @@ hamburgerMenu.addEventListener("click", toggleMenu);
 navbarMenu.addEventListener("click", function (event) {
     if (
         event.target === navbarMenu &&
-        navbarMenu.classList.contains("cs-active")
+        navbarMenu.classList.contains("pc-active")
     ) {
         toggleMenu();
     }
@@ -35,15 +35,15 @@ navbarMenu.addEventListener("click", function (event) {
 
 // Function to handle dropdown toggle
 function toggleDropdown(element) {
-    element.classList.toggle("cs-active");
-    const dropdownButton = element.querySelector(".cs-dropdown-button");
+    element.classList.toggle("pc-active");
+    const dropdownButton = element.querySelector(".pc-dropdown-button");
     if (dropdownButton) {
         toggleAriaExpanded(dropdownButton);
     }
 }
 
 // Add event listeners to each dropdown element for accessibility
-const dropdownElements = document.querySelectorAll(".cs-dropdown");
+const dropdownElements = document.querySelectorAll(".pc-dropdown");
 dropdownElements.forEach((element) => {
     let escapePressed = false;
 
@@ -56,8 +56,8 @@ dropdownElements.forEach((element) => {
 
         // If the focus has moved outside the dropdown, remove the active class from the dropdown
         if (!element.contains(event.relatedTarget)) {
-            element.classList.remove("cs-active");
-            const dropdownButton = element.querySelector(".cs-dropdown-button");
+            element.classList.remove("pc-active");
+            const dropdownButton = element.querySelector(".pc-dropdown-button");
 
             if (dropdownButton) {
                 toggleAriaExpanded(dropdownButton);
@@ -66,7 +66,7 @@ dropdownElements.forEach((element) => {
     });
 
     element.addEventListener("keydown", function (event) {
-        if (element.classList.contains("cs-active")) {
+        if (element.classList.contains("pc-active")) {
             event.stopPropagation();
         }
 
@@ -91,7 +91,7 @@ dropdownElements.forEach((element) => {
 });
 
 // Pressing Enter will redirect to the href
-const dropdownLinks = document.querySelectorAll(".cs-drop-li > .cs-li-link");
+const dropdownLinks = document.querySelectorAll(".pc-drop-li > .pc-li-link");
 dropdownLinks.forEach((link) => {
     link.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
@@ -104,21 +104,21 @@ dropdownLinks.forEach((link) => {
 document.addEventListener("keydown", (event) => {
     if (
         event.key === "Escape" &&
-        hamburgerMenu.classList.contains("cs-active")
+        hamburgerMenu.classList.contains("pc-active")
     ) {
         toggleMenu();
     }
 });
 
 if (window.scrollY > 0){
-  navbarMenu.classList.add('cs-navigation-scrolled');
+  navbarMenu.classList.add('pc-navigation-scrolled');
 }
 
 window.addEventListener('scroll', function() {
   if (window.scrollY > 0) {
-    navbarMenu.classList.add('cs-navigation-scrolled');
+    navbarMenu.classList.add('pc-navigation-scrolled');
   } else {
-    navbarMenu.classList.remove('cs-navigation-scrolled');
+    navbarMenu.classList.remove('pc-navigation-scrolled');
   }
 });
 

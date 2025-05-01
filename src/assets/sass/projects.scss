@@ -13,13 +13,13 @@
         padding: var(--sectionPadding);
         /* Centers button */
         text-align: center;
-        .cs-container {
+        .pc-container {
             margin: auto;
             max-width: calc(1322 / 16 * 1em);
             width: 100%;
         }
 
-        .cs-image-group {
+        .pc-image-group {
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -32,7 +32,7 @@
             gap: calc(30 / 16 * 1em);
         }
 
-        .cs-row {
+        .pc-row {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -40,7 +40,7 @@
             gap: calc(30 / 16 * 1em);
         }
 
-        .cs-picture {
+        .pc-picture {
             position: relative;
             display: block;
             img {
@@ -53,52 +53,52 @@
             }
         }
 
-        .cs-row-1 {
-            .cs-picture1 {
+        .pc-row-1 {
+            .pc-picture1 {
                 height: calc(567 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
 
-            .cs-picture2 {
+            .pc-picture2 {
                 height: calc(629 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
 
-            .cs-picture3 {
+            .pc-picture3 {
                 height: calc(512 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
         }
 
-        .cs-row-2 {
-            .cs-picture1 {
+        .pc-row-2 {
+            .pc-picture1 {
                 height: calc(492 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
 
-            .cs-picture2 {
+            .pc-picture2 {
                 height: calc(517 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
 
-            .cs-picture3 {
+            .pc-picture3 {
                 height: calc(629 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
         }
 
-        .cs-row-3 {
-            .cs-picture1 {
+        .pc-row-3 {
+            .pc-picture1 {
                 height: calc(625 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
 
-            .cs-picture2 {
+            .pc-picture2 {
                 height: calc(452 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
 
-            .cs-picture3 {
+            .pc-picture3 {
                 height: calc(629 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }

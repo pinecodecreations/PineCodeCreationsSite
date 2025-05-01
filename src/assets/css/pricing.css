@@ -7,6 +7,13 @@
     width: 100%;
     padding: var(--sectionPadding);
   }
+  .pricing-section .pc-topper {
+    margin: auto;
+    text-align: center;
+  }
+  .pricing-section .pc-title {
+    text-align: center;
+  }
   .pricing-section .pricing-cards {
     display: flex;
     flex-wrap: wrap;

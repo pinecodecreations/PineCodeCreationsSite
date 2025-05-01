@@ -6,6 +6,13 @@
     max-width: 80rem;
     width: 100%;
     padding: var(--sectionPadding);
+    .pc-topper {
+      margin: auto;
+      text-align: center;
+    }
+    .pc-title {
+      text-align: center;
+    }
     .pricing-cards {
       display: flex;
       flex-wrap: wrap;

@@ -631,23 +631,23 @@
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #cs-footer {
+  #pc-footer {
     background-color: #1a1a1a;
     /* 60px - 100px top and bottom */
     padding: clamp(3.75em, 7.82vw, 6.25em) 1em;
     font-family: "Poppins", "Arial", sans-serif;
   }
-  #cs-footer .cs-container {
+  #pc-footer .pc-container {
     margin: auto;
     max-width: 80em;
     width: 100%;
   }
-  #cs-footer .cs-logo-group {
+  #pc-footer .pc-logo-group {
     position: relative;
     /* takes up all the space, lets the other ul's wrap below it */
     width: 100%;
   }
-  #cs-footer .cs-logo {
+  #pc-footer .pc-logo {
     display: block;
     /* 28px - 44px */
     margin-bottom: clamp(1.75em, 4.17vw, 2.75em);
@@ -655,32 +655,32 @@
     /* 210px - 240px */
     width: clamp(13.125em, 8vw, 17em);
   }
-  #cs-footer .cs-logo-img {
+  #pc-footer .pc-logo-img {
     height: auto;
     width: 100%;
   }
-  #cs-footer .cs-text {
+  #pc-footer .pc-text {
     margin: 0;
     margin-bottom: 2.5rem;
     /* changes to 521px at desktop */
     max-width: 21.5rem;
     color: var(--bodyTextColorWhite);
   }
-  #cs-footer .cs-nav {
+  #pc-footer .pc-nav {
     margin: 0;
     /* 32px - 40px */
     margin-bottom: clamp(2em, 5.3vw, 2.5em);
     padding: 0;
     padding-left: 1em;
   }
-  #cs-footer .cs-nav-li {
+  #pc-footer .pc-nav-li {
     list-style: none;
     line-height: 1.5em;
   }
-  #cs-footer .cs-nav-li:last-of-type {
+  #pc-footer .pc-nav-li:last-of-type {
     margin-bottom: 0;
   }
-  #cs-footer .cs-header {
+  #pc-footer .pc-header {
     position: relative;
     display: block;
     margin-bottom: 1.25rem;
@@ -689,14 +689,14 @@
     font-weight: 700;
     color: var(--bodyTextColorWhite);
   }
-  #cs-footer .cs-nav-link {
+  #pc-footer .pc-nav-link {
     position: relative;
     text-decoration: none;
     font-size: 1rem;
     line-height: 1.5em;
     color: var(--bodyTextColorWhite);
   }
-  #cs-footer .cs-nav-link:before {
+  #pc-footer .pc-nav-link:before {
     position: absolute;
     bottom: -0.125rem;
     left: 0;
@@ -710,21 +710,21 @@
     width: 0%;
     transition: width 0.3s;
   }
-  #cs-footer .cs-nav-link:hover:before {
+  #pc-footer .pc-nav-link:hover:before {
     width: 100%;
   }
-  #cs-footer .cs-bottom {
+  #pc-footer .pc-bottom {
     position: relative;
     width: 100%;
     padding-left: 1em;
   }
-  #cs-footer .cs-copyright {
+  #pc-footer .pc-copyright {
     display: block;
     font-size: 1rem;
     line-height: 1.5em;
     color: #b4b2c7;
   }
-  #cs-footer .cs-social {
+  #pc-footer .pc-social {
     position: absolute;
     bottom: 0;
     right: 1em;
@@ -733,7 +733,7 @@
     justify-content: flex-start;
     gap: 0.75em;
   }
-  #cs-footer .cs-social-link {
+  #pc-footer .pc-social-link {
     z-index: 1;
     position: relative;
     display: flex;
@@ -745,11 +745,11 @@
     width: 1.5rem;
     transition: transform 0.3s, background-color 0.3s;
   }
-  #cs-footer .cs-social-link:hover {
+  #pc-footer .pc-social-link:hover {
     transform: translateY(-0.1875rem);
     background-color: var(--primary);
   }
-  #cs-footer .cs-social-img {
+  #pc-footer .pc-social-img {
     display: block;
     height: 0.8125rem;
     width: auto;
@@ -757,7 +757,7 @@
 }
 /* Inbetween - 600px */
 @media only screen and (min-width: 37.5em) {
-  #cs-footer .cs-container {
+  #pc-footer .pc-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -768,32 +768,32 @@
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  #cs-footer .cs-logo-group {
+  #pc-footer .pc-logo-group {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     /* 20px - 60px */
     margin-bottom: clamp(1.25em, 4vw, 3.75em);
   }
-  #cs-footer .cs-logo {
+  #pc-footer .pc-logo {
     margin: 0;
   }
-  #cs-footer .cs-text {
+  #pc-footer .pc-text {
     margin: 0;
     max-width: 32.5625rem;
     width: 50%;
     text-align: right;
   }
-  #cs-footer .cs-nav {
+  #pc-footer .pc-nav {
     padding: 0;
   }
-  #cs-footer .cs-bottom {
+  #pc-footer .pc-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0;
   }
-  #cs-footer .cs-social {
+  #pc-footer .pc-social {
     position: relative;
     /* reset these positions */
     bottom: auto;

@@ -725,25 +725,25 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #cs-footer {
+    #pc-footer {
         background-color: #1a1a1a;
         /* 60px - 100px top and bottom */
         padding: clamp(3.75em, 7.82vw, 6.25em) calc(16 / 16 * 1em);
         font-family: "Poppins", "Arial", sans-serif;
 
-        .cs-container {
+        .pc-container {
             margin: auto;
             max-width: calc(1280 / 16 * 1em);
             width: 100%;
         }
 
-        .cs-logo-group {
+        .pc-logo-group {
             position: relative;
             /* takes up all the space, lets the other ul's wrap below it */
             width: 100%;
         }
 
-        .cs-logo {
+        .pc-logo {
             display: block;
             /* 28px - 44px */
             margin-bottom: clamp(1.75em, 4.17vw, 2.75em);
@@ -752,12 +752,12 @@
             width: clamp(13.125em, 8vw, 17em);
         }
 
-        .cs-logo-img {
+        .pc-logo-img {
             height: auto;
             width: 100%;
         }
 
-        .cs-text {
+        .pc-text {
             margin: 0;
             margin-bottom: calc(40 / 16 * 1rem);
             /* changes to 521px at desktop */
@@ -765,7 +765,7 @@
             color: var(--bodyTextColorWhite);
         }
 
-        .cs-nav {
+        .pc-nav {
             margin: 0;
             /* 32px - 40px */
             margin-bottom: clamp(2em, 5.3vw, 2.5em);
@@ -773,7 +773,7 @@
             padding-left: calc(16 / 16 * 1em);
         }
 
-        .cs-nav-li {
+        .pc-nav-li {
             list-style: none;
             line-height: 1.5em;
             &:last-of-type {
@@ -781,7 +781,7 @@
             }
         }
 
-        .cs-header {
+        .pc-header {
             position: relative;
             display: block;
             margin-bottom: calc(20 / 16 * 1rem);
@@ -791,7 +791,7 @@
             color: var(--bodyTextColorWhite);
         }
 
-        .cs-nav-link {
+        .pc-nav-link {
             position: relative;
             text-decoration: none;
             font-size: calc(16 / 16 * 1rem);
@@ -820,20 +820,20 @@
             }
         }
 
-        .cs-bottom {
+        .pc-bottom {
             position: relative;
             width: 100%;
             padding-left: calc(16 / 16 * 1em);
         }
 
-        .cs-copyright {
+        .pc-copyright {
             display: block;
             font-size: calc(16 / 16 * 1rem);
             line-height: 1.5em;
             color: #b4b2c7;
         }
 
-        .cs-social {
+        .pc-social {
             position: absolute;
             bottom: 0;
             right: calc(16 / 16 * 1em);
@@ -843,7 +843,7 @@
             gap: calc(12 / 16 * 1em);
         }
 
-        .cs-social-link {
+        .pc-social-link {
             z-index: 1;
             position: relative;
             display: flex;
@@ -863,7 +863,7 @@
             }
         }
 
-        .cs-social-img {
+        .pc-social-img {
             display: block;
             height: calc(13 / 16 * 1rem);
             width: auto;
@@ -873,8 +873,8 @@
 
 /* Inbetween - 600px */
 @media only screen and (min-width: 37.5em) {
-    #cs-footer {
-        .cs-container {
+    #pc-footer {
+        .pc-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
@@ -887,8 +887,8 @@
 
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    #cs-footer {
-        .cs-logo-group {
+    #pc-footer {
+        .pc-logo-group {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
@@ -896,29 +896,29 @@
             margin-bottom: clamp(1.25em, 4vw, 3.75em);
         }
 
-        .cs-logo {
+        .pc-logo {
             margin: 0;
         }
 
-        .cs-text {
+        .pc-text {
             margin: 0;
             max-width: calc(521 / 16 * 1rem);
             width: 50%;
             text-align: right;
         }
 
-        .cs-nav {
+        .pc-nav {
             padding: 0;
         }
 
-        .cs-bottom {
+        .pc-bottom {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0;
         }
 
-        .cs-social {
+        .pc-social {
             position: relative;
             /* reset these positions */
             bottom: auto;

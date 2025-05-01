@@ -9,7 +9,7 @@
     .sbs {
         padding: var(--sectionPadding);
 
-        .cs-container {
+        .pc-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -20,7 +20,7 @@
             row-gap: calc(40 / 16 * 1rem);
         }
 
-        .cs-left {
+        .pc-left {
             position: relative;
             height: calc(636 / 16 * 1em);
             /* using ems so we can use font size to scale the whole section */
@@ -29,7 +29,7 @@
             font-size: min(2.31vw, 0.7em);
         }
 
-        .cs-picture {
+        .pc-picture {
             position: absolute;
             display: block;
             border-radius: calc(24 / 16 * 1em);
@@ -48,14 +48,14 @@
             }
         }
 
-        .cs-picture1 {
+        .pc-picture1 {
             top: 0;
             left: 0;
             height: calc(581 / 16 * 1em);
             width: calc(522 / 16 * 1em);
         }
 
-        .cs-picture2 {
+        .pc-picture2 {
             bottom: 0;
             right: 0;
             /* 6px - 12px */
@@ -66,22 +66,22 @@
             box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
         }
 
-        .cs-right {
+        .pc-right {
             margin: auto;
             max-width: calc(542 / 16 * 1rem);
         }
 
-        .cs-topper {
+        .pc-topper {
             margin-bottom: calc(4 / 16 * 1rem);
             text-align: left;
         }
 
-        .cs-title {
+        .pc-title {
             max-width: calc(800 / 16 * 1rem);
             text-align: left;
         }
 
-        .cs-text {
+        .pc-text {
             margin-bottom: calc(16 / 16 * 1rem);
             max-width: calc(750 / 16 * 1rem);
             text-align: left;
@@ -91,7 +91,7 @@
             }
         }
 
-        .cs-flex-group {
+        .pc-flex-group {
             position: relative;
             border-radius: calc(16 / 16 * 1rem);
             background-color: #f7f7f7;
@@ -99,7 +99,7 @@
             padding: clamp(1rem, 3vw, 2rem);
         }
 
-        .cs-flex-p {
+        .pc-flex-p {
             margin: 0 0 calc(16 / 16 * 1rem);
             /* 14px - 16px */
             font-size: clamp(0.875rem, 1.5vw, 1rem);
@@ -107,7 +107,7 @@
             color: #353535;
         }
 
-        .cs-name {
+        .pc-name {
             display: block;
             margin: 0 0 calc(4 / 16 * 1rem);
             text-transform: uppercase;
@@ -117,14 +117,14 @@
             color: var(--headerColor);
         }
 
-        .cs-job {
+        .pc-job {
             display: block;
             font-size: calc(14 / 16 * 1rem);
             line-height: 1.5em;
             color: #353535;
         }
 
-        .cs-quote-icon {
+        .pc-quote-icon {
             position: absolute;
             bottom: calc(0 / 16 * 1rem);
             /* 16px - 32px */
@@ -134,7 +134,7 @@
             width: clamp(3.75rem, 10vw, 8.5rem);
         }
 
-        .cs-button-solid {
+        .pc-button-solid {
             margin-top: calc(32 / 16 * 1rem);
         }
     }
@@ -143,18 +143,18 @@
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
     .sbs {
-        .cs-container {
+        .pc-container {
             flex-flow: row;
             justify-content: space-between;
             gap: calc(52 / 16 * 1rem);
         }
 
-        .cs-left {
+        .pc-left {
             font-size: min(1.2vw, 1em);
             flex: none;
         }
 
-        .cs-right {
+        .pc-right {
             margin: 0;
         }
     }
@@ -164,41 +164,41 @@
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         .sbs {
-            .cs-left {
+            .pc-left {
                 &:before,
                 &:after {
                     background: var(--accent);
                 }
             }
 
-            .cs-picture2 {
+            .pc-picture2 {
                 /* 6px - 12px */
                 border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
                 background-color: var(--dark);
             }
 
-            .cs-topper {
+            .pc-topper {
                 color: var(--primaryLight);
             }
 
-            .cs-title,
-            .cs-text,
-            .cs-h3,
-            .cs-flex-p,
-            .cs-name {
+            .pc-title,
+            .pc-text,
+            .pc-h3,
+            .pc-flex-p,
+            .pc-name {
                 color: var(--bodyTextColorWhite);
             }
 
-            .cs-flex-group {
+            .pc-flex-group {
                 background-color: var(--accent);
             }
 
-            .cs-job {
+            .pc-job {
                 opacity: 0.8;
                 color: var(--bodyTextColorWhite);
             }
 
-            .cs-quote-icon {
+            .pc-quote-icon {
                 opacity: 0.2;
             }
         }
@@ -214,7 +214,7 @@
     #sbs-r {
         padding: var(--sectionPadding);
 
-        .cs-container {
+        .pc-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -225,7 +225,7 @@
             row-gap: calc(40 / 16 * 1rem);
         }
 
-        .cs-left {
+        .pc-left {
             position: relative;
             height: calc(450 / 16 * 1em);
             /* using ems so we can use font size to scale the whole section */
@@ -234,7 +234,7 @@
             font-size: min(2.31vw, 0.7em);
         }
 
-        .cs-picture {
+        .pc-picture {
             display: block;
             /* clips img tag corners */
             overflow: hidden;
@@ -250,14 +250,14 @@
             }
         }
 
-        .cs-picture1 {
+        .pc-picture1 {
             top: 0;
             right: 0;
             height: calc(581 / 16 * 1em);
             width: calc(522 / 16 * 1em);
         }
 
-        .cs-picture2 {
+        .pc-picture2 {
             bottom: 0;
             left: 0;
             /* 6px - 12px */
@@ -268,22 +268,22 @@
             box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
         }
 
-        .cs-right {
+        .pc-right {
             margin: auto;
             max-width: calc(542 / 16 * 1rem);
         }
 
-        .cs-topper {
+        .pc-topper {
             margin-bottom: calc(4 / 16 * 1rem);
             text-align: left;
         }
 
-        .cs-title {
+        .pc-title {
             max-width: calc(800 / 16 * 1rem);
             text-align: left;
         }
 
-        .cs-text {
+        .pc-text {
             margin-bottom: calc(16 / 16 * 1rem);
             max-width: calc(750 / 16 * 1rem);
             text-align: left;
@@ -292,7 +292,7 @@
             }
         }
 
-        .cs-flex-group {
+        .pc-flex-group {
             position: relative;
             border-radius: calc(16 / 16 * 1rem);
             background-color: #f7f7f7;
@@ -300,7 +300,7 @@
             padding: clamp(1rem, 3vw, 2rem);
         }
 
-        .cs-flex-p {
+        .pc-flex-p {
             margin: 0 0 calc(16 / 16 * 1rem);
             /* 14px - 16px */
             font-size: clamp(0.875rem, 1.5vw, 1rem);
@@ -308,7 +308,7 @@
             color: #353535;
         }
 
-        .cs-name {
+        .pc-name {
             display: block;
             margin: 0 0 calc(4 / 16 * 1rem);
             text-transform: uppercase;
@@ -318,14 +318,14 @@
             color: var(--headerColor);
         }
 
-        .cs-job {
+        .pc-job {
             display: block;
             font-size: calc(14 / 16 * 1rem);
             line-height: 1.5em;
             color: #353535;
         }
 
-        .cs-quote-icon {
+        .pc-quote-icon {
             position: absolute;
             bottom: calc(0 / 16 * 1rem);
             /* 16px - 32px */
@@ -340,20 +340,20 @@
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
     #sbs-r {
-        .cs-container {
+        .pc-container {
             flex-flow: row;
             justify-content: space-between;
             gap: calc(52 / 16 * 1rem);
         }
 
-        .cs-left {
+        .pc-left {
             /* sends it to the right */
             order: 2;
             font-size: min(1.2vw, 1em);
             flex: none;
         }
 
-        .cs-right {
+        .pc-right {
             margin: 0;
         }
     }
@@ -363,41 +363,41 @@
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #sbs-r {
-            .cs-left {
+            .pc-left {
                 &:before,
                 &:after {
                     background: var(--accent);
                 }
             }
 
-            .cs-picture2 {
+            .pc-picture2 {
                 /* 6px - 12px */
                 border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
                 background-color: var(--dark);
             }
 
-            .cs-topper {
+            .pc-topper {
                 color: var(--primaryLight);
             }
 
-            .cs-title,
-            .cs-text,
-            .cs-h3,
-            .cs-flex-p,
-            .cs-name {
+            .pc-title,
+            .pc-text,
+            .pc-h3,
+            .pc-flex-p,
+            .pc-name {
                 color: var(--bodyTextColorWhite);
             }
 
-            .cs-flex-group {
+            .pc-flex-group {
                 background-color: var(--accent);
             }
 
-            .cs-job {
+            .pc-job {
                 opacity: 0.8;
                 color: var(--bodyTextColorWhite);
             }
 
-            .cs-quote-icon {
+            .pc-quote-icon {
                 opacity: 0.2;
             }
         }
@@ -417,24 +417,24 @@
         padding: var(--sectionPadding);
         /* Centers button */
         text-align: center;
-        .cs-container {
+        .pc-container {
             margin: auto;
             max-width: calc(1322 / 16 * 1em);
             width: 100%;
         }
 
-        .cs-topper {
+        .pc-topper {
             margin-bottom: calc(16 / 16 * 1rem);
             text-align: center;
         }
 
-        .cs-title {
+        .pc-title {
             margin-bottom: calc(40 / 16 * 1rem);
             max-width: calc(621 / 16 * 1rem);
             text-align: center;
         }
 
-        .cs-image-group {
+        .pc-image-group {
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -447,7 +447,7 @@
             gap: calc(30 / 16 * 1em);
         }
 
-        .cs-row {
+        .pc-row {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -455,7 +455,7 @@
             gap: calc(30 / 16 * 1em);
         }
 
-        .cs-picture {
+        .pc-picture {
             position: relative;
             display: block;
             img {
@@ -468,52 +468,52 @@
             }
         }
 
-        .cs-row-1 {
-            .cs-picture1 {
+        .pc-row-1 {
+            .pc-picture1 {
                 height: calc(567 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
 
-            .cs-picture2 {
+            .pc-picture2 {
                 height: calc(629 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
 
-            .cs-picture3 {
+            .pc-picture3 {
                 height: calc(512 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
         }
 
-        .cs-row-2 {
-            .cs-picture1 {
+        .pc-row-2 {
+            .pc-picture1 {
                 height: calc(492 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
 
-            .cs-picture2 {
+            .pc-picture2 {
                 height: calc(517 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
 
-            .cs-picture3 {
+            .pc-picture3 {
                 height: calc(629 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
         }
 
-        .cs-row-3 {
-            .cs-picture1 {
+        .pc-row-3 {
+            .pc-picture1 {
                 height: calc(625 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
 
-            .cs-picture2 {
+            .pc-picture2 {
                 height: calc(452 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
 
-            .cs-picture3 {
+            .pc-picture3 {
                 height: calc(629 / 16 * 1em);
                 width: calc(420 / 16 * 1em);
             }
@@ -525,7 +525,7 @@
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #gallery {
-            .cs-title {
+            .pc-title {
                 color: var(--bodyTextColorWhite);
             }
         }
@@ -543,36 +543,36 @@
         /* Centers the button */
         text-align: center;
 
-        .cs-container {
+        .pc-container {
             margin: auto;
             max-width: calc(1104 / 16 * 1rem);
             width: 100%;
         }
 
-        .cs-topper {
+        .pc-topper {
             margin-bottom: calc(16 / 16 * 1rem);
             text-align: center;
         }
 
-        .cs-title {
+        .pc-title {
             max-width: calc(700 / 16 * 1rem);
             text-align: center;
         }
 
-        .cs-text {
+        .pc-text {
             /* 88px - 104px */
             margin-bottom: clamp(5.5em, 10.2vw, 6.5em);
             max-width: calc(650 / 16 * 1rem);
             text-align: center;
         }
 
-        .cs-card-group {
+        .pc-card-group {
             /* 48px - 64px */
             margin: 0 auto clamp(3rem, 5vw, 4rem);
             padding: 0;
         }
 
-        .cs-item {
+        .pc-item {
             position: relative;
             display: flex;
             flex-wrap: wrap;
@@ -598,14 +598,14 @@
             }
         }
 
-        .cs-item-img {
+        .pc-item-img {
             position: absolute;
             top: calc(-40 / 16 * 1rem);
             height: calc(80 / 16 * 1rem);
             width: calc(80 / 16 * 1rem);
         }
 
-        .cs-item-p {
+        .pc-item-p {
             border-bottom: 1px solid #e8e9ec;
             margin: 0 0 calc(20 / 16 * 1rem);
             padding-bottom: calc(20 / 16 * 1rem);
@@ -614,7 +614,7 @@
             color: var(--bodyTextColor);
         }
 
-        .cs-reviewer {
+        .pc-reviewer {
             display: block;
             margin: 0 auto 0 0;
             width: 40%;
@@ -624,14 +624,14 @@
             color: var(--headerColor);
         }
 
-        .cs-desc {
+        .pc-desc {
             display: block;
             font-size: calc(14 / 16 * 1rem);
             font-weight: 400;
             color: var(#353535);
         }
 
-        .cs-item-stars {
+        .pc-item-stars {
             height: calc(16 / 16 * 1rem);
             width: calc(96 / 16 * 1rem);
         }
@@ -641,14 +641,14 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
     #reviews {
-        .cs-card-group {
+        .pc-card-group {
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: calc(16 / 16 * 1rem);
         }
 
-        .cs-item {
+        .pc-item {
             /* reset margin so it won't interfere with flexbox */
             margin: 0;
         }
@@ -659,18 +659,18 @@
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #reviews {
-            .cs-title,
-            .cs-text,
-            .cs-item-p,
-            .cs-reviewer {
+            .pc-title,
+            .pc-text,
+            .pc-item-p,
+            .pc-reviewer {
                 color: var(--bodyTextColorWhite);
             }
 
-            .cs-item {
+            .pc-item {
                 background: var(--medium);
             }
 
-            .cs-desc {
+            .pc-desc {
                 color: var(--primaryLight);
             }
         }
@@ -762,20 +762,383 @@
         &__item {
           background: var(--medium);
         }
-          .cs-title,
-          .cs-text,
-          .cs-item-p,
-          .cs-reviewer {
+          .pc-title,
+          .pc-text,
+          .pc-item-p,
+          .pc-reviewer {
               color: var(--bodyTextColorWhite);
           }
 
-          .cs-item {
+          .pc-item {
               background: var(--medium);
           }
 
-          .cs-desc {
+          .pc-desc {
               color: var(--primaryLight);
           }
       }
   }
 }
+
+/*-- -------------------------- -->
+<---   Side By Side Reverse     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  @keyframes floatAnimation {
+      0% {
+          transform: translateY(0);
+      }
+      50% {
+          transform: translateY(-2rem);
+      }
+      100% {
+          transform: translateY(0);
+      }
+  }
+
+  @keyframes floatAnimation2 {
+      0% {
+          transform: translateY(0);
+      }
+      50% {
+          transform: translateY(-3rem);
+      }
+      100% {
+          transform: translateY(0);
+      }
+  }
+
+  #sbsr-1363 {
+      padding: var(--sectionPadding);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+
+      .pc-container {
+          width: 100%;
+          /* changes to 1280px at desktop */
+          max-width: calc(584 / 16 * 1rem);
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          /* 48px - 64px */
+          gap: clamp(3rem, 6vw, 4rem);
+      }
+
+      .pc-content {
+          /* set text align to left if content needs to be left aligned */
+          text-align: left;
+          width: 100%;
+          max-width: calc(630 / 16 * 1rem);
+          display: flex;
+          flex-direction: column;
+          /* centers content horizontally, set to flex-start to left align */
+          align-items: flex-start;
+      }
+
+
+
+      .pc-title {
+          /* 23 characters wide including spaces */
+          max-width: 26ch;
+      }
+
+      .pc-text {
+          margin-bottom: calc(16 / 16 * 1rem);
+          &:last-of-type {
+              margin-bottom: calc(24 / 16 * 1rem);
+          }
+      }
+
+      .pc-card-group {
+          width: 100%;
+          max-width: calc(630 / 16 * 1rem);
+          margin: 0 0 calc(24 / 16 * 1rem) 0;
+          padding: 0;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(15.265rem, 1fr));
+          align-items: center;
+          gap: clamp(1rem, 2vw, 1.25rem);
+      }
+
+      .pc-item {
+          list-style: none;
+          /* 16px - 24px */
+          padding: clamp(1rem, 3vw, 1.5rem);
+          /* prevents padding from affecting height and width */
+          box-sizing: border-box;
+          background-color: #f7f7f7;
+          border-radius: calc(16 / 16 * 1rem);
+          border: 1px solid #e8e8e8;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: calc(12 / 16 * 1rem);
+          height: 100%;
+      }
+
+      .pc-h3 {
+          font-size: calc(20 / 16 * 1rem);
+          line-height: 1.2em;
+          font-weight: 700;
+          margin: 0;
+          color: var(--headerColor);
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: calc(8 / 16 * 1rem);
+      }
+
+      .pc-h3-icon {
+          width: calc(32 / 16 * 1rem);
+          height: auto;
+          display: block;
+      }
+
+      .pc-item-text {
+          font-size: calc(14 / 16 * 1rem);
+          line-height: 1.5em;
+          margin: 0;
+          color: var(--bodyTextColor);
+      }
+
+      .pc-ul {
+          width: 100%;
+          margin: 0 0 calc(24 / 16 * 1rem) 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: calc(12 / 16 * 1rem);
+      }
+
+      .pc-li {
+          font-size: var(--bodyFontSize);
+          list-style: none;
+          line-height: 1.5em;
+          width: 100%;
+          color: var(--bodyTextColor);
+          display: flex;
+          justify-content: flex-start;
+          /* push icon top the top so if the list item goes to two lines the icon stays at the top */
+          align-items: flex-start;
+          gap: calc(8 / 16 * 1rem);
+      }
+
+      .pc-icon {
+          width: calc(24 / 16 * 1rem);
+          height: auto;
+          /* adds extra space between the icon and top of parent so it's more centered */
+          margin-top: 1px;
+          display: block;
+      }
+
+
+      .pc-image-group {
+          width: 100%;
+          max-width: calc(586 / 16 * 1rem);
+          /* Changes to auto at desktop */
+          height: calc(520 / 16 * 1rem);
+          /* 32px - 48px */
+          border-radius: clamp(2rem, 4vw, 3rem);
+          /* clips the corners of the children around the border radius */
+          overflow: hidden;
+          position: relative;
+      }
+      .pc-background:nth-child(1) {
+        display: none;
+      }
+      .pc-background {
+          width: 100%;
+          height: 100%;
+          /* makes it cover the parent dimensions */
+          object-fit: cover;
+          display: block;
+
+          img {
+              width: 100%;
+              height: 100%;
+              /* makes it cover the parent like a backgorund image */
+              object-fit: cover;
+              display: block;
+          }
+      }
+
+      .pc-box {
+          text-align: left;
+          width: 100%;
+          max-width: calc(304 / 16 * 1rem);
+          padding: calc(32 / 16 * 1rem);
+          /* prevents padding from affecting height and width */
+          box-sizing: border-box;
+          background-color: var(--primary);
+          /* 48px - 80px */
+          border-radius: calc(32 / 16 * 1rem);
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: calc(24 / 16 * 1rem);
+          position: absolute;
+          /* 12px - 20px */
+          right: clamp(0.75rem, 1.9vw, 1.5rem);
+          /* 12px - 20px */
+          bottom: clamp(0.75rem, 1.9vw, 1.5rem);
+      }
+
+      .pc-box-icon {
+          width: calc(140 / 16 * 1rem);
+          height: auto;
+          display: block;
+      }
+
+      .pc-desc {
+          font-size: calc(20 / 16 * 1rem);
+          line-height: 1.2em;
+          text-align: inherit;
+          font-weight: 700;
+          width: 100%;
+          margin: 0;
+          color: var(--bodyTextColorWhite);
+      }
+
+      .pc-glow {
+          font-size: min(2.5vw, 0.7em);
+          width: calc(419 / 16 * 1em);
+          height: calc(427 / 16 * 1em);
+          position: absolute;
+          /* Reset at larger desktop */
+          right: calc(-260 / 16 * 1em);
+          /* chnages to 30px at desktop */
+          bottom: 50%;
+          z-index: -1;
+
+          &:before {
+              /* white border bubble */
+              content: "";
+              width: calc(330 / 16 * 1em);
+              height: calc(330 / 16 * 1em);
+              background: radial-gradient(circle, var(--primary) 40%, rgba(90, 147, 103, 0.8) 70%);
+              box-shadow: 0 0 15px rgba(90, 147, 103, 0.8), 0 0 30px rgba(90, 147, 103, 0.6), 0 0 60px rgba(90, 147, 103, 0.4); /* Glowing effect */
+              border-radius: 50%;
+              opacity: .7;
+              position: absolute;
+              display: block;
+              top: 0;
+              right: 0;
+              animation-name: floatAnimation;
+              animation-duration: 5s;
+              animation-timing-function: ease-in-out;
+              animation-fill-mode: forwards;
+              animation-iteration-count: infinite;
+          }
+
+          &:after {
+              /* orange bubble */
+              content: "";
+              width: calc(260 / 16 * 1em);
+              height: calc(260 / 16 * 1em);
+              background: radial-gradient(circle, var(--primaryLight) 40%, rgba(90, 147, 103, 0.8) 70%);
+              box-shadow: 0 0 15px rgba(90, 147, 103, 0.8), 0 0 30px rgba(90, 147, 103, 0.6), 0 0 60px rgba(90, 147, 103, 0.4); /* Glowing effect */              opacity: 0.15;
+              border-radius: 50%;
+              display: block;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              z-index: -1;
+              animation-name: floatAnimation2;
+              animation-duration: 14s;
+              animation-timing-function: ease-in-out;
+              animation-fill-mode: forwards;
+              animation-iteration-count: infinite;
+          }
+      }
+  }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #sbsr-1363 {
+      .pc-container {
+          max-width: calc(1280 / 16 * 1rem);
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: stretch;
+      }
+      .pc-background:nth-child(1) {
+        display: block;
+      }
+      .pc-background {
+        height: 50%;
+      }
+      .pc-image-group {
+          /* sends it to the right in the 2nd position */
+          order: 2;
+          height: auto;
+      }
+
+      .pc-glow {
+          font-size: min(2.5vw, 1em);
+          bottom: calc(0 / 16 * 1rem);
+          right: calc(-100 / 16 * 1rem);
+      }
+  }
+}
+
+/* Large Desktop 1600px */
+@media only screen and (min-width: 100rem) {
+  #sbsr-1363 {
+      .pc-glow {
+          margin-right: calc(750 / 16 * 1rem);
+          left: auto;
+          right: 50%;
+      }
+  }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode {
+      #sbsr-1363 {
+          .pc-topper {
+              color: var(--primary);
+          }
+
+          .pc-title,
+          .pc-text,
+          .pc-li,
+          .pc-item-text {
+              color: var(--bodyTextColorWhite);
+          }
+
+          .pc-text,
+          .pc-li,
+          .pc-item-text {
+              opacity: 0.8;
+          }
+
+          .pc-item {
+              background-color: rgba(0, 0, 0, 0.2);
+              border-color: rgba(255, 255, 255, 0.2);
+          }
+
+          .pc-h3 {
+              color: var(--bodyTextColorWhite);
+          }
+
+          .pc-icon {
+              filter: grayscale(1) brightness(1000%);
+          }
+
+          .pc-glow {
+              &:before {
+                  border-color: rgba(255, 255, 255, 0.2);
+              }
+          }
+      }
+  }
+}
+
+                              
