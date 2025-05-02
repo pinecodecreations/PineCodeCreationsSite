@@ -218,21 +218,89 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
             margin: auto;
             max-width: calc(1280 / 16 * 1rem);
             width: 100%;
             row-gap: calc(40 / 16 * 1rem);
         }
 
-        .pc-left {
-            position: relative;
-            height: calc(450 / 16 * 1em);
-            /* using ems so we can use font size to scale the whole section */
-            width: calc(631 / 16 * 1em);
-            /* scaling the font size with the view width */
-            font-size: min(2.31vw, 0.7em);
-        }
+            .pc-left {
+              /* sends it to the right */
+                position: relative;
+                height: calc(650 / 16 * 1em);
+                /* using ems so we can use font size to scale the whole section */
+                width: calc(631 / 16 * 1em);
+                /* scaling the font size with the view width */
+                font-size: min(2.31vw, 0.7em);
+                order: 2;
+                z-index: 10;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                max-width: 39.375rem;
+                width: 100%;
+                text-align: left;
+                gap: clamp(2rem, 4vw, 3rem);
+                margin: auto;
+              
+                .pc-stats {
+                  display: flex;
+                  grid-template-columns: repeat(12, 1fr);
+                  justify-content: space-between;
+                  margin: 0;
+                  max-width: 39.375rem;
+                  width: 100%;
+                  padding: 0;
+                  row-gap: 1.5rem;
+                  column-gap: clamp(1.5rem, 4vw, 4.5vw);
+                  .pc-stat {
+                    display: flex;
+                    flex-direction: column;
+                    align-content: space-between;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    grid-column: span 4;
+                    align-self: stretch;
+                    .pc-number {
+                      font-family: var(--headerFont);
+                      display: block;
+                      margin: 0 0 0.25rem 0;
+                      font-size: clamp(2.4375rem, 5vw, 3.8125rem);
+                      line-height: 1.2em;
+                      font-weight: 900;
+                      color: var(--primaryLight);
+                      text-align: left;
+                    }
+                    .pc-desc {
+                      margin: 0;
+                      font-size: clamp(0.875rem, 1.6vw, 1.25rem);
+                      line-height: 1.5em;
+                      color: var(--bodyTextColor);
+                      text-align: left;
+                      display: flex;
+                      flex-direction: column;
+                      align-content: space-between;
+                      margin: 0;
+                      padding: 0;
+                      list-style: none;
+                      grid-column: span 4;
+                      align-self: stretch;
+                    }
+                  }
+                }
+                .pc-picture {
+                  z-index: 1;
+                  position: relative;
+                  display: block;
+                  border-radius: 1rem;
+                  overflow: hidden;
+                  height: 28.8125rem;
+                  width: 100%;
+                }
+              }
+        
 
         .pc-picture {
             display: block;
@@ -271,16 +339,18 @@
         .pc-right {
             margin: auto;
             max-width: calc(542 / 16 * 1rem);
+            text-align: center;
+            
         }
 
         .pc-topper {
             margin-bottom: calc(4 / 16 * 1rem);
-            text-align: left;
+            text-align: center;
         }
 
         .pc-title {
             max-width: calc(800 / 16 * 1rem);
-            text-align: left;
+            text-align: center;
         }
 
         .pc-text {
@@ -290,6 +360,10 @@
             &:last-of-type {
                 margin-bottom: calc(32 / 16 * 1rem);
             }
+        }
+
+        .pc-button-solid {
+          margin: auto;
         }
 
         .pc-flex-group {
@@ -337,6 +411,35 @@
     }
 }
 
+@media only screen and (min-width: 48rem) {
+  #sbs-r {
+    .pc-container {
+      flex-direction: row;
+      gap: clamp(2rem, 4vw, 3rem);
+      .pc-topper {
+        text-align: left;
+      }
+
+    .pc-title {
+        max-width: calc(800 / 16 * 1rem);
+        text-align: left;
+      }
+
+    .pc-text {
+        text-align: left;
+    }
+
+    .pc-button-solid {
+      margin: 0;
+    }
+
+    .pc-right {
+      text-align: left;
+    }
+    }
+  }
+}
+
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
     #sbs-r {
@@ -350,8 +453,71 @@
             /* sends it to the right */
             order: 2;
             font-size: min(1.2vw, 1em);
-            flex: none;
-        }
+            z-index: 10;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 39.375rem;
+            width: 100%;
+            text-align: left;
+            gap: clamp(2rem, 4vw, 3rem);
+            .pc-stats {
+                display: flex;
+                grid-template-columns: repeat(12, 1fr);
+                justify-content: space-between;
+                margin: 0;
+                max-width: 39.375rem;
+                width: 100%;
+                padding: 0;
+                row-gap: 1.5rem;
+                column-gap: clamp(1.5rem, 4vw, 4.5vw);
+                .pc-stat {
+                  display: flex;
+                  flex-direction: column;
+                  align-content: space-between;
+                  margin: 0;
+                  padding: 0;
+                  list-style: none;
+                  grid-column: span 4;
+                  align-self: stretch;
+                  .pc-number {
+                    font-family: var(--headerFont);
+                    display: block;
+                    margin: 0 0 0.25rem 0;
+                    font-size: clamp(2.4375rem, 5vw, 3.8125rem);
+                    line-height: 1.2em;
+                    font-weight: 900;
+                    color: var(--primaryLight);
+                    text-align: left;
+                  }
+                  .pc-desc {
+                    margin: 0;
+                    font-size: clamp(0.875rem, 1.6vw, 1.25rem);
+                    line-height: 1.5em;
+                    color: var(--bodyTextColor);
+                    text-align: left;
+                    display: flex;
+                    flex-direction: column;
+                    align-content: space-between;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    grid-column: span 4;
+                    align-self: stretch;
+                  }
+                }
+              }
+              .pc-picture {
+                z-index: 1;
+                position: relative;
+                display: block;
+                border-radius: 1rem;
+                overflow: hidden;
+                height: 28.8125rem;
+                width: 100%;
+              }
+            }
 
         .pc-right {
             margin: 0;
@@ -364,6 +530,14 @@
     body.dark-mode {
         #sbs-r {
             .pc-left {
+              .pc-stats {
+                .pc-stat {
+                  .pc-desc {
+                    color: var(--bodyTextColorWhite);
+                  }
+                }
+              }
+
                 &:before,
                 &:after {
                     background: var(--accent);
@@ -759,6 +933,9 @@
 @media only screen and (min-width: 0rem) {
   body.dark-mode {
       .portfolio {
+        .pc-topper {
+          color: var(--primary);
+        }
         &__item {
           background: var(--medium);
         }
@@ -840,17 +1017,25 @@
       }
 
 
-
+      .pc-topper {
+        margin: auto;
+      }
       .pc-title {
           /* 23 characters wide including spaces */
           max-width: 26ch;
+          text-align: center;
       }
 
       .pc-text {
           margin-bottom: calc(16 / 16 * 1rem);
+          text-align: center;
           &:last-of-type {
               margin-bottom: calc(24 / 16 * 1rem);
           }
+      }
+
+      .pc-button-solid {
+        margin: auto;
       }
 
       .pc-card-group {
@@ -1084,6 +1269,22 @@
           bottom: calc(0 / 16 * 1rem);
           right: calc(-100 / 16 * 1rem);
       }
+
+      .pc-topper {
+        margin: 0;
+      }
+      .pc-title {
+          /* 23 characters wide including spaces */
+          text-align: left;
+      }
+
+      .pc-text {
+          text-align: left;
+      }
+
+      .pc-button-solid {
+        margin: 0;
+      }
   }
 }
 
@@ -1141,4 +1342,55 @@
   }
 }
 
+/* Mobile - 360px */
+/* you can copy and paste these styles into the section CSS where you placed the #list-1165 HTML, or you can place it in your global stylesheet so you can reuse the HTML in any Side By Side section on your site. That way when you make changes to it, it will also change everywhere in the site */
+@media only screen and (min-width: 0rem) {
+  #list-1165 {
+      max-width: calc(630 / 16 * 1rem);
+      margin: 0 0 calc(32 / 16 * 1rem) 0;
+      padding: 0;
+      /* clips the bullets to create the half circle */
+      overflow: hidden;
+
+      .cs-li {
+          list-style: none;
+          margin: 0 0 calc(8 / 16 * 1rem) 0;
+          color: var(--bodyTextColor);
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: calc(12 / 16 * 1rem);
+          position: relative;
+
+          &:before {
+              /* bullet */
+              content: "";
+              width: calc(8 / 16 * 1rem);
+              height: calc(8 / 16 * 1rem);
+              margin-top: calc(8 / 16 * 1rem);
+              background: var(--secondary);
+              display: block;
+              /* prevents flexbox from squishing it */
+              flex: none;
+          }
+      }
+  }
+}
+
+/* Dark Mode, copy and paste only the styles inside the #list-1165 brackets into your section's dark mode media query */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode {
+      #list-1165 {
+          .cs-li {
+              color: var(--bodyTextColorWhite);
+          }
+
+          .cs-li {
+              opacity: 0.8;
+          }
+      }
+  }
+}
+
+                              
                               

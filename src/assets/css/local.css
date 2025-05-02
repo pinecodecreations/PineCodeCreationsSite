@@ -179,19 +179,85 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin: auto;
     max-width: 80rem;
     width: 100%;
     row-gap: 2.5rem;
   }
   #sbs-r .pc-left {
+    /* sends it to the right */
     position: relative;
-    height: 28.125em;
+    height: 40.625em;
     /* using ems so we can use font size to scale the whole section */
     width: 39.4375em;
     /* scaling the font size with the view width */
     font-size: min(2.31vw, 0.7em);
+    order: 2;
+    z-index: 10;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 39.375rem;
+    width: 100%;
+    text-align: left;
+    gap: clamp(2rem, 4vw, 3rem);
+    margin: auto;
+  }
+  #sbs-r .pc-left .pc-stats {
+    display: flex;
+    grid-template-columns: repeat(12, 1fr);
+    justify-content: space-between;
+    margin: 0;
+    max-width: 39.375rem;
+    width: 100%;
+    padding: 0;
+    row-gap: 1.5rem;
+    column-gap: clamp(1.5rem, 4vw, 4.5vw);
+  }
+  #sbs-r .pc-left .pc-stats .pc-stat {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-column: span 4;
+    align-self: stretch;
+  }
+  #sbs-r .pc-left .pc-stats .pc-stat .pc-number {
+    font-family: var(--headerFont);
+    display: block;
+    margin: 0 0 0.25rem 0;
+    font-size: clamp(2.4375rem, 5vw, 3.8125rem);
+    line-height: 1.2em;
+    font-weight: 900;
+    color: var(--primaryLight);
+    text-align: left;
+  }
+  #sbs-r .pc-left .pc-stats .pc-stat .pc-desc {
+    margin: 0;
+    font-size: clamp(0.875rem, 1.6vw, 1.25rem);
+    line-height: 1.5em;
+    color: var(--bodyTextColor);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-column: span 4;
+    align-self: stretch;
+  }
+  #sbs-r .pc-left .pc-picture {
+    z-index: 1;
+    position: relative;
+    display: block;
+    border-radius: 1rem;
+    overflow: hidden;
+    height: 28.8125rem;
+    width: 100%;
   }
   #sbs-r .pc-picture {
     display: block;
@@ -227,14 +293,15 @@
   #sbs-r .pc-right {
     margin: auto;
     max-width: 33.875rem;
+    text-align: center;
   }
   #sbs-r .pc-topper {
     margin-bottom: 0.25rem;
-    text-align: left;
+    text-align: center;
   }
   #sbs-r .pc-title {
     max-width: 50rem;
-    text-align: left;
+    text-align: center;
   }
   #sbs-r .pc-text {
     margin-bottom: 1rem;
@@ -243,6 +310,9 @@
   }
   #sbs-r .pc-text:last-of-type {
     margin-bottom: 2rem;
+  }
+  #sbs-r .pc-button-solid {
+    margin: auto;
   }
   #sbs-r .pc-flex-group {
     position: relative;
@@ -283,6 +353,28 @@
     width: clamp(3.75rem, 10vw, 8.5rem);
   }
 }
+@media only screen and (min-width: 48rem) {
+  #sbs-r .pc-container {
+    flex-direction: row;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  #sbs-r .pc-container .pc-topper {
+    text-align: left;
+  }
+  #sbs-r .pc-container .pc-title {
+    max-width: 50rem;
+    text-align: left;
+  }
+  #sbs-r .pc-container .pc-text {
+    text-align: left;
+  }
+  #sbs-r .pc-container .pc-button-solid {
+    margin: 0;
+  }
+  #sbs-r .pc-container .pc-right {
+    text-align: left;
+  }
+}
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
   #sbs-r .pc-container {
@@ -294,7 +386,70 @@
     /* sends it to the right */
     order: 2;
     font-size: min(1.2vw, 1em);
-    flex: none;
+    z-index: 10;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 39.375rem;
+    width: 100%;
+    text-align: left;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  #sbs-r .pc-left .pc-stats {
+    display: flex;
+    grid-template-columns: repeat(12, 1fr);
+    justify-content: space-between;
+    margin: 0;
+    max-width: 39.375rem;
+    width: 100%;
+    padding: 0;
+    row-gap: 1.5rem;
+    column-gap: clamp(1.5rem, 4vw, 4.5vw);
+  }
+  #sbs-r .pc-left .pc-stats .pc-stat {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-column: span 4;
+    align-self: stretch;
+  }
+  #sbs-r .pc-left .pc-stats .pc-stat .pc-number {
+    font-family: var(--headerFont);
+    display: block;
+    margin: 0 0 0.25rem 0;
+    font-size: clamp(2.4375rem, 5vw, 3.8125rem);
+    line-height: 1.2em;
+    font-weight: 900;
+    color: var(--primaryLight);
+    text-align: left;
+  }
+  #sbs-r .pc-left .pc-stats .pc-stat .pc-desc {
+    margin: 0;
+    font-size: clamp(0.875rem, 1.6vw, 1.25rem);
+    line-height: 1.5em;
+    color: var(--bodyTextColor);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-column: span 4;
+    align-self: stretch;
+  }
+  #sbs-r .pc-left .pc-picture {
+    z-index: 1;
+    position: relative;
+    display: block;
+    border-radius: 1rem;
+    overflow: hidden;
+    height: 28.8125rem;
+    width: 100%;
   }
   #sbs-r .pc-right {
     margin: 0;
@@ -302,6 +457,9 @@
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
+  body.dark-mode #sbs-r .pc-left .pc-stats .pc-stat .pc-desc {
+    color: var(--bodyTextColorWhite);
+  }
   body.dark-mode #sbs-r .pc-left:before, body.dark-mode #sbs-r .pc-left:after {
     background: var(--accent);
   }
@@ -620,6 +778,9 @@
 
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
+  body.dark-mode .portfolio .pc-topper {
+    color: var(--primary);
+  }
   body.dark-mode .portfolio__item {
     background: var(--medium);
   }
@@ -690,15 +851,23 @@
     /* centers content horizontally, set to flex-start to left align */
     align-items: flex-start;
   }
+  #sbsr-1363 .pc-topper {
+    margin: auto;
+  }
   #sbsr-1363 .pc-title {
     /* 23 characters wide including spaces */
     max-width: 26ch;
+    text-align: center;
   }
   #sbsr-1363 .pc-text {
     margin-bottom: 1rem;
+    text-align: center;
   }
   #sbsr-1363 .pc-text:last-of-type {
     margin-bottom: 1.5rem;
+  }
+  #sbsr-1363 .pc-button-solid {
+    margin: auto;
   }
   #sbsr-1363 .pc-card-group {
     width: 100%;
@@ -912,6 +1081,19 @@
     bottom: 0rem;
     right: -6.25rem;
   }
+  #sbsr-1363 .pc-topper {
+    margin: 0;
+  }
+  #sbsr-1363 .pc-title {
+    /* 23 characters wide including spaces */
+    text-align: left;
+  }
+  #sbsr-1363 .pc-text {
+    text-align: left;
+  }
+  #sbsr-1363 .pc-button-solid {
+    margin: 0;
+  }
 }
 /* Large Desktop 1600px */
 @media only screen and (min-width: 100rem) {
@@ -949,6 +1131,47 @@
   }
   body.dark-mode #sbsr-1363 .pc-glow:before {
     border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+/* Mobile - 360px */
+/* you can copy and paste these styles into the section CSS where you placed the #list-1165 HTML, or you can place it in your global stylesheet so you can reuse the HTML in any Side By Side section on your site. That way when you make changes to it, it will also change everywhere in the site */
+@media only screen and (min-width: 0rem) {
+  #list-1165 {
+    max-width: 39.375rem;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    /* clips the bullets to create the half circle */
+    overflow: hidden;
+  }
+  #list-1165 .cs-li {
+    list-style: none;
+    margin: 0 0 0.5rem 0;
+    color: var(--bodyTextColor);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.75rem;
+    position: relative;
+  }
+  #list-1165 .cs-li:before {
+    /* bullet */
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-top: 0.5rem;
+    background: var(--secondary);
+    display: block;
+    /* prevents flexbox from squishing it */
+    flex: none;
+  }
+}
+/* Dark Mode, copy and paste only the styles inside the #list-1165 brackets into your section's dark mode media query */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #list-1165 .cs-li {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #list-1165 .cs-li {
+    opacity: 0.8;
   }
 }
 
