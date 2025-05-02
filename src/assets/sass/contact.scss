@@ -17,6 +17,27 @@
         --sectionPadding: clamp(3.75em, 7.82vw, 6.25em) 1rem;
     }
 
+    .alert {
+      padding: 1rem 1.5rem;
+      border-radius: 0.5rem;
+      font-family: "Manrope", "Arial", sans-serif;
+      font-size: 1rem;
+      display: none; // Hide by default
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 1rem auto;
+      max-width: 600px;
+      transition: all 0.3s ease-in-out;
+    
+      &.success-alert {
+        background-color: #e6f9ee;
+        border: 1px solid #27ae60;
+        color: #218c54;
+        box-shadow: 0 2px 8px rgba(39, 174, 96, 0.2);
+      }
+    }
+
     #pc-contact {
         padding: var(--sectionPadding);
         font-family: "Poppins", "Arial", sans-serif;
