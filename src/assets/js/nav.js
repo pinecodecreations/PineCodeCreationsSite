@@ -122,3 +122,28 @@ window.addEventListener('scroll', function() {
   }
 });
 
+//CONTACT FORM
+if (window.location.pathname === '/contact/') {
+  const handleSubmit = event => {
+    event.preventDefault();
+  
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+  
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+      .then(() => {
+        const alert = document.getElementById('successAlert');
+        alert.style.display = 'flex'; // Show the alert
+        myForm.style.display = 'none';
+      })
+      .catch(error => alert(error));
+  };
+  
+  document.querySelector("form").addEventListener("submit", handleSubmit);
+  
+}
+
