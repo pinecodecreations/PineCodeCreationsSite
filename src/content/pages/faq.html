@@ -1,0 +1,341 @@
+---
+title: 'Page title for <title> and OG tags'
+description: 'Description for <meta> description and OG tags'
+preloadImg: '/assets/images/imagename.format'
+permalink: 'faq/'
+eleventyNavigation:
+    key: FAQ
+    order: 500
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+  <link rel="stylesheet" href="/assets/css/faq.css" />
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+      <h1 id="home-h">FAQ</h1>
+      <picture>
+          <source
+              media="(max-width: 600px)"
+              srcset="/assets/images/trees.jpg"
+          />
+          <source
+              media="(min-width: 601px)"
+              srcset="/assets/images/trees.jpg"
+          />
+          <img
+              aria-hidden="true"
+              decoding="async"
+              src="/assets/images/trees.jpg"
+              alt="pine trees"
+              loading="eager"
+              width="2500"
+              height="1667"
+          />
+      </picture>
+  </section>
+
+<!-- ============================================ -->
+<!--                    FAQ                       -->
+<!-- ============================================ -->
+
+<section id="faq-1720">
+  <div class="pc-container">
+      <div class="pc-content">
+          <h2 class="pc-title">Frequently Asked Questions</h2>
+          <p class="pc-text">We know building a website can come with a lot of questions. This page covers the most common ones, but if you need anything else, just ask!</p>
+      </div>
+      <div class="pc-flex-group">
+          <div class="pc-button-group">
+              <!--If you need to add another button, make sure to copy and paste from one of the buttons here and increment the data-filter value, so the next one would be data-filter="four", and so on-->
+              <div class="pc-flex">
+                  <button class="pc-option" data-filter="one">
+                      <img class="pc-icon" src="/assets/svgs/plus.svg" alt="plus graphic" width="12" height="12" decoding="async" aria-hidden="true">
+                      Payments & Pricing
+                  </button>
+                  <button class="pc-option" data-filter="two">
+                      <img class="pc-icon" src="/assets/svgs/plus.svg" alt="plus graphic" width="12" height="12" decoding="async" aria-hidden="true">
+                      Plans
+                  </button>
+                  <button class="pc-option" data-filter="three">
+                      <img class="pc-icon" src="/assets/svgs/plus.svg" alt="plus graphic" width="12" height="12" decoding="async" aria-hidden="true">
+                      Websites
+                  </button>
+              </div>
+              <!-- <picture class="pc-picture"> -->
+                  <!--Mobile Image-->
+                  <!-- <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people2.jpg"> -->
+                  <!--Tablet and above Image-->
+                  <!-- <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people2.jpg">
+                  <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people2.jpg" alt="people" width="353" height="493">
+              </picture> -->
+          </div>
+          <!--We need this wrapper so the absolutely positioned FAQ lists can be positioned to the top of it to so the animations don't amke it overlap the buttons group above it. We needed a wrapper div around it for the faq lists to be relatively positioned to in order to get the effect we wanted-->
+          <div class="pc-wrapper">
+              <!--If you add more FAQ's, copy and paste of of the .pc-faq-grop lists and increment the data-category to the next number. We have three right now, if you added a fourth you'd change it to data-category="four" to correspond to the new button you created in the .pc-button-group. The filter and category data attributes need to match so they can work together-->
+              <ul class="pc-faq-group" data-category="one">
+                  <!-- Active class added as default -->
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                              How long does the subscription last?
+                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        The subscription includes a 12-month minimum commitment, after which it continues on a month-to-month basis. You’re free to cancel anytime after the initial term. Please note: the website remains active as part of the subscription — if the subscription is canceled, the site is no longer hosted or maintained.
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            What happens if I cancel after the contract is up and want to come back later?
+                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            What if I need to cancel before the 12-month term is complete?
+                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        Early cancellations are subject to the remaining balance of your 12-month contract. If you're unsure about the full commitment, feel free to reach out and we can walk you through your options.                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            What happens if a payment is late?                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        All invoices include a 7-day grace period for payment. If an invoice remains unpaid after that window, a $25 late fee will be applied.
+                        For subscription clients: if multiple monthly payments are significantly overdue without communication, we reserve the right to cancel the contract. In such cases, the client may be held responsible for the full value of the website.
+                        We’re always happy to work with clients who communicate openly — life happens, and we’re flexible when needed. However, to protect the time and effort invested in building each site, we do take action when there’s a lack of response or repeated non-payment.
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            How do you accept payments, and which methods are supported?                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        We send all invoices via Square, which includes a secure link where you can enter your payment details.
+                        For subscription plans, payments are made by credit or debit card — we accept all major card providers.
+                        For one-time (lump sum) projects, we do ACH bank transfers to help reduce processing fees.
+
+                        Please note: We do not accept checks or money orders.
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            Is the $100 per additional page a one-time charge or monthly?                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        The $100 fee for additional pages is a one-time charge. It covers the design and development of that page, and it becomes part of your website — not a recurring cost.
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            Do you offer refunds?
+                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        Due to the time and custom work involved, we typically do not offer refunds once a project has started. However, if you’re unhappy with the direction early on (after we show you the initial design and before we start on the content of the main page), we’re always open to working with you to find a solution that meets your expectations.                      
+
+                      </p>
+                  </li>
+              </ul>
+              <ul class="pc-faq-group pc-hidden" data-category="two">
+                  <!-- Active class added as default -->
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            What happens after the 12-month subscription ends?
+                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        Yes, subscription plans continue on a monthly basis after the 12-month minimum. Since we don’t collect the full cost of the website up front, it typically takes 2–3 years for us to earn what we would through a lump sum project.
+
+                        Our goal is to build long-term relationships with our clients, ideally lasting 5 years or more, which makes the model sustainable for us and valuable for you. By that point, your website will likely be generating far more than $150/month in value — meaning it’s not just paying for itself, but helping your business grow.
+                        
+                        We aim to consistently deliver enough value, performance, and support to make it an easy decision to continue month after month.
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            Can I purchase the site outright after the 12-month subscription period?
+                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        No, we don’t offer a buyout option for the monthly subscription plan.
+                        As mentioned earlier, it typically takes 2–3 years — including hosting and ongoing support — to match the income we would receive from a one-time lump sum project. The subscription model only becomes financially sustainable for us when clients remain with us for 5+ years.
+                        
+                        This approach allows us to focus more on delivering quality work, supporting our clients, and continuously improving their sites — instead of constantly chasing new sales to cover costs. It creates a win-win: you get long-term, dedicated service, and we maintain the stability needed to provide it.
+                        
+                        If clients frequently opted to buy out early, it would undermine the entire subscription model and reduce our ability to offer the high-touch service that sets us apart from traditional agencies.
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            Can I add unlimited edits and ongoing support to a lump sum project?                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        Yes! We offer an optional $50/month add-on for unlimited edits and ongoing support.
+                        This add-on requires a 12-month commitment and is designed to provide consistent, reliable service — so it can’t be paused and resumed month to month. If you choose to cancel and later decide to reinstate it, a new 12-month term will apply.
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            What’s the difference between the lump sum and subscription plans?                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        The main difference comes down to short-term affordability vs. long-term cost.
+                        With the subscription plan, you’re spreading the cost over time through small, manageable monthly payments — making it ideal if you want to reduce upfront expenses while benefiting from ongoing support.
+                        
+                        The lump sum option, on the other hand, requires a larger upfront investment but saves you money in the long run since you’re paying for design and development all at once without ongoing service fees (unless you choose to add them).
+                        
+                        Ultimately, the right choice depends on your cash flow and priorities. If consistent support and lower upfront costs are important, the subscription is a great fit. If you're looking to pay once and move on without monthly commitments, the lump sum offers more long-term savings.
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            Is SEO included in your packages?                          
+                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        Yes and no. SEO involves two key components: on-page SEO and off-page SEO.
+                        <br>
+                        <br>
+                        On-page SEO refers to everything on your website — from content and structure to load times, accessibility, and meta tags.
+                        <br>
+                        <br>
+                        Off-page SEO focuses on factors outside your site, like link building, guest posts, and online citations.
+                        <br>
+                        <br>
+                        With our website packages, we handle important on-page SEO aspects, including fast load times, accessibility, meta tags, Google Search Console setup, sitemap generation, and basic content optimization. However, SEO is an ongoing, dynamic process that goes beyond the initial setup.
+                        
+                        For ongoing SEO efforts, including off-page strategies, we would partner with an SEO specialist. An SEO specialist would handle the ongoing SEO work separately from our website packages. If you're interested in professional SEO services, we'd be happy to connect you with someone to discuss offerings, plans, and pricing.
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            Do you build e-commerce websites on the subscription plan?
+                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        No, we do not offer e-commerce websites under the $150/month plan.
+                        E-commerce sites require significantly more setup and customization compared to standard business websites, and due to the higher costs involved, it’s not feasible to offer them at the same price point. If you're interested in an e-commerce site, we can provide a custom quote based on the scope and requirements.
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            If I cancel my subscription, do I still own my domain name?                          
+                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        Yes, you retain full ownership of your domain. We believe in transparency and trust — your domain is always yours to keep.
+                      </p>
+                  </li>
+              </ul>
+              <ul class="pc-faq-group pc-hidden" data-category="three">
+                  <!-- Active class added as default -->
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            How long does it take to complete the entire website development process?
+                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        Our typical website development timeline is 2-4 weeks, depending on the responsiveness of our clients in providing content and images, as well as the availability of our design and development team. In some cases, it may take as little as 2 weeks, while other projects may require up to 3 weeks.
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            If I cancel my subscription, do I still retain ownership of my website?
+                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        No, we do not offer that option or everyone would do it and we would be out of business. However, you will always retain ownership of your domain and any assets associated with your site.
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            Do we own the domain name for our website?
+                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        Yes, absolutely. We believe in full transparency and ownership. Even if we purchased the domain on your behalf, we will transfer it to you upon cancellation of your subscription.
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            Do you use WordPress or any website builders for development?
+                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        Nope! Every website we create is built with custom, hand-written code — no page builders involved. This is what sets us apart from others; we invest the time and effort to deliver a truly unique, tailored experience, and it’s evident in the quality of our work and the lasting impact on our clients' online presence.
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            Why do you choose custom coding over WordPress? What are the benefits of custom development?
+                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        Our custom-coded websites offer a number of advantages over traditional platforms like WordPress:
+                        <br>
+                        <br>
+                        Enhanced Security: With no databases or third-party plugins, there’s simply nothing for hackers to exploit. Unlike WordPress sites that require constant updates to avoid vulnerabilities, our custom sites are built to be secure from the start, providing peace of mind with fewer security risks.
+                        <br>
+                        <br>
+                        Faster Load Times: We don’t rely on plugins, which can slow down your site. Our streamlined code ensures fast load times and better performance across all devices.
+                        <br>
+                        <br>
+                        Easier Maintenance & Customization: Custom-built sites are easier to maintain and more adaptable to future changes, saving you time and costs in the long run. Plus, you’ll never face the frustration of constantly updating software or dealing with plugin conflicts.
+                        <br>
+                        <br>
+                        No Bloat: We avoid the unnecessary bloat that often comes with page builders and plugins, ensuring your site is lean, efficient, and responsive.
+                        <br>
+                        <br>
+                        In short, with our custom-coded websites, you’re getting a more secure, faster, and reliable site that doesn’t require constant upkeep — and there’s no risk of the dreaded security breaches or unwanted redirects that can happen on other platforms.
+                      </p>
+                  </li>
+                  <li class="pc-faq-item">
+                      <button class="pc-button">
+                          <span class="pc-button-text">
+                            How do we submit requests for edits or updates to our website?                          
+                          </span>
+                      </button>
+                      <p class="pc-item-p">
+                        Call, Send a text or email and the request will be fulfilled as soon as possible (usually within 48 hours depending on the request).
+                      </p>
+                  </li>
+              </ul>
+        </div>
+      </div>
+  </div>
+  <div class="pc-glow" aria-hidden="true"></div>
+</section>
+                              
+{% endblock %}

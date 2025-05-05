@@ -1129,9 +1129,6 @@
   body.dark-mode #sbsr-1363 .pc-icon {
     filter: grayscale(1) brightness(1000%);
   }
-  body.dark-mode #sbsr-1363 .pc-glow:before {
-    border-color: rgba(255, 255, 255, 0.2);
-  }
 }
 /* Mobile - 360px */
 /* you can copy and paste these styles into the section CSS where you placed the #list-1165 HTML, or you can place it in your global stylesheet so you can reuse the HTML in any Side By Side section on your site. That way when you make changes to it, it will also change everywhere in the site */
@@ -1143,7 +1140,7 @@
     /* clips the bullets to create the half circle */
     overflow: hidden;
   }
-  #list-1165 .cs-li {
+  #list-1165 .pc-li {
     list-style: none;
     margin: 0 0 0.5rem 0;
     color: var(--bodyTextColor);
@@ -1153,7 +1150,7 @@
     gap: 0.75rem;
     position: relative;
   }
-  #list-1165 .cs-li:before {
+  #list-1165 .pc-li:before {
     /* bullet */
     content: "";
     width: 0.5rem;
@@ -1167,10 +1164,10 @@
 }
 /* Dark Mode, copy and paste only the styles inside the #list-1165 brackets into your section's dark mode media query */
 @media only screen and (min-width: 0rem) {
-  body.dark-mode #list-1165 .cs-li {
+  body.dark-mode #list-1165 .pc-li {
     color: var(--bodyTextColorWhite);
   }
-  body.dark-mode #list-1165 .cs-li {
+  body.dark-mode #list-1165 .pc-li {
     opacity: 0.8;
   }
 }

@@ -1333,11 +1333,6 @@
               filter: grayscale(1) brightness(1000%);
           }
 
-          .pc-glow {
-              &:before {
-                  border-color: rgba(255, 255, 255, 0.2);
-              }
-          }
       }
   }
 }
@@ -1352,7 +1347,7 @@
       /* clips the bullets to create the half circle */
       overflow: hidden;
 
-      .cs-li {
+      .pc-li {
           list-style: none;
           margin: 0 0 calc(8 / 16 * 1rem) 0;
           color: var(--bodyTextColor);
@@ -1381,11 +1376,11 @@
 @media only screen and (min-width: 0rem) {
   body.dark-mode {
       #list-1165 {
-          .cs-li {
+          .pc-li {
               color: var(--bodyTextColorWhite);
           }
 
-          .cs-li {
+          .pc-li {
               opacity: 0.8;
           }
       }

@@ -1,0 +1,529 @@
+/*-- -------------------------- -->
+<---            FAQ             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #faq-1720 {
+      padding: var(--sectionPadding);
+      position: relative;
+
+      .pc-container {
+          width: 100%;
+          max-width: calc(1280 / 16 * 1rem);
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          /* 48px - 64px */
+          gap: clamp(3rem, 6vw, 4rem);
+          position: relative;
+          z-index: 1;
+      }
+
+      .pc-content {
+          /* set text align to left if content needs to be left aligned */
+          text-align: left;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          /* centers content horizontally, set to flex-start to left align */
+          align-items: flex-start;
+      }
+
+      .pc-title {
+          margin: 0 0 1rem 0;
+      }
+
+      .pc-text {
+        margin: 0;
+      }
+
+      .pc-flex-group {
+          width: 100%;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          /* 16px - 20px */
+          gap: clamp(1rem, 2.3vw, 1.25rem);
+          position: relative;
+      }
+
+      .pc-wrapper {
+          width: 100%;
+          position: relative;
+      }
+
+      .pc-button-group {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          /* 16px - 20px */
+          gap: clamp(1rem, 2.5vw, 1.25rem);
+          /* prevents flexbox from squishing it */
+          flex: none;
+      }
+
+      .pc-flex {
+          width: 100%;
+          /* 24px - 32px */
+          padding: clamp(1.5rem, 3vw, 2rem);
+          background-color: #F7F7F7;
+          display: flex;
+          flex-direction: column;
+          order: 3;
+          gap: calc(20 / 16 * 1rem);
+      }
+
+      .pc-option {
+          /* 16px - 20px */
+          font-size: clamp(1rem, 2vw, 1.25rem);
+          line-height: 1.2em;
+          font-weight: 700;
+          padding: 0;
+          color: var(--bodyTextColor);
+          background-color: transparent;
+          border: none;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: calc(8 / 16 * 1rem);
+          position: relative;
+          z-index: 1;
+          transition: color .3s;
+          
+          &:hover {
+              color: var(--primary);
+              cursor: pointer;
+          }
+
+          &.pc-active {
+              color: var(--primary);
+          }
+      }
+
+      .pc-picture {
+          width: 100%;
+          /* 328px - 450px */
+          height: clamp(20.5rem, 30vw, 28.125rem);
+          /* 16px - 20px */
+          margin: 0 0 clamp(1rem, 2.4vw, 1.25rem);
+          order: 2;
+          position: relative;
+          z-index: 1;
+
+          img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              position: absolute;
+              top: 0;
+              left: 0;
+          }
+      }
+
+      .pc-faq-group {
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          order: 3;
+          gap: calc(8 / 16 * 1rem);
+          transition:
+              transform 0.7s,
+              opacity 0.3s,
+              visibility 0.5s,
+              top 0.3s,
+              left 0.3s;
+          /* makes the transfrom scaling orgin the top left corner, dictates the direction by which the scale transforms animate towards */
+          transform-origin: top;
+          transform-style: preserve-3d;
+          perspective: 900px;
+
+          &.pc-hidden {
+              position: absolute;
+              /* by using visibility:hidden instead of display:none, we can see the animations from the opacity and transforms, display:none won't render animations. */
+              visibility: hidden;
+              /* prevents the mouse from interacting with it */
+              pointer-events: none;
+              /* hidden galleries have a 0 opacity, and we animate the opacity to 1 when they become active */
+              opacity: 0;
+              /* this top and left value help control the animation, by setting it to position absolute and left 0, the FAQ won't fly off screen to the left, it will stop its position to be at the left edge of the .pc-flex-group (left: 0). Same for the bottom:0 value, the FAQ won't go past that position when it animates */
+              top: 0;
+              left: 0;
+              position: absolute;
+              /* prevents the hidden galleries from overflowing the section, and makes a nice animations to transition to and from */
+              transform: scaleY(0);
+
+              .pc-faq-item {
+                  transform: rotateX(270deg);
+                  opacity: 0;
+              }
+          }
+      }
+
+      .pc-faq-item {
+          list-style: none;
+          width: 100%;
+          /* clips all corners of the button that overlap the rounded border */
+          overflow: hidden;
+          opacity: 1;
+          top: 0;
+          transform: rotateX(0deg);
+          transition:
+              transform 0.6s,
+              opacity 0.3s;
+
+          &:nth-of-type(2) {
+              transition-delay: 0.1s;
+          }
+          &:nth-of-type(3) {
+              transition-delay: 0.2s;
+          }
+          &:nth-of-type(4) {
+              transition-delay: 0.3s;
+          }
+          &:nth-of-type(5) {
+              transition-delay: 0.4s;
+          }
+          &:nth-of-type(6) {
+              transition-delay: 0.5s;
+          }
+          &:nth-of-type(7) {
+              transition-delay: 0.6s;
+          }
+          &:nth-of-type(8) {
+              transition-delay: 0.7s;
+          }
+          &:nth-of-type(9) {
+              transition-delay: 0.8s;
+          }
+          &:nth-of-type(10) {
+              transition-delay: 0.9s;
+          }
+
+          &.active {
+              .pc-button {
+                  color: var(--primary);
+                  &:before {
+                      background-color: var(--primary);
+                      transform: rotate(315deg);
+                  }
+                  &:after {
+                      background-color: var(--primary);
+                      transform: rotate(-315deg);
+                  }
+              }
+              .pc-item-p {
+                  height: auto;
+                  /* 20px - 24px bottom */
+                  /* 16px - 24px left & right */
+                  padding: 0 clamp(1rem, 2vw, 1.5rem)
+                      clamp(1.25rem, 1.3vw, 1.5rem);
+                  opacity: 1;
+              }
+          }
+      }
+
+      .pc-button {
+          /* 16px - 20px */
+          font-size: clamp(1rem, 2vw, 1.25rem);
+          line-height: 1.2em;
+          text-align: left;
+          font-weight: bold;
+          /* 16px - 24px top & bottom */
+          /* 16px - 20px left & right */
+          padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.25rem);
+          background-color: #f7f7f7;
+          border: none;
+          color: var(--headerColor);
+          display: block;
+          width: 100%;
+          position: relative;
+          transition:
+              background-color 0.3s,
+              color 0.3s;
+
+          &:hover {
+              cursor: pointer;
+          }
+
+          &:before {
+              /* left line */
+              content: "";
+              width: calc(8 / 16 * 1rem);
+              height: calc(2 / 16 * 1rem);
+              background-color: var(--headerColor);
+              opacity: 1;
+              border-radius: 50%;
+              position: absolute;
+              display: block;
+              top: 50%;
+              right: calc(24 / 16 * 1rem);
+              transform: rotate(45deg);
+              /* animate the transform from the left side of the x axis, and the center of the y */
+              transform-origin: left center;
+              transition: transform 0.5s;
+          }
+
+          &:after {
+              /* right line */
+              content: "";
+              width: calc(8 / 16 * 1rem);
+              height: calc(2 / 16 * 1rem);
+              background-color: var(--headerColor);
+              opacity: 1;
+              border-radius: 50%;
+              position: absolute;
+              display: block;
+              top: 50%;
+              right: calc(21 / 16 * 1rem);
+              transform: rotate(-45deg);
+              /* animate the transform from the right side of the x axis, and the center of the y */
+              transform-origin: right center;
+              transition: transform 0.5s;
+          }
+      }
+
+      .pc-button-text {
+          width: 80%;
+          display: block;
+      }
+
+      .pc-item-p {
+          /* 14px - 16px */
+          font-size: clamp(0.875rem, 1.5vw, 1rem);
+          line-height: 1.5em;
+          width: 100%;
+          height: 0;
+          margin: 0;
+          /* 16px - 24px */
+          padding: 0 clamp(1rem, 2vw, 1.5rem);
+          opacity: 0;
+          background-color: #f7f7f7;
+          color: var(--bodyTextColor);
+          /* clips the text so it doesn't show up */
+          overflow: hidden;
+          transition:
+              opacity 0.3s,
+              padding-bottom 0.3s;
+      }
+  }
+  @keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatAnimation2 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+  .pc-glow {
+    font-size: min(2.5vw, 0.7em);
+    width: calc(419 / 16 * 1em);
+    height: calc(427 / 16 * 1em);
+    position: absolute;
+    /* Reset at larger desktop */
+    right: calc(-260 / 16 * 1em);
+    /* chnages to 30px at desktop */
+    bottom: 50%;
+    z-index: -1;
+
+    &:before {
+        /* white border bubble */
+        content: "";
+        width: calc(330 / 16 * 1em);
+        height: calc(330 / 16 * 1em);
+        background: radial-gradient(circle, var(--primary) 40%, rgba(90, 147, 103, 0.8) 70%);
+        box-shadow: 0 0 15px rgba(90, 147, 103, 0.8), 0 0 30px rgba(90, 147, 103, 0.6), 0 0 60px rgba(90, 147, 103, 0.4); /* Glowing effect */
+        border-radius: 50%;
+        opacity: .7;
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+        animation-name: floatAnimation;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+    }
+
+    &:after {
+        /* orange bubble */
+        content: "";
+        width: calc(260 / 16 * 1em);
+        height: calc(260 / 16 * 1em);
+        background: radial-gradient(circle, var(--primaryLight) 40%, rgba(90, 147, 103, 0.8) 70%);
+        box-shadow: 0 0 15px rgba(90, 147, 103, 0.8), 0 0 30px rgba(90, 147, 103, 0.6), 0 0 60px rgba(90, 147, 103, 0.4); /* Glowing effect */              opacity: 0.15;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        animation-name: floatAnimation2;
+        animation-duration: 14s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+    }
+}
+}
+
+/* Inbetween - 600px */
+@media only screen and (min-width: 37.5rem) {
+  #faq-1720 {
+      .pc-button-group {
+          width: 80%;
+          max-width: calc(353 / 16 * 1rem);
+          flex-direction: row;
+          align-items: stretch;
+          flex: none;
+      }
+
+      .pc-content {
+          width: 100%;
+      }
+
+      .pc-picture {
+          height: 100%;
+          /* 300px - 493px */
+          min-height: clamp(18.75rem, 30vw, 30.8125rem);
+          margin: 0;
+          height: 100%;
+          flex: none;
+          order: 3;
+      }
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 48rem) {
+  #faq-1720 {
+      .pc-flex-group {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          /* 20px - 80px */
+          column-gap: clamp(1.25rem, 3vw, 5rem);
+      }
+      
+      .pc-button-group {
+          flex-direction: column;
+          flex: auto;
+      }
+
+      .pc-picture {
+          max-height: calc(500 / 16 * 1rem);
+      }
+      .pc-glow {
+        font-size: min(2.5vw, 1em);
+        bottom: calc(0 / 16 * 1rem);
+        right: calc(-100 / 16 * 1rem);
+    }
+  }
+}
+
+/* Large Desktop 1600px */
+@media only screen and (min-width: 100rem) {
+  #faq-1720 {
+      .pc-glow {
+          margin-right: calc(750 / 16 * 1rem);
+          left: auto;
+          right: 50%;
+      }
+  }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode {
+      #faq-1720 {
+          .pc-title,
+          .pc-item-p {
+              color: var(--bodyTextColorWhite);
+          }
+
+          .pc-flex {
+              background-color: rgba(0, 0, 0, .2);
+          }
+
+          .pc-option {
+              color: var(--bodyTextColorWhite);
+
+              &.pc-active {
+                  color: var(--primary);
+              }
+          }
+
+          .pc-faq-item {
+              &:nth-of-type(2) {
+                  transition-delay: 0.1s;
+              }
+              &:nth-of-type(3) {
+                  transition-delay: 0.2s;
+              }
+              &:nth-of-type(4) {
+                  transition-delay: 0.3s;
+              }
+              &:nth-of-type(5) {
+                  transition-delay: 0.4s;
+              }
+              &:nth-of-type(6) {
+                  transition-delay: 0.5s;
+              }
+              &:nth-of-type(7) {
+                  transition-delay: 0.6s;
+              }
+              &:nth-of-type(8) {
+                  transition-delay: 0.7s;
+              }
+              &:nth-of-type(9) {
+                  transition-delay: 0.8s;
+              }
+              &:nth-of-type(10) {
+                  transition-delay: 0.9s;
+              }
+
+              &:hover {
+                  border-color: var(--secondary);
+                  transition: border-color 0.3s;
+              }
+          }
+
+          .pc-button {
+              background-color: rgba(0, 0, 0, .2);
+              color: var(--bodyTextColorWhite);
+
+              &:before, &:after {
+                  background-color: var(--bodyTextColorWhite);
+              }
+          }
+
+          .pc-item-p {
+              background-color: rgba(0, 0, 0, .2);
+              color: var(--bodyTextColorWhite);
+              opacity: .8;
+          }
+      }
+  }
+}
+                              
