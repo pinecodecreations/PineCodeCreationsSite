@@ -31,6 +31,63 @@
         --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
     }
 
+      .pc-glow {
+      font-size: min(2.5vw, 0.7em);
+      width: calc(419 / 16 * 1em);
+      height: calc(427 / 16 * 1em);
+      position: absolute;
+      /* Reset at larger desktop */
+      right: calc(-260 / 16 * 1em);
+      /* chnages to 30px at desktop */
+      bottom: 50%;
+      z-index: -1;
+
+        &:before {
+            /* white border bubble */
+            content: "";
+            width: calc(330 / 16 * 1em);
+            height: calc(330 / 16 * 1em);
+            background: radial-gradient(circle, var(--primary) 40%, rgba(90, 147, 103, 0.8) 70%);
+            box-shadow: 0 0 15px rgba(90, 147, 103, 0.8), 0 0 30px rgba(90, 147, 103, 0.6), 0 0 60px rgba(90, 147, 103, 0.4); /* Glowing effect */
+            border-radius: 50%;
+            opacity: .7;
+            position: absolute;
+            display: block;
+            top: 0;
+            right: 0;
+            animation-name: floatAnimation;
+            animation-duration: 5s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+
+        &:after {
+            /* orange bubble */
+            content: "";
+            width: calc(260 / 16 * 1em);
+            height: calc(260 / 16 * 1em);
+            background: radial-gradient(circle, var(--primaryLight) 40%, rgba(90, 147, 103, 0.8) 70%);
+            box-shadow: 0 0 15px rgba(90, 147, 103, 0.8), 0 0 30px rgba(90, 147, 103, 0.6), 0 0 60px rgba(90, 147, 103, 0.4); /* Glowing effect */              opacity: 0.15;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            animation-name: floatAnimation2;
+            animation-duration: 14s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+    }
+
+    .pc-glow.reverse {
+      left: calc(-260 / 16 * 1em);
+      top: 50%;
+    }
+
 
     .pc-navigation-scrolled{
       top: 0 !important;
@@ -146,6 +203,31 @@
     .pc-hide-on-desktop {
         display: none;
     }
+    .pc-glow {
+      font-size: min(2.5vw, 1em);
+      bottom: calc(0 / 16 * 1rem);
+      right: calc(-100 / 16 * 1rem);
+    }
+    .pc-glow.reverse {
+      top: calc(0 / 16 * 1rem);
+      left: calc(-100 / 16 * 1rem);
+    }
+}
+
+/* Large Desktop 1600px */
+@media only screen and (min-width: 100rem) {
+    .pc-glow {
+        margin-right: calc(750 / 16 * 1rem);
+        left: auto;
+        right: 50%;
+    }
+
+    .pc-glow.reverse {
+        margin-left: calc(650 / 16 * 1rem);
+        right: auto;
+        left: 50%;
+    }
+  
 }
 
 /* Fonts and general styles */

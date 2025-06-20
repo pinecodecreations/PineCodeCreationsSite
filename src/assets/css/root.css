@@ -25,6 +25,60 @@
     /* 60px - 100px top and bottom */
     --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
   }
+  .pc-glow {
+    font-size: min(2.5vw, 0.7em);
+    width: 26.1875em;
+    height: 26.6875em;
+    position: absolute;
+    /* Reset at larger desktop */
+    right: -16.25em;
+    /* chnages to 30px at desktop */
+    bottom: 50%;
+    z-index: -1;
+  }
+  .pc-glow:before {
+    /* white border bubble */
+    content: "";
+    width: 20.625em;
+    height: 20.625em;
+    background: radial-gradient(circle, var(--primary) 40%, rgba(90, 147, 103, 0.8) 70%);
+    box-shadow: 0 0 15px rgba(90, 147, 103, 0.8), 0 0 30px rgba(90, 147, 103, 0.6), 0 0 60px rgba(90, 147, 103, 0.4); /* Glowing effect */
+    border-radius: 50%;
+    opacity: 0.7;
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    animation-name: floatAnimation;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+  .pc-glow:after {
+    /* orange bubble */
+    content: "";
+    width: 16.25em;
+    height: 16.25em;
+    background: radial-gradient(circle, var(--primaryLight) 40%, rgba(90, 147, 103, 0.8) 70%);
+    box-shadow: 0 0 15px rgba(90, 147, 103, 0.8), 0 0 30px rgba(90, 147, 103, 0.6), 0 0 60px rgba(90, 147, 103, 0.4); /* Glowing effect */
+    opacity: 0.15;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    animation-name: floatAnimation2;
+    animation-duration: 14s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+  .pc-glow.reverse {
+    left: -16.25em;
+    top: 50%;
+  }
   .pc-navigation-scrolled {
     top: 0 !important;
     width: 100% !important;
@@ -120,6 +174,28 @@
   }
   .pc-hide-on-desktop {
     display: none;
+  }
+  .pc-glow {
+    font-size: min(2.5vw, 1em);
+    bottom: 0rem;
+    right: -6.25rem;
+  }
+  .pc-glow.reverse {
+    top: 0rem;
+    left: -6.25rem;
+  }
+}
+/* Large Desktop 1600px */
+@media only screen and (min-width: 100rem) {
+  .pc-glow {
+    margin-right: 46.875rem;
+    left: auto;
+    right: 50%;
+  }
+  .pc-glow.reverse {
+    margin-left: 40.625rem;
+    right: auto;
+    left: 50%;
   }
 }
 /* Fonts and general styles */
