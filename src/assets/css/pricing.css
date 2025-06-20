@@ -105,6 +105,9 @@
   body.dark-mode #pricing .pricing-card h2, body.dark-mode #pricing .pricing-card li {
     color: #fff;
   }
+  body.dark-mode #pricing .pc-topper {
+    color: var(--primary);
+  }
 }
 
 /*# sourceMappingURL=pricing.css.map */

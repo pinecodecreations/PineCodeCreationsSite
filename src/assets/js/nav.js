@@ -90,6 +90,16 @@ dropdownElements.forEach((element) => {
     }
 });
 
+const links = document.querySelectorAll(".pc-li-link");
+links.forEach(link => {
+  if (link.href === window.location.href) {
+    link.classList.add("cs-active");
+  }
+  else {
+    link.classList.remove("cs-active");
+  }
+});
+
 // Pressing Enter will redirect to the href
 const dropdownLinks = document.querySelectorAll(".pc-drop-li > .pc-li-link");
 dropdownLinks.forEach((link) => {
