@@ -1625,9 +1625,9 @@
             padding: 0;
             margin: 0;
             display: grid;
-            //for 3 cards
-            //grid-template-columns: repeat(12, 1fr);
-            grid-template-columns: repeat(8, 1fr);
+            //for 2 cards
+            grid-template-columns: repeat(12, 1fr);
+            //grid-template-columns: repeat(8, 1fr);
         }
 
         .pc-item {
@@ -1641,9 +1641,9 @@
             justify-content: center;
             align-items: flex-start;
             flex-direction: column;
-            //for 3
-            //grid-column: span 12;
-            grid-column: span 8;
+            //for 2
+            grid-column: span 12;
+            //grid-column: span 8;
             position: relative;
             align-items: center;
             text-align: center;
