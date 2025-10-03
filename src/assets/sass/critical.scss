@@ -661,21 +661,34 @@
       transform: translateX(-50%); /* center it */
       width: 100vw; /* full viewport width */
       height: 100%;
-      background: white;
+    /* Use the vein image as a layered background as a fallback for iOS Safari
+      Browsers that support masking will still apply mask-image below. */
+    background-image: url("/assets/images/tree-vein-background.jpg"), linear-gradient(to right, #4e4376, #2b5876);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: cover, cover;
+    /* blend the vein image with the gradient for a subtle effect when mask isn't available */
+    background-blend-mode: multiply, normal;
 
-      /* Masking: use luminance for non-alpha images (jpg). Add -webkit- prefixes for broader support */
-      mask-image: url("/assets/images/tree-vein-background.jpg");
-      mask-mode: luminance;
-      mask-repeat: no-repeat;
-      mask-size: cover;
-      mask-position: center;
+    /* Masking: use luminance for non-alpha images (jpg). Keep -webkit- prefixed properties for broader support */
+    mask-image: url("/assets/images/tree-vein-background.jpg");
+    mask-mode: luminance;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    mask-position: center;
 
-      -webkit-mask-image: url("/assets/images/tree-vein-background.jpg");
-      -webkit-mask-mode: luminance;
-      -webkit-mask-repeat: no-repeat;
-      -webkit-mask-size: cover;
-      -webkit-mask-position: center;
-      z-index: -1;
+    -webkit-mask-image: url("/assets/images/tree-vein-background.jpg");
+    /* Note: -webkit-mask-mode may behave inconsistently on some iOS versions; keeping as-is */
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    -webkit-mask-position: center;
+    z-index: -1;
+
+  /* Try additional webkit mask composite flags where supported */
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+
+  /* If masking is not supported, rely on the background-image fallback (background-image already set above). */
     }
 
     .pc-flex-group {
