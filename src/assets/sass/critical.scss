@@ -863,8 +863,28 @@
 @media only screen and (min-width: 0rem) {
   body.dark-mode {
     #services {
+    background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, .5) 0%,  /* very dark at top */
+    rgba(0, 0, 0, 0.6) 15%, /* hint of white early */
+    rgba(0, 0, 0, 0.7) 30%, /* mid fade */
+    rgba(0, 0, 0, 0.9) 60%, /* nearly white near bottom */
+    var(--dark) 95% /* pure white at bottom */
+  ),
+  linear-gradient(
+    to bottom,
+    #0a0f1a,
+    #000814
+  );
 
+    &::before {
+      background: #000814;
+    }
+      
       .pc-flex-group {
+        &::before {
+          background: transparent
+        }
         .pc-topper {
           color: var(--primaryLight);
         }
