@@ -450,33 +450,10 @@
       z-index: 2;
       transform: translateX(-50%) translateY(-50%);
 
-      span,
-      h1,
-      p {
-        // animation: glitch1 8s infinite;
-      }
+      /* placeholder for possible glitch animation on text (disabled) */
     }
 
-    .pc-flex-group:nth-child(2) {
-
-      span,
-      h1,
-      p {
-        // color: #67f3da;
-        // animation: glitch2 8s infinite;
-      }
-
-    }
-
-    .pc-flex-group:nth-child(3) {
-
-      span,
-      h1,
-      p {
-        // color: #f16f6f;
-        // animation: glitch3 8s infinite;
-      }
-    }
+    /* optional variants for pc-flex-group animations were removed (placeholders) */
 
     .pc-topper {
       margin-bottom: calc(16 / 16 * 1rem);
@@ -630,7 +607,7 @@
 /* Desktop Parallax Effect - 1300px */
 @media only screen and (min-width: 81.25em) {
 
-  #hero {}
+  /* Desktop parallax placeholder removed */
 }
 
 /* Dark Mode */
@@ -638,6 +615,7 @@
   body.dark-mode {
     #hero {
       background: linear-gradient(to right, #0a0f1a, #000814);
+
       .pinetree {
         background: linear-gradient(to right, #0a0f1a, #000814);
       }
@@ -652,22 +630,79 @@
 /* Mobile */
 @media only screen and (min-width: 0rem) {
   .services {
+    padding: var(--sectionPadding);
     z-index: 100;
     position: relative;
+    width: 100%;
     // border-top: calc(6 / 16 * 1em) solid var(--primary);
     // border-radius: calc(5 / 16 * 1em);
-    margin: auto;
+    margin: 0;
     // background: #fff;
-    max-width: calc(1320 / 16 * 1em);
-    width: 90%;
+    // max-width: calc(1320 / 16 * 1em);
+          //background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%, white 20%),  linear-gradient(to right, #4e4376, #2b5876);
+    background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,  /* very dark at top */
+    rgba(255, 255, 255, 0.1) 15%, /* hint of white early */
+    rgba(255, 255, 255, 0.5) 30%, /* mid fade */
+    rgba(255, 255, 255, 0.9) 60%, /* nearly white near bottom */
+    white 95% /* pure white at bottom */
+  ),
+  linear-gradient(
+    to right,
+    #4e4376,
+    #2b5876
+  );
+        &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%); /* center it */
+      width: 100vw; /* full viewport width */
+      height: 100%;
+      background: white;
+
+      /* Masking: use luminance for non-alpha images (jpg). Add -webkit- prefixes for broader support */
+      mask-image: url("/assets/images/tree-vein-background.jpg");
+      mask-mode: luminance;
+      mask-repeat: no-repeat;
+      mask-size: cover;
+      mask-position: center;
+
+      -webkit-mask-image: url("/assets/images/tree-vein-background.jpg");
+      -webkit-mask-mode: luminance;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: cover;
+      -webkit-mask-position: center;
+      z-index: -1;
+    }
 
     .pc-flex-group {
-      padding: var(--sectionPadding);
+      position: relative;
       text-align: -webkit-center;
+
+      padding: 2rem;
+      max-width: 45rem;
+      margin: auto auto 2rem auto;
+              &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%); /* center it */
+      width: 100vw; /* full viewport width */
+      height: 100%;
+            background: rgba(255, 255, 255, 0.8); /* translucent */
+      backdrop-filter: blur(4px); 
+      z-index: -3;
+              }
 
     }
 
     .card-stack {
+      position: relative;
+
       &:not(:last-child) {
         margin-bottom: calc(50 / 16 * 1em);
 
@@ -680,16 +715,64 @@
         max-width: calc(357 / 16 * 1em);
         min-width: calc(50 / 16 * 1em);
         width: 100%;
-        background: white;
+        /* render decorative layer behind the card using ::before, and render the visible card surface using ::after */
+        background: transparent;
         padding: calc(50 / 16 * 1em) calc(20 / 16 * 1em);
         border-radius: 15px;
-        /* border: 0.375em solid var(--primary); */
-        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+        /* visible card surface (shadow, fill) will be provided by ::after pseudo */
         transition: transform 0.3s ease;
+        position: relative;
+        isolation: isolate;
+        z-index: 0;
 
         &:hover {
-          transform: scale(1.05);
-          transform: translateY(-5px);
+          /* raise the card above siblings on hover; decorative ::before remains behind */
+          z-index: 3;
+          transform: scale(1.05) translateY(-5px);
+
+          &::before {
+            transform: rotate(6deg);
+            transform: scale(1.05);
+          }
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          border-radius: 15px;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+          background: linear-gradient(to right, #4e4376, #2b5876);
+          transform: rotate(3deg);
+          /* decorative layer: keep it behind the visual card surface */
+          z-index: 0;
+          pointer-events: none;
+          will-change: transform, opacity;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* visible card surface sits above the decorative layer */
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          border-radius: 15px;
+          background: #fff;
+          box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+          z-index: 2;
+          pointer-events: none;
+        }
+
+        /* ensure content sits above ::after */
+        >* {
+          position: relative;
+          z-index: 3;
         }
 
         picture {
@@ -699,7 +782,7 @@
           border-radius: 50%;
           margin: auto;
           margin-bottom: calc(23 / 16 * 1em);
-          background: var(--primary);
+          background: linear-gradient(to right, #4e4376, #2b5876);
           height: calc(88 / 16 * 1em);
           width: calc(88 / 16 * 1em);
 
@@ -725,7 +808,7 @@
           text-align: center;
         }
 
-        &:last-of-type {}
+        /* intentionally no per-item last-of-type styles */
       }
     }
 
@@ -737,12 +820,14 @@
   .services {
     display: flex;
     flex-direction: column;
-    width: 98%;
+    width: 100%;
     font-size: min(1.8vw, 1em);
+    position: relative;
 
     .card-stack {
       display: flex;
       justify-content: space-evenly;
+      gap: calc(16 / 16 * 1em);
 
       .card {
         margin: calc(13 / 20 * 1em);
@@ -754,9 +839,10 @@
 /* Large Desktop */
 @media only screen and (min-width: 1300px) {
   .services {
-    padding: calc(50 / 16 * 1em) calc(80 / 16 * 1em);
+
     .pc-flex-group {
       padding-bottom: 0;
+
       .pc-text {
         margin: 0 auto 1rem auto;
         padding: 0;
@@ -787,6 +873,11 @@
       .card {
         background: var(--medium);
         box-shadow: 0px 20px 40px rgba(255, 255, 255, 0.1);
+
+        &::after {
+          background: var(--medium);
+          box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.1);
+        }
       }
 
       picture {
