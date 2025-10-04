@@ -219,7 +219,7 @@
       radial-gradient(circle at 70% 70%, #5A9367, transparent 40%);
     animation: moveGlow 10s ease-in-out infinite;
     filter: blur(50px);
-    z-index: 0;
+    z-index: 1;
   }
 
   @keyframes moveGlow {
@@ -340,7 +340,6 @@
   #hero {
     position: relative;
     /* prevents overflow from the lines extending past the screen width */
-    overflow: hidden;
     /* changes on tablet */
     padding: 0 calc(16 / 16 * 1rem);
     padding-bottom: calc(100 / 16 * 1rem);
@@ -633,7 +632,7 @@
     padding: var(--sectionPadding);
     // z-index: 100;
     position: relative;
-    isolation: isolate;
+    // isolation: isolate;
     width: 100%;
     // border-top: calc(6 / 16 * 1em) solid var(--primary);
     // border-radius: calc(5 / 16 * 1em);
@@ -680,7 +679,7 @@
         mask-position: center;
         mask-size: cover;
         mask-composite: intersect;
-    z-index: -1;
+    z-index: 1;
         background: white
       
     }
