@@ -645,7 +645,7 @@
        Add this element in the HTML: <div class="services-bg"></div> */
     .services-bg {
       position: absolute;
-      top: -2px;
+      top: 0px;
       left: 0;
       width: 100vw;
       height: 100%;
@@ -667,10 +667,12 @@
     z-index: 0;
             background:linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0) 0%,  /* very dark at top */
-    rgba(255, 255, 255, 0.1) 15%, /* hint of white early */
-    rgba(255, 255, 255, 0.5) 30%, /* mid fade */
-    rgba(255, 255, 255, 0.9) 60%, /* nearly white near bottom */
+    rgba(255, 255, 255, 1) 0%,  /* very dark at top */
+    rgba(255, 255, 255, 0.9) 15%, /* hint of white early */
+    rgba(255, 255, 255, 0.8) 30%, /* mid fade */
+    rgba(255, 255, 255, 0.8) 45%, /* mid fade */
+    rgba(255, 255, 255, 0.8) 60%, /* nearly white near bottom */
+    rgba(255, 255, 255, 0.9) 75%, /* nearly white near bottom */
     white 95% /* pure white at bottom */
   ),
   linear-gradient(
@@ -875,10 +877,10 @@
     #services {
     background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, .5) 0%,  /* very dark at top */
-    rgba(0, 0, 0, 0.6) 15%, /* hint of white early */
-    rgba(0, 0, 0, 0.7) 30%, /* mid fade */
-    rgba(0, 0, 0, 0.9) 60%, /* nearly white near bottom */
+    rgba(0, 0, 0, .1) 0%,  /* very dark at top */
+    rgba(0, 0, 0, 0.2) 15%, /* hint of white early */
+    rgba(0, 0, 0, 0.3) 30%, /* mid fade */
+    rgba(0, 0, 0, 0.1) 60%, /* nearly white near bottom */
     var(--dark) 95% /* pure white at bottom */
   ),
   linear-gradient(

@@ -858,8 +858,43 @@
 .portfolio {
   padding: 4rem 2rem;
   text-align: center;
+  position: relative;
+
+  .services-bg {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 100vw;
+      height: 100%;
+      pointer-events: none;
+
+      /* Primary fallback: vein image blended with gradient */
+
+
+
+        -webkit-mask-image: url("/assets/svgs/tree-vein-background.svg");
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: cover;
+
+        mask-image: url("/assets/svgs/tree-vein-background.svg");
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: cover;
+        z-index: 0;
+        background: 
+          radial-gradient(
+            circle at 50% 20%,              /* position: horizontal% vertical% */
+            rgba(255, 255, 255, 1) 30%,
+            rgba(255, 255, 255, 0.9) 40%,
+            rgba(255, 255, 255, .7) 80%
+          ),
+          linear-gradient(to right, #4e4376, #2b5876);
+      
+  }
 
   &__container {
+    position: relative;
     align-items: center;
     margin: auto;
     max-width: 80rem;
@@ -933,6 +968,17 @@
 @media only screen and (min-width: 0rem) {
   body.dark-mode {
       .portfolio {
+  background: radial-gradient(
+    circle at 50% 20%, 
+    rgba(0, 0, 0, 0.1) 15%,
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0.3) 90%
+  );
+        .services-bg {
+          background: var(--dark);
+
+          
+      }
         .pc-topper {
           color: var(--primary);
         }
