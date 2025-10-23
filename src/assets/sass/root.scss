@@ -30,7 +30,46 @@
         /* 60px - 100px top and bottom */
         --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
     }
+    .services-bg {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 100vw;
+      height: 100%;
+      pointer-events: none;
 
+      /* Primary fallback: vein image blended with gradient */
+
+
+
+        -webkit-mask-image: url("/assets/svgs/tree-vein-background.svg");
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: cover;
+
+        mask-image: url("/assets/svgs/tree-vein-background.svg");
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: cover;
+        z-index: 0;
+        background:
+          /* bottom fade */
+          linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, .4) 30%,rgba(255, 255, 255, .6) 60%, rgba(255, 255, 255, 1) 100%),
+          
+          /* circular glow */
+          radial-gradient(
+            circle at 50% 35%, 
+            rgb(255, 255, 255) 30%, 
+            rgba(255, 255, 255, 0.9) 40%, 
+            rgba(255, 255, 255, 0.7) 70%, 
+            rgba(255, 255, 255, 0.3) 90%, 
+            rgba(255, 255, 255, 0) 100%
+          ),
+
+          /* background colors */
+          linear-gradient(to right, #4e4376, #2b5876);
+      
+    }
       .pc-glow {
       font-size: min(2.5vw, 0.7em);
       width: calc(419 / 16 * 1em);
@@ -191,6 +230,50 @@
 
     .pc-hide-on-mobile {
         display: none;
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (max-width: 48rem) {
+    .services-bg {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 100vw;
+      height: 100%;
+      pointer-events: none;
+
+      /* Primary fallback: vein image blended with gradient */
+
+
+
+        -webkit-mask-image: url("/assets/svgs/tree-vein-background.svg");
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: cover;
+
+        mask-image: url("/assets/svgs/tree-vein-background.svg");
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: cover;
+        z-index: 0;
+        background:
+          /* bottom fade */
+          linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, .4) 30%,rgba(255, 255, 255, .6) 60%, rgba(255, 255, 255, 1) 100%),
+          
+          /* circular glow */
+          radial-gradient(
+            circle at 50% 35%, 
+            rgb(255, 255, 255) 30%, 
+            rgba(255, 255, 255, 0.9) 40%, 
+            rgba(255, 255, 255, 0.7) 70%, 
+            rgba(255, 255, 255, 0.3) 90%, 
+            rgba(255, 255, 255, 0) 100%
+          ),
+
+          /* background colors */
+          linear-gradient(to right, #4e4376, #2b5876);
+      
     }
 }
 
@@ -363,6 +446,23 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
+
+          .services-bg {
+      background: linear-gradient(to bottom, 
+      rgba(18, 26, 27, 0) 10%, 
+      rgba(18, 26, 27, 0.4) 30%, 
+      rgba(18, 26, 27, 0.6) 60%, 
+      rgb(18, 26, 27) 100%), 
+      
+      radial-gradient(circle at 50% 20%, 
+      rgb(18, 26, 27) 30%, 
+      rgba(18, 26, 27, 0.9) 40%, 
+      rgba(18, 26, 27, 0.7) 70%, 
+      rgba(18, 26, 27, 0.3) 90%, 
+      rgba(18, 26, 27, 0) 100%), 
+      
+      linear-gradient(to right, #4e4376, #2b5876)
+    }
         #dark-mode-toggle {
             .pc-sun {
                 opacity: 1;
@@ -422,7 +522,31 @@
                 opacity 0.3s;
         }
     }
+
+
 }
+
+/* Tablet - 768px */
+@media only screen and (max-width: 48rem) {
+    body.dark-mode {
+          .services-bg {
+      background: linear-gradient(to bottom, 
+      rgba(18, 26, 27, 0) 10%, 
+      rgba(18, 26, 27, 0.4) 30%, 
+      rgba(18, 26, 27, 0.6) 60%, 
+      rgb(18, 26, 27) 100%), 
+      
+      radial-gradient(circle at 50% 30%, 
+      rgb(18, 26, 27) 30%, 
+      rgba(18, 26, 27, 0.9) 40%, 
+      rgba(18, 26, 27, 0.7) 70%, 
+      rgba(18, 26, 27, 0.3) 90%, 
+      rgba(18, 26, 27, 0) 100%), 
+      
+      linear-gradient(to right, #4e4376, #2b5876)
+    }
+    }
+  }
 
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {

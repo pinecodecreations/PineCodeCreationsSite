@@ -613,7 +613,7 @@
 @media only screen and (min-width: 0rem) {
   body.dark-mode {
     #hero {
-      background: linear-gradient(to right, #0a0f1a, #000814);
+      background: var(--dark);
 
       .pinetree {
         background: linear-gradient(to right, #0a0f1a, #000814);
@@ -641,52 +641,7 @@
     // max-width: calc(1320 / 16 * 1em);
           //background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%, white 20%),  linear-gradient(to right, #4e4376, #2b5876);
     background:white;
-    /* Use an explicit element for the background so iOS doesn't drop it behind stacking contexts
-       Add this element in the HTML: <div class="services-bg"></div> */
-    .services-bg {
-      position: absolute;
-      top: 0px;
-      left: 0;
-      width: 100vw;
-      height: 100%;
-      pointer-events: none;
 
-      /* Primary fallback: vein image blended with gradient */
-
-
-
-        -webkit-mask-image: url("/assets/svgs/tree-vein-background.svg");
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-position: center;
-        -webkit-mask-size: cover;
-
-        mask-image: url("/assets/svgs/tree-vein-background.svg");
-        mask-repeat: no-repeat;
-        mask-position: center;
-        mask-size: cover;
-    z-index: 0;
-            background:linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 1) 0%,  /* very dark at top */
-    rgba(255, 255, 255, 0.9) 15%, /* hint of white early */
-    rgba(255, 255, 255, 0.8) 30%, /* mid fade */
-    rgba(255, 255, 255, 0.8) 45%, /* mid fade */
-    rgba(255, 255, 255, 0.8) 60%, /* nearly white near bottom */
-    rgba(255, 255, 255, 0.9) 75%, /* nearly white near bottom */
-    white 95% /* pure white at bottom */
-  ),
-  linear-gradient(
-    to right,
-    #4e4376,
-    #2b5876
-  );
-      
-    }
-
-
-    
-
-    
 
     .pc-flex-group {
       position: relative;
@@ -695,19 +650,18 @@
       padding: 2rem;
       max-width: 45rem;
       margin: auto auto 2rem auto;
-      z-index: 2;
-              &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%); /* center it */
-      width: 100vw; /* full viewport width */
-      height: 100%;
-            background: rgba(255, 255, 255, 0.8); /* translucent */
-      backdrop-filter: blur(4px); 
-      z-index: -1;
-              }
+      //         &::before {
+      // content: "";
+      // position: absolute;
+      // top: 0;
+      // left: 50%;
+      // transform: translateX(-50%); /* center it */
+      // width: 100vw; /* full viewport width */
+      // height: 100%;
+      //       background: rgba(255, 255, 255, 0.8); /* translucent */
+      // backdrop-filter: blur(4px); 
+      // z-index: -1;
+      //         }
 
     }
 
@@ -835,6 +789,7 @@
     width: 100%;
     font-size: min(1.8vw, 1em);
     position: relative;
+    z-index: 2;
 
     .card-stack {
       display: flex;
@@ -875,21 +830,23 @@
 @media only screen and (min-width: 0rem) {
   body.dark-mode {
     #services {
-    background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, .1) 0%,  /* very dark at top */
-    rgba(0, 0, 0, 0.2) 15%, /* hint of white early */
-    rgba(0, 0, 0, 0.3) 30%, /* mid fade */
-    rgba(0, 0, 0, 0.1) 60%, /* nearly white near bottom */
-    var(--dark) 95% /* pure white at bottom */
-  ),
-  linear-gradient(
-    to bottom,
-    #0a0f1a,
-    #000814
-  );
+    background: var(--dark);
+    z-index: 2;
+  //   background: linear-gradient(
+  //   to bottom,
+  //   rgba(0, 0, 0, .1) 0%,  /* very dark at top */
+  //   rgba(0, 0, 0, 0.2) 15%, /* hint of white early */
+  //   rgba(0, 0, 0, 0.3) 30%, /* mid fade */
+  //   rgba(0, 0, 0, 0.1) 60%, /* nearly white near bottom */
+  //   var(--dark) 95% /* pure white at bottom */
+  // ),
+  // linear-gradient(
+  //   to bottom,
+  //   #0a0f1a,
+  //   #000814
+  // );
   .services-bg {
-      background: var(--dark);
+      //background: var(--dark);
     }
 
 
