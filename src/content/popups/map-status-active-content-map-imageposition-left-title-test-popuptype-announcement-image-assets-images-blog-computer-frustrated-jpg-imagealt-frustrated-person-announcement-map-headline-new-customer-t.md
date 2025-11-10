@@ -1,6 +1,6 @@
 ---
 name: Test
-status: active
+status: inactive
 content:
   imagePosition: left
   title: Test
