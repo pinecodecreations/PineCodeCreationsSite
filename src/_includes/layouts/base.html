@@ -69,9 +69,16 @@
         <!-- Sitewide Stylesheets and Scripts -->
         <link rel="stylesheet" href="/assets/css/root.css" />
         <link rel="stylesheet" href="/assets/css/dark.css" />
+        {% if collections.popups.length > 0 %}
+          <link rel="stylesheet" href="/assets/css/popup.css" />
+        {% endif %}
         <script defer src="/assets/js/dark.js"></script>
         <script defer src="/assets/js/nav.js"></script>
-
+        
+        {% if collections.popups.length > 0 %}
+          <!-- Include popup script -->
+          <script src="/assets/js/popup.js"></script>
+        {% endif %}
         <!-- Plausible Analytics -->
         <script defer src="https://plausible.io/js/script.js" onload="this.setAttribute('data-domain', window.location.host)"></script>
 
@@ -82,6 +89,13 @@
     </head>
     <body>
         {% include "components/header.html" %}
+        <!-- Render all active popups from the popups collection -->
+        {% for popup in collections.popups %}
+            {% if popup.data.status == "active" %}
+                {% include "layouts/popup.html" %}
+            {% endif %}
+        {% endfor %}
+
         <main id="main">{% block body %}{% endblock %}</main>
         {% include "components/footer.html" %}
     </body>

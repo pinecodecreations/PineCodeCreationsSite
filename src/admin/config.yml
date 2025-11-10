@@ -30,3 +30,174 @@ collections:
           - { label: "Featured Image", name: "image", widget: "image" }
           - { label: "Image Caption", name: "imageAlt", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+    - name: "popups"
+      label: "Popups"
+      folder: "src/content/popups"
+      create: true
+      slug: "{{slug}}"
+      fields:
+          - { label: "Popup Name", name: "name", widget: "string", required: true }
+          - { label: "Status", name: "status", widget: "select", options: ["active", "inactive"], default: "active" }
+          
+          # Content Section
+          - label: "Content"
+            name: "content"
+            widget: "object"
+            hint: "Define the content and behavior of template."
+            fields:
+                - { label: "Title", name: "title", widget: "string" }
+                - { label: "Popup Type", name: "popupType", widget: "select", options: ["discount", "announcement", "custom"] }
+                - { label: "Top-level Image", name: "image", widget: "image", required: false, hint: "Optional: Image used for this popup (applies to announcement, promo, or custom). If set, it will display on the left or right side of the popup.)" }
+                - { label: "Image alt text", name: "imageAlt", widget: "string", required: false, hint: "Accessibility alt text for the top-level popup image." }
+                - label: "Image Position"
+                  name: "imagePosition"
+                  widget: "select"
+                  options:
+                    - { label: "Left", value: "left" }
+                    - { label: "Right", value: "right" }
+                  default: "left"
+                - label: "Discount Settings"
+                  name: "discount"
+                  widget: "object"
+                  fields:
+                    - { 
+                        label: "Promo/Coupon Code", 
+                        name: "promoCode", 
+                        widget: "string", 
+                        required: false,
+                        hint: "Optional: Display a promo code in the popup with template styling."
+                      }
+                    - { label: "Percent Off", name: "percent", widget: "number", required: false }
+                    - { label: "Promo Code", name: "code", widget: "string", required: false }
+                - label: "Announcement Settings"
+                  name: "announcement"
+                  widget: "object"
+                  fields:
+                    - { label: "Headline", name: "headline", widget: "string", required: false }
+                    - { label: "Text", name: "text", widget: "string", required: false }
+                    - { 
+                        label: "Link URL", 
+                        name: "linkUrl", 
+                        widget: "string", 
+                        required: false,
+                        hint: "Used when you want to use the template popup. This is where the Custom Link URL will take you."
+                      }
+                    - { 
+                        label: "Link Text", 
+                        name: "linkText", 
+                        widget: "string", 
+                        required: false,
+                        hint: "Used when you want to use the template popup. This will be the text that shows on the button for the url link."
+                      }
+
+                - label: "Custom Code Settings"
+                  name: "custom"
+                  widget: "object"
+                  fields:
+                    - { 
+                      label: "Custom HTML/Code", 
+                      name: "customCode", 
+                      widget: "text", 
+                      required: false,
+                      hint: "Optional: Add custom HTML, embed code, or tracking scripts. Best to use by itself without body or Custom URL Link."
+                      }
+      
+          # Timing Settings
+          - label: "Timing"
+            name: "timing"
+            widget: "object"
+            fields:
+                - label: "Show Popup On"
+                  name: "trigger"
+                  widget: "select"
+                  options: 
+                      - { label: "Website Entrance", value: "entrance" }
+                      - { label: "Website Exit", value: "exit" }
+                      - { label: "After Page Scroll", value: "scroll" }
+                      - { label: "After Time Spent on Page", value: "time" }
+                  default: "entrance"
+                - { 
+                    label: "Scroll Percentage (if scroll trigger)", 
+                    name: "scrollPercentage", 
+                    widget: "number", 
+                    required: false,
+                    hint: "Show popup after user scrolls this percentage (e.g., 50 for 50%)"
+                  }
+                - { 
+                    label: "Time Delay (if time trigger)", 
+                    name: "timeDelay", 
+                    widget: "number", 
+                    required: false,
+                    hint: "Show popup after this many seconds"
+                  }
+          
+          # Display Frequency
+          - label: "Display Frequency"
+            name: "displayFrequency"
+            widget: "object"
+            fields:
+                - label: "Frequency"
+                  name: "type"
+                  widget: "select"
+                  options:
+                      - { label: "Once Per Visit", value: "once-per-visit" }
+                      - { label: "Once Per Session", value: "once-per-session" }
+                      - { label: "Once Per Day", value: "once-per-day" }
+                      - { label: "Every Time", value: "every-time" }
+                  default: "once-per-visit"
+          
+          # Stopping Conditions
+          - label: "Stopping Conditions"
+            name: "stoppingConditions"
+            widget: "object"
+            fields:
+                - { 
+                    label: "Do Not Display After Popup is Closed", 
+                    name: "hideAfterClose", 
+                    widget: "boolean", 
+                    default: true 
+                  }
+                - { 
+                    label: "Do Not Display After Action Button is Clicked", 
+                    name: "hideAfterAction", 
+                    widget: "boolean", 
+                    default: true 
+                  }
+          
+          # Schedule
+          - label: "Schedule"
+            name: "schedule"
+            widget: "object"
+            fields:
+                - { 
+                    label: "Start Date", 
+                    name: "startDate", 
+                    widget: "datetime", 
+                    required: false,
+                    hint: "When should the popup start showing?"
+                  }
+                - { 
+                    label: "End Date", 
+                    name: "endDate", 
+                    widget: "datetime", 
+                    required: false,
+                    hint: "When should the popup stop showing?"
+                  }
+          
+          # Display Preferences
+          - label: "Display Preferences"
+            name: "displayPreferences"
+            widget: "object"
+            fields:
+                - { 
+                    label: "Show on Mobile", 
+                    name: "mobile", 
+                    widget: "boolean", 
+                    default: true 
+                  }
+                - { 
+                    label: "Show on Desktop", 
+                    name: "desktop", 
+                    widget: "boolean", 
+                    default: true 
+                  }

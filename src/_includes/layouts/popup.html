@@ -1,0 +1,123 @@
+
+
+
+
+<!-- Popup Template -->
+<div class="popup" 
+     data-popup-id="{{ popup.data.name | slugify }}"
+     data-trigger="{{ popup.data.timing.trigger }}"
+     data-scroll-percentage="{{ popup.data.timing.scrollPercentage }}"
+     data-time-delay="{{ popup.data.timing.timeDelay }}"
+     data-frequency="{{ popup.data.displayFrequency.type }}"
+     data-hide-after-close="{{ popup.data.stoppingConditions.hideAfterClose }}"
+     data-hide-after-action="{{ popup.data.stoppingConditions.hideAfterAction }}"
+     data-mobile="{{ popup.data.displayPreferences.mobile }}"
+     data-desktop="{{ popup.data.displayPreferences.desktop }}"
+     data-start-date="{{ popup.data.schedule.startDate }}"
+     data-end-date="{{ popup.data.schedule.endDate }}"
+     data-status="{{ popup.data.status }}"
+    data-custom-link="{{ popup.data.content.customLink }}"
+    data-button-action="{{ popup.data.content.buttonAction }}"
+    data-popup-type="{{ (popup.data.content and popup.data.content.popupType) or popup.data.popupType }}">
+    
+    <div class="popup__overlay"></div>
+    
+    <div class="popup__container">
+        <button class="popup__close" aria-label="Close popup">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        
+        {% set topImage = (popup.data.content and popup.data.content.image) or (popup.data.content and popup.data.content.announcement and popup.data.content.announcement.image) %}
+        {% set topImageAlt = (popup.data.content and popup.data.content.imageAlt) or (popup.data.content and popup.data.content.announcement and popup.data.content.announcement.imageAlt) %}
+        {% set topImagePos = (popup.data.content and popup.data.content.imagePosition) or (popup.data.content and popup.data.content.announcement and popup.data.content.announcement.imagePosition) or 'left' %}
+
+        <div class="popup__inner {% if topImage %}popup--with-media popup--media-{{ topImagePos }}{% endif %}">
+            {% if topImage %}
+                <div class="popup__media">
+                    <img src="{{ topImage }}" alt="{{ topImageAlt or '' }}" />
+                </div>
+            {% endif %}
+
+            <div class="popup__content">
+                <h2 class="popup__title">{{ popup.data.content.title }}</h2>
+
+                {% if popup.data.content.popupType == 'custom' %}
+                    {% if popup.data.content and popup.data.content.custom and popup.data.content.custom.customCode %}
+                        <div class="popup__custom-code">{{ popup.data.content.custom.customCode | safe }}</div>
+                    {% else %}
+                        <div class="popup__text"><em>No custom HTML provided.</em></div>
+                    {% endif %}
+
+                {% elif popup.data.content.popupType == 'discount' %}
+                    {% set promo = (popup.data.content.discount and popup.data.content.discount.promoCode) or (popup.data.content.discount and popup.data.content.discount.code) or popup.data.content.promoCode %}
+                    {% set percent = popup.data.content.discount and popup.data.content.discount.percent %}
+                    {% if promo %}
+                        <div class="popup__text">
+                            {% if percent %}<p><strong>{{ percent }}% off</strong></p>{% endif %}
+                            <p>Use code <strong>{{ promo }}</strong> at checkout.</p>
+                        </div>
+                        <div class="popup__promo">
+                            <div class="popup__promo-label">Promo Code:</div>
+                            <div class="popup__promo-code">
+                                <span class="popup__promo-text">{{ promo }}</span>
+                                <button type="button" class="popup__promo-copy" data-code="{{ promo }}" aria-label="Copy code">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="5" y="5" width="9" height="9" rx="1"></rect>
+                                        <path d="M3 11V3a1 1 0 0 1 1-1h8"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="popup__text"><em>No promo configured.</em></div>
+                    {% endif %}
+
+                    {% set ctaUrl = (popup.data.content.announcement and popup.data.content.announcement.linkUrl) or popup.data.content.customLink %}
+                    {% set ctaText = (popup.data.content.announcement and popup.data.content.announcement.linkText) or popup.data.content.customLinkText %}
+                    {% if ctaUrl %}
+                        <a href="{{ ctaUrl }}" class="popup__button popup__button--link">{{ ctaText or 'Learn more' }}</a>
+                    {% endif %}
+
+                {% else %}
+                    {# announcement/template mode #}
+                    {% if popup.data.content and popup.data.content.announcement %}
+                      {% set ann = popup.data.content.announcement %}
+                      <div class="popup__announcement">
+                          <div class="popup__body">
+                              {% if ann.headline %}
+                                  <div class="popup__subtitle">{{ ann.headline | safe }}</div>
+                              {% endif %}
+                              {% if ann.text %}
+                                  <div class="popup__text">{{ ann.text | safe }}</div>
+                              {% endif %}
+                          </div>
+                      </div>
+                    {% endif %}
+                    {% if popup.data.content and popup.data.content.promoCode %}
+                        <div class="popup__promo">
+                            <div class="popup__promo-label">Promo Code:</div>
+                            <div class="popup__promo-code">
+                                <span class="popup__promo-text">{{ popup.data.content.promoCode }}</span>
+                                <button type="button" class="popup__promo-copy" data-code="{{ popup.data.content.promoCode }}" aria-label="Copy code">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="5" y="5" width="9" height="9" rx="1"></rect>
+                                        <path d="M3 11V3a1 1 0 0 1 1-1h8"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% set annUrl = (popup.data.content.announcement and popup.data.content.announcement.linkUrl) or popup.data.content.customLink %}
+                    {% set annText = (popup.data.content.announcement and popup.data.content.announcement.linkText) or popup.data.content.customLinkText %}
+                    {% if annUrl %}
+                        <a href="{{ annUrl }}" class="popup__button popup__button--link">{{ annText or 'Learn more' }}</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

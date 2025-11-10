@@ -102,6 +102,7 @@ module.exports = function (eleventyConfig) {
      *  https://moment.github.io/luxon/api-docs/index.html#datetime
      */
     eleventyConfig.addFilter("postDate", filterPostDate);
+
     /**=====================================================================
                                     END FILTERS
     =======================================================================*/
@@ -127,6 +128,26 @@ module.exports = function (eleventyConfig) {
     /**=====================================================================
                               END SERVER SETTINGS
     =======================================================================*/
+
+  /**=====================================================================
+          COLLECTIONS - Popups collection
+  =======================================================================*/
+  // Build a collection of popup files located under src/content/popups
+  eleventyConfig.addCollection("popups", function(collectionApi) {
+    const items = collectionApi.getAll().filter(item => {
+      return item.inputPath && /src[\\\/]content[\\\/]popups[\\\/]/.test(item.inputPath);
+    }).sort((a, b) => {
+      const ao = (a.data && a.data.order) || 0;
+      const bo = (b.data && b.data.order) || 0;
+      if (ao !== bo) return ao - bo;
+      return (a.fileSlug || '').localeCompare(b.fileSlug || '');
+    });
+
+    return items;
+  });
+  /**=====================================================================
+                END COLLECTIONS
+  =======================================================================*/
 
     return {
         dir: {
