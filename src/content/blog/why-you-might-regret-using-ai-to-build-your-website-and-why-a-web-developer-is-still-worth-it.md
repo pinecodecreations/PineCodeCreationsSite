@@ -5,7 +5,7 @@ url: Why AI Websites Fail
 description: Thinking of using AI to build your website? Discover the hidden
   pitfalls and why hiring a skilled web developer is still the best choice for a
   high-performing, professional online presence.
-author: Dallin Bise
+author: Dallin B.
 date: 2025-04-23T23:38:00.000Z
 tags:
   - post
