@@ -379,13 +379,17 @@
   }
   #dark-mode-toggle .pc-moon {
     z-index: 2;
-    transition: transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    will-change: transform, opacity;
   }
   #dark-mode-toggle .pc-sun {
     z-index: 1;
     opacity: 0;
     transform: translate(-50%, 100%);
-    transition: transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    will-change: transform, opacity;
   }
 }
 /* Tablet - 768px */

@@ -5,14 +5,10 @@
 // helper functions to toggle dark mode
 function enableDarkMode() {
     document.body.classList.add("dark-mode");
-    const imgElement = document.getElementById('pc-image');
-    imgElement.src = '/assets/svgs/pinecodecreations blkwhite.svg'
     localStorage.setItem("theme", "dark");
 }
 function disableDarkMode() {
     document.body.classList.remove("dark-mode");
-    const imgElement = document.getElementById('pc-image');
-    imgElement.src = '/assets/svgs/pinecodecreations blkwhite.svg'
     localStorage.setItem("theme", "light");
 }
 
