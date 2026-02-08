@@ -464,12 +464,12 @@
         #dark-mode-toggle {
             .pc-sun {
                 opacity: 1;
-                transform: translate(-50%, -50%);
+                transform: translate3d(-50%, -50%, 0);
             }
 
             .pc-moon {
                 opacity: 0;
-                transform: translate(-50%, -150%);
+                transform: translate3d(-50%, -150%, 0);
                 fill: #fff;
             }
         }
@@ -487,6 +487,9 @@
         width: calc(48 / 16 * 1rem);
         overflow: hidden;
         padding: 0;
+        // Force hardware acceleration on iOS
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
 
         img,
         svg {
@@ -494,23 +497,26 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate3d(-50%, -50%, 0);
             height: calc(20 / 16 * 1rem);
             width: calc(20 / 16 * 1rem);
             pointer-events: none;
+            // Force hardware acceleration
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-perspective: 1000;
+            perspective: 1000;
         }
 
         .pc-moon {
             z-index: 2;
-            // Transition properties
+            // Transition properties with hardware acceleration
             transition:
                 transform 0.3s ease-in-out,
                 opacity 0.3s ease-in-out;
-            // Optimize for iOS Safari
             -webkit-transition:
-                transform 0.3s ease-in-out,
+                -webkit-transform 0.3s ease-in-out,
                 opacity 0.3s ease-in-out;
-            will-change: transform, opacity;
 
             // fill: yellow; --> uncomment to change the color of the moon if needed
         }
@@ -518,16 +524,14 @@
         .pc-sun {
             z-index: 1;
             opacity: 0;
-            // Transition property
-            transform: translate(-50%, 100%);
+            // Use translate3d for hardware acceleration
+            transform: translate3d(-50%, 100%, 0);
             transition:
                 transform 0.3s ease-in-out,
                 opacity 0.3s ease-in-out;
-            // Optimize for iOS Safari
             -webkit-transition:
-                transform 0.3s ease-in-out,
+                -webkit-transform 0.3s ease-in-out,
                 opacity 0.3s ease-in-out;
-            will-change: transform, opacity;
         }
     }
 
