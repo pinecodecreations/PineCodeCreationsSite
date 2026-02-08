@@ -12,7 +12,7 @@ function enableDarkMode() {
 function disableDarkMode() {
     document.body.classList.remove("dark-mode");
     const imgElement = document.getElementById('pc-image');
-    imgElement.src = '/assets/svgs/PinecodeCreations Color.svg'
+    imgElement.src = '/assets/svgs/pinecodecreations blkwhite.svg'
     localStorage.setItem("theme", "light");
 }
 

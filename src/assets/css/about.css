@@ -64,7 +64,7 @@
   #sbs .pc-topper {
     margin-bottom: 0.25rem;
     text-align: left;
-    color: var(--secondaryLight);
+    color: var(--secondary);
   }
   #sbs .pc-title {
     max-width: 50rem;
@@ -147,7 +147,7 @@
     background-color: var(--dark);
   }
   body.dark-mode #sbs .pc-topper {
-    color: var(--primaryLight);
+    color: var(--secondaryLight);
   }
   body.dark-mode #sbs .pc-title,
   body.dark-mode #sbs .pc-text,

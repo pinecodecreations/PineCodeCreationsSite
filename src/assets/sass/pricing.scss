@@ -6,6 +6,9 @@
     max-width: 80rem;
     width: 100%;
     padding: var(--sectionPadding);
+    .pc-container {
+      text-align: center;
+    }
     .pc-topper {
       margin: auto;
       text-align: center;
@@ -121,7 +124,7 @@
 
       }
       .pc-topper {
-        color: var(--primary);
+        color: var(--secondaryLight);
       }
     }
   }

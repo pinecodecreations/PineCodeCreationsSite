@@ -7,6 +7,9 @@
     width: 100%;
     padding: var(--sectionPadding);
   }
+  .pricing-section .pc-container {
+    text-align: center;
+  }
   .pricing-section .pc-topper {
     margin: auto;
     text-align: center;
@@ -106,7 +109,7 @@
     color: #fff;
   }
   body.dark-mode #pricing .pc-topper {
-    color: var(--primary);
+    color: var(--secondaryLight);
   }
 }
 

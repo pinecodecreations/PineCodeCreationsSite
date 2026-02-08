@@ -147,7 +147,7 @@
     background-color: var(--dark);
   }
   body.dark-mode .sbs .pc-topper {
-    color: var(--primaryLight);
+    color: var(--secondaryLight);
   }
   body.dark-mode .sbs .pc-title,
   body.dark-mode .sbs .pc-text,
@@ -424,7 +424,7 @@
     font-size: clamp(2.4375rem, 5vw, 3.8125rem);
     line-height: 1.2em;
     font-weight: 900;
-    color: var(--primaryLight);
+    color: var(--primary);
     text-align: left;
   }
   #sbs-r .pc-left .pc-stats .pc-stat .pc-desc {
@@ -469,7 +469,7 @@
     background-color: var(--dark);
   }
   body.dark-mode #sbs-r .pc-topper {
-    color: var(--primaryLight);
+    color: var(--secondaryLight);
   }
   body.dark-mode #sbs-r .pc-title,
   body.dark-mode #sbs-r .pc-text,
@@ -707,7 +707,7 @@
     background: var(--medium);
   }
   body.dark-mode #reviews .pc-desc {
-    color: var(--primaryLight);
+    color: var(--secondaryLight);
   }
 }
 /*-- -------------------------- -->
@@ -771,11 +771,11 @@
   display: inline-block;
   font-weight: bold;
   text-decoration: none;
-  color: #5a9367;
+  color: var(--primary);
   transition: color 0.3s ease;
 }
 .portfolio__link:hover {
-  color: #477351;
+  color: var(--primaryLight);
 }
 
 /* Dark Mode */
@@ -784,7 +784,7 @@
     background: var(--dark);
   }
   body.dark-mode .portfolio .pc-topper {
-    color: var(--primary);
+    color: var(--secondaryLight);
   }
   body.dark-mode .portfolio__item {
     background: var(--medium);
@@ -797,9 +797,6 @@
   }
   body.dark-mode .portfolio .pc-item {
     background: var(--medium);
-  }
-  body.dark-mode .portfolio .pc-desc {
-    color: var(--primaryLight);
   }
 }
 /*-- -------------------------- -->
@@ -1111,7 +1108,7 @@
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
   body.dark-mode #sbsr-1363 .pc-topper {
-    color: var(--primary);
+    color: var(--secondaryLight);
   }
   body.dark-mode #sbsr-1363 .pc-title,
   body.dark-mode #sbsr-1363 .pc-text,
@@ -1489,7 +1486,7 @@
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
   body.dark-mode #reviews-981 .pc-topper {
-    color: var(--primaryLight);
+    color: var(--secondaryLight);
   }
   body.dark-mode #reviews-981 .pc-title,
   body.dark-mode #reviews-981 .pc-text,

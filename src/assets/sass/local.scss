@@ -1,5 +1,6 @@
 /* PAGE-SPECIFIC STYLES FOR THE HOME PAGE */
 
+
 /*-- -------------------------- -->
 <---       Side By Side         -->
 <--- -------------------------- -*/
@@ -178,7 +179,7 @@
             }
 
             .pc-topper {
-                color: var(--primaryLight);
+                color: var(--secondaryLight);
             }
 
             .pc-title,
@@ -488,7 +489,7 @@
                     font-size: clamp(2.4375rem, 5vw, 3.8125rem);
                     line-height: 1.2em;
                     font-weight: 900;
-                    color: var(--primaryLight);
+                    color: var(--primary);
                     text-align: left;
                   }
                   .pc-desc {
@@ -551,7 +552,7 @@
             }
 
             .pc-topper {
-                color: var(--primaryLight);
+                color: var(--secondaryLight);
             }
 
             .pc-title,
@@ -845,7 +846,7 @@
             }
 
             .pc-desc {
-                color: var(--primaryLight);
+                color: var(--secondaryLight);
             }
         }
     }
@@ -922,11 +923,11 @@
     display: inline-block;
     font-weight: bold;
     text-decoration: none;
-    color: #5a9367; // your primary color
+    color: var(--primary); // your primary color
     transition: color 0.3s ease;
 
     &:hover {
-      color: darken(#5a9367, 10%);
+      color: var(--primaryLight);
     }
   }
 }
@@ -938,7 +939,7 @@
       background: var(--dark);
 
         .pc-topper {
-          color: var(--primary);
+          color: var(--secondaryLight);
         }
         &__item {
           background: var(--medium);
@@ -954,9 +955,6 @@
               background: var(--medium);
           }
 
-          .pc-desc {
-              color: var(--primaryLight);
-          }
       }
   }
 }
@@ -1308,7 +1306,7 @@
   body.dark-mode {
       #sbsr-1363 {
           .pc-topper {
-              color: var(--primary);
+              color: var(--secondaryLight);
           }
 
           .pc-title,
@@ -1763,7 +1761,7 @@
     body.dark-mode {
         #reviews-981 {
             .pc-topper {
-                color: var(--primaryLight);
+                color: var(--secondaryLight);
             }
             .pc-title,
             .pc-text,

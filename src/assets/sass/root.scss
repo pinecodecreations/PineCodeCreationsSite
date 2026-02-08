@@ -8,10 +8,10 @@
 @media only screen and (min-width: 0rem) {
     // Website colors
     :root {
-        --primary: #5A9367;
-        --primaryLight: #A8C6A0;
-        --secondary: #4E3629;
-        --secondaryLight: #8B6F5A;
+        --primary: #2b5876;
+        --primaryLight: #5a91c1;
+        --secondary: #4e4376;
+        --secondaryLight: #8176af;
         --neutralAccent: #D6D6D6;
         --warmAccent: #D67D3E;
         --coolAccent: #5FA8D3;
@@ -146,15 +146,18 @@
 
     // Text styles - can be replaced using CodeStitch's "Content Flair" Stitches
     .pc-topper {
-        display: block;
-        margin-bottom: 0.25rem;
+        display: inline-block;
+        padding: calc(8 / 16 * 1rem) calc(20 / 16 * 1rem);
+        background: rgba(78, 67, 118, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: calc(50 / 16 * 1rem);
+        border: 1px solid rgba(78, 67, 118, 0.3);
+        font-size: calc(14 / 16 * 1rem);
+        font-weight: 600;
+        letter-spacing: 0.05em;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-size: var(--topperFontSize);
-        line-height: 1.2em;
-        font-weight: 700;
-        color: var(--secondaryLight);
-        text-align: inherit;
+        margin-bottom: calc(24 / 16 * 1rem);
+        text-shadow: 0 calc(2 / 16 * 1rem) calc(8 / 16 * 1rem) rgba(0, 0, 0, 0.3);
     }
 
     .pc-title {
@@ -184,7 +187,6 @@
         margin-top: -2px;
         position: relative;
         display: inline-block;
-        background-color: var(--primary);
         width: auto;
         padding: 0 calc(30 / 16 * 1rem);
         text-decoration: none;
@@ -193,16 +195,12 @@
         line-height: calc(50 / 16 * 1em);
         font-weight: bold;
         border-radius: 50px;
-
-        // Transition Properties
-        color: #fff;
         text-align: center;
-
         transform-style: preserve-3d;
         transition: transform 0.15s ease-out, background 0.15s ease-out;
-        color: rgb(59, 165, 84);
-        background: rgb(233, 247, 236);
-        border: 2px solid rgb(59, 165, 84);
+        color: var(--primary);
+        background: color-mix(in srgb, var(--primary) 10%, white);
+        border: 2px solid var(--primary);
         
 
         &:hover {
@@ -215,8 +213,8 @@
         }
 
         &:before {
-            background: rgb(158, 220, 172);
-            box-shadow: rgb(59, 165, 84) 0px 0px 0px 2px;
+            background: color-mix(in srgb, var(--primary) 50%, white); 
+            box-shadow: var(--primary) 0px 0px 0px 2px;
             position: absolute;
             content: "";
             width: 100%;
@@ -860,8 +858,6 @@
             background-color: var(--dark);
 
             .pc-logo {
-                /* makes it white */
-                filter: grayscale(1) brightness(1000%);
             }
 
             .pc-line {
@@ -1186,7 +1182,7 @@
             align-items: center;
             /* margin-right auto pushes everything away from it to the right */
             margin: 0 auto 0 0;
-            height: calc(85 / 16 * 1rem);
+            height: calc(75 / 16 * 1rem);
             max-width: calc(420 / 16 * 1rem);
             width: 18.4%;
             padding: 0;
@@ -1261,11 +1257,6 @@
     body.dark-mode {
         #pc-navigation {
             background-color: var(--dark);
-
-            .pc-logo {
-                /* makes it turn white */
-                filter: grayscale(1) brightness(1000%);
-            }
 
             .pc-li-link {
                 color: var(--bodyTextColorWhite);

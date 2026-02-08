@@ -5,10 +5,10 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0rem) {
   :root {
-    --primary: #5A9367;
-    --primaryLight: #A8C6A0;
-    --secondary: #4E3629;
-    --secondaryLight: #8B6F5A;
+    --primary: #2b5876;
+    --primaryLight: #5a91c1;
+    --secondary: #4e4376;
+    --secondaryLight: #8176af;
     --neutralAccent: #D6D6D6;
     --warmAccent: #D67D3E;
     --coolAccent: #5FA8D3;
@@ -112,15 +112,18 @@
     width: 100%;
   }
   .pc-topper {
-    display: block;
-    margin-bottom: 0.25rem;
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: rgba(78, 67, 118, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 3.125rem;
+    border: 1px solid rgba(78, 67, 118, 0.3);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: var(--topperFontSize);
-    line-height: 1.2em;
-    font-weight: 700;
-    color: var(--secondaryLight);
-    text-align: inherit;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3);
   }
   .pc-title {
     position: relative;
@@ -146,7 +149,6 @@
     margin-top: -2px;
     position: relative;
     display: inline-block;
-    background-color: var(--primary);
     width: auto;
     padding: 0 1.875rem;
     text-decoration: none;
@@ -155,13 +157,12 @@
     line-height: 3.125em;
     font-weight: bold;
     border-radius: 50px;
-    color: #fff;
     text-align: center;
     transform-style: preserve-3d;
     transition: transform 0.15s ease-out, background 0.15s ease-out;
-    color: rgb(59, 165, 84);
-    background: rgb(233, 247, 236);
-    border: 2px solid rgb(59, 165, 84);
+    color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 10%, white);
+    border: 2px solid var(--primary);
   }
   .pc-button-solid:hover {
     transform: translate(-2px, 0.25em);
@@ -171,8 +172,8 @@
     transform: translate3d(-1px, 0.3em, -1em);
   }
   .pc-button-solid:before {
-    background: rgb(158, 220, 172);
-    box-shadow: rgb(59, 165, 84) 0px 0px 0px 2px;
+    background: color-mix(in srgb, var(--primary) 50%, white);
+    box-shadow: var(--primary) 0px 0px 0px 2px;
     position: absolute;
     content: "";
     width: 100%;
@@ -652,10 +653,6 @@
   body.dark-mode #pc-navigation {
     background-color: var(--dark);
   }
-  body.dark-mode #pc-navigation .pc-logo {
-    /* makes it white */
-    filter: grayscale(1) brightness(1000%);
-  }
   body.dark-mode #pc-navigation .pc-line {
     background-color: #fff;
   }
@@ -912,7 +909,7 @@
     align-items: center;
     /* margin-right auto pushes everything away from it to the right */
     margin: 0 auto 0 0;
-    height: 5.3125rem;
+    height: 4.6875rem;
     max-width: 26.25rem;
     width: 18.4%;
     padding: 0;
@@ -974,10 +971,6 @@
 @media only screen and (min-width: 64rem) {
   body.dark-mode #pc-navigation {
     background-color: var(--dark);
-  }
-  body.dark-mode #pc-navigation .pc-logo {
-    /* makes it turn white */
-    filter: grayscale(1) brightness(1000%);
   }
   body.dark-mode #pc-navigation .pc-li-link {
     color: var(--bodyTextColorWhite);

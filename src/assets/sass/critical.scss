@@ -336,291 +336,383 @@
     }
   }
 
+  /*-- -------------------------- -->
+<---      Parallax Hero         -->
+<--- -------------------------- -*/
 
-  #hero {
-    position: relative;
-    /* prevents overflow from the lines extending past the screen width */
-    /* changes on tablet */
-    padding: 0 calc(16 / 16 * 1rem);
-    padding-bottom: calc(100 / 16 * 1rem);
-    font-family: "Poppins", "Arial", sans-serif;
-    /* Centers button */
-    text-align: center;
-    // background: rgba(155, 155, 155, .5);
-    //background-color: #ffffff;
-    //background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cpath fill='%235a9367' fill-opacity='0.46' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H300.1a5 5 0 0 1 3.9-3.9v2.07a3 3 0 0 0 0 5.66v2.07a5 5 0 0 1-3.9-3.9H185.41L162 121.41v98.69zm-144-64a5 5 0 1 1-2 0v-3.51l48-48V48h32V0h2v50H66v55.41l-48 48v2.69zM50 53.9v43.51l-48 48V208h26.1a5 5 0 1 1 0 2H0v-65.41l48-48V53.9a5 5 0 1 1 2 0zm-16 16V89.41l-34 34v-2.82l32-32V69.9a5 5 0 1 1 2 0zM12.1 32a5 5 0 1 1 0 2H9.41L0 43.41V40.6L8.59 32h3.51zm265.8 18a5 5 0 1 1 0-2h18.69l7.41-7.41v2.82L297.41 50H277.9zm-16 160a5 5 0 1 1 0-2H288v-71.41l16-16v2.82l-14 14V210h-28.1zm-208 32a5 5 0 1 1 0-2H64v-22.59L40.59 194H21.9a5 5 0 1 1 0-2H41.41L66 216.59V242H53.9zm150.2 14a5 5 0 1 1 0 2H96v-56.6L56.6 162H37.9a5 5 0 1 1 0-2h19.5L98 200.6V256h106.1zm-150.2 2a5 5 0 1 1 0-2H80v-46.59L48.59 178H21.9a5 5 0 1 1 0-2H49.41L82 208.59V258H53.9zM34 39.8v1.61L9.41 66H0v-2h8.59L32 40.59V0h2v39.8zM2 300.1a5 5 0 0 1 3.9 3.9H3.83A3 3 0 0 0 0 302.17V256h18v48h-2v-46H2v42.1zM34 241v63h-2v-62H0v-2h34v1zM17 18H0v-2h16V0h2v18h-1zm273-2h14v2h-16V0h2v16zm-32 273v15h-2v-14h-14v14h-2v-16h18v1zM0 92.1A5.02 5.02 0 0 1 6 97a5 5 0 0 1-6 4.9v-2.07a3 3 0 1 0 0-5.66V92.1zM80 272h2v32h-2v-32zm37.9 32h-2.07a3 3 0 0 0-5.66 0h-2.07a5 5 0 0 1 9.8 0zM5.9 0A5.02 5.02 0 0 1 0 5.9V3.83A3 3 0 0 0 3.83 0H5.9zm294.2 0h2.07A3 3 0 0 0 304 3.83V5.9a5 5 0 0 1-3.9-5.9zm3.9 300.1v2.07a3 3 0 0 0-1.83 1.83h-2.07a5 5 0 0 1 3.9-3.9zM97 100a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-48 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 96a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-144a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM49 36a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM33 68a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 240a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm80-176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm112 176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 180a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'%3E%3C/path%3E%3C/svg%3E");
-    background: linear-gradient(to right, #4e4376, #2b5876);
-
-    &:after {
-      content: "";
-      //background: url("/assets/images/trees.webp"); 
-      background: white;
-      //background: var(--primaryLight);
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      position: absolute;
-      z-index: -1;
-    }
-
-    .pinetree {
-
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      bottom: 0;
-      left: 0;
-      object-fit: cover;
-      mask: url("/assets/svgs/trees-sillouette.svg") no-repeat bottom;
-      -webkit-mask: url("/assets/svgs/trees-sillouette.svg") no-repeat bottom;
-      /* Safari support */
-      mask-size: 150vw;
-      z-index: 1;
-      background: -webkit-linear-gradient(to right, #4e4376, #2b5876);
-      background: linear-gradient(to right, #4e4376, #2b5876);
-    }
-
-
-
-    .pc-picture {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      height: 100%;
-      /* Background Image */
-      width: 100%;
-
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #parallax-hero {
+        position: relative;
         width: 100%;
-        /* Makes image act like a background-image */
-        object-fit: cover;
-        mask: url("/assets/svgs/trees-sillouette.svg") no-repeat center;
-        mask-size: 100%;
-      }
+        height: 100vh;
+        min-height: calc(600 / 16 * 1rem);
+        overflow: hidden;
+        background: linear-gradient(to bottom, #a8b5d9 0%, #c9b8d8 100%);
+    
+    .stars {
+      display: none;
+    }
+    .pc-container {
+        width: 100%;
+        height: 65%;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .parallax-layer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60%;
+        will-change: transform;
+        
+        img {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            object-fit: cover;
+            object-position: center bottom;
+        }
+        
+        // Layer-specific adjustments for better depth and smaller trees
+        &[data-speed="0.2"] img {
+            // Background mountains/sky - blue
+            height: 60%;
+            filter: hue-rotate(40deg) saturate(1.1) brightness(0.9);
+        }
+        
+        &[data-speed="0.35"] img {
+            height: 65%;
+            filter: hue-rotate(50deg) saturate(1.1) brightness(0.88);
+        }
+        
+        &[data-speed="0.5"] img {
+            height: 70%;
+            filter: hue-rotate(60deg) saturate(1.15) brightness(0.86);
+        }
+        
+        &[data-speed="0.8"] img {
+            height: 75%;
+            filter: hue-rotate(70deg) saturate(1.15) brightness(0.84);
+        }
+        
+        &[data-speed="1.0"] img {
+            height: 80%;
+            filter: hue-rotate(80deg) saturate(1.2) brightness(0.82);
+        }
+        
+        &[data-speed="1.2"] img {
+            height: 85%;
+            filter: hue-rotate(90deg) saturate(1.25) brightness(0.8);
+        }
+        
+        &[data-speed="1.5"] img {
+            // Foreground trees - darker purple
+            height: 90%;
+            filter: hue-rotate(100deg) saturate(1.3) brightness(0.75);
+        }
+    }
+
+    .background {
+      height: 100vh;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) translateY(100%);
+      width: auto;
+      /* height: auto; */
+      min-width: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+      background-color: #0e1e32;
     }
 
     .pc-container {
-      position: relative;
-      margin: auto;
-      max-width: calc(1280 / 16 * 1em);
-      width: 100%;
-      height: 100vh;
-      /* we put the padding top and bottom on the container instead of #Hero so the pseudo element lines go to the top and bottom of the section */
-      /* 144px - 280px - leaving extra space for the navigation */
-      /* changes on tablet */
-
-      &:before {
         position: absolute;
-        top: 0;
-        left: 0;
-        /* Left Line */
-        content: "";
-        opacity: 1;
-        display: block;
-        height: 100%;
-        width: 1px;
-      }
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 10;
+        color: #fff;
+        padding: 0 calc(20 / 16 * 1rem);
+        width: 100%;
+        max-width: calc(800 / 16 * 1rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-
-    .pc-flex-group {
-      padding-top: calc(48 / 16 * 1em);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      /* 60px - 220px */
-      /* 464px - 562px */
-      max-width: clamp(29em, 60vw, 35.125em);
-      width: 80vw;
-      box-sizing: border-box;
-
-
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      z-index: 2;
-      transform: translateX(-50%) translateY(-50%);
-
-      /* placeholder for possible glitch animation on text (disabled) */
-    }
-
-    /* optional variants for pc-flex-group animations were removed (placeholders) */
-
+    
     .pc-topper {
-      margin-bottom: calc(16 / 16 * 1rem);
-      color: #fff;
-      text-align: center;
+        color: var(--secondary);
+        display: inline-block;
+        padding: calc(8 / 16 * 1rem) calc(20 / 16 * 1rem);
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: calc(50 / 16 * 1rem);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        font-size: calc(14 / 16 * 1rem);
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: calc(24 / 16 * 1rem);
+        text-shadow: 0 calc(2 / 16 * 1rem) calc(8 / 16 * 1rem) rgba(0, 0, 0, 0.3);
     }
 
     .pc-title {
-      width: 100%;
-      color: #fff;
-      text-align: center;
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        font-weight: 800;
+        margin: 0 0 calc(24 / 16 * 1rem) 0;
+        line-height: 1.1;
+        color: #fff;
+        text-shadow: 0 calc(4 / 16 * 1rem) calc(20 / 16 * 1rem) rgba(0, 0, 0, 0.5);
+        letter-spacing: -0.02em;
     }
 
     .pc-text {
-      /* 32px - 40px */
-      margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
-      /* 40px - 48px */
-      margin-bottom: clamp(2.5rem, 4vw, 3rem);
-      color: #fff;
-      text-align: center;
+        font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+        line-height: 1.6;
+        margin: 0 auto calc(40 / 16 * 1rem) auto;
+        color: #fff;
+        opacity: 0.95;
+        text-shadow: 0 calc(2 / 16 * 1rem) calc(12 / 16 * 1rem) rgba(0, 0, 0, 0.5);
+        max-width: calc(650 / 16 * 1rem);
+        margin-left: auto;
+        margin-right: auto;
     }
-
-    .pc-button-solid {
-      margin-bottom: calc(16 / 16 * 1rem);
-      height: initial;
-      line-height: clamp(2.875em, 5.5vw, 3.5em);
+    
+    .parallax-cta-group {
+        display: flex;
+        gap: calc(16 / 16 * 1rem);
+        justify-content: center;
+        flex-wrap: wrap;
     }
-
-    .pc-button-transparent {
-      z-index: 1;
-      position: relative;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid var(--bodyTextColorWhite);
-      margin: 0 calc(8 / 16 * 1rem);
-      background-color: transparent;
-      /* 46px - 56px */
-      height: clamp(2.875em, 5.5vw, 3.5em);
-      width: calc(180 / 16 * 1rem);
-      box-sizing: border-box;
-      padding: 0;
-      text-decoration: none;
-      font-size: calc(16 / 16 * 1rem);
-      /* 46px - 56px */
-      line-height: clamp(2.875em, 5.5vw, 3.5em);
-      font-weight: 700;
-      color: #fff;
-
-      .pc-img {
-        display: block;
-        margin-right: calc(12 / 16 * 1rem);
-      }
-
-      &:before {
-        z-index: -1;
-        position: absolute;
-        /* so it sits on top of the border */
-        top: -1px;
-        bottom: -1px;
-        left: -1px;
-        right: -1px;
-        content: "";
-        opacity: 1;
-        /* this is what creates the grow affect on hover */
-        transform: scaleX(0);
-        display: block;
-        background: #000;
-        transition: transform 0.3s;
-        transform-origin: left;
-      }
-
-      &:hover {
-        &:before {
-          transform: scaleX(1);
+    
+    .parallax-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: calc(16 / 16 * 1rem) calc(32 / 16 * 1rem);
+        font-size: calc(16 / 16 * 1rem);
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: calc(8 / 16 * 1rem);
+        transition: all 0.3s ease;
+        text-shadow: none;
+        min-width: calc(180 / 16 * 1rem);
+    }
+    
+    .parallax-button-primary {
+        background: #fff;
+        color: #1a2332;
+        box-shadow: 0 calc(4 / 16 * 1rem) calc(20 / 16 * 1rem) rgba(0, 0, 0, 0.3);
+        
+        &:hover {
+            transform: translateY(calc(-2 / 16 * 1rem));
+            box-shadow: 0 calc(6 / 16 * 1rem) calc(30 / 16 * 1rem) rgba(0, 0, 0, 0.4);
         }
-      }
+    }
+    
+    .parallax-button-secondary {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        color: #fff;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        
+        &:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(calc(-2 / 16 * 1rem));
+        }
+    }
+    
+    .parallax-scroll-indicator {
+        position: absolute;
+        bottom: calc(40 / 16 * 1rem);
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: calc(8 / 16 * 1rem);
+        color: rgba(255, 255, 255, 0.8);
+        z-index: 10;
+        animation: bounce 2s infinite;
+        
+        span {
+            font-size: calc(14 / 16 * 1rem);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-shadow: 0 calc(2 / 16 * 1rem) calc(8 / 16 * 1rem) rgba(0, 0, 0, 0.5);
+        }
+        
+        svg {
+            opacity: 0.8;
+            filter: drop-shadow(0 calc(2 / 16 * 1rem) calc(4 / 16 * 1rem) rgba(0, 0, 0, 0.3));
+        }
+    }
+    
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateX(-50%) translateY(0);
+        }
+        50% {
+            transform: translateX(-50%) translateY(calc(-10 / 16 * 1rem));
+        }
     }
   }
 }
+
 
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  #hero {
-    /* 32px - 40px */
-    padding: 0 clamp(2em, 5vw, 2.5em);
-
-    // background-color: darkslategrey;
-    &:after {
-      content: "";
-      //background: url("/assets/images/landing.jpg");
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      // opacity: 0.7;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      position: absolute;
-      z-index: -1;
+    #parallax-hero {
+        height: 100vh;
+        min-height: calc(700 / 16 * 1rem);
     }
+    
+    .parallax-layer {
+        &[data-speed="0.2"] img {
+            height: 65%;
+        }
+        
+        &[data-speed="0.35"] img {
+            height: 70%;
+        }
+        
+        &[data-speed="0.5"] img {
+            height: 75%;
+        }
+        
+        &[data-speed="0.65"] img {
+            height: 80%;
+        }
+        
+        &[data-speed="0.8"] img {
+            height: 85%;
+        }
+        
+        &[data-speed="0.95"] img {
+            height: 90%;
+        }
+        
+        &[data-speed="1.1"] img {
+            height: 95%;
+        }
+    }
+}
 
-    .pc-container {
-      &:after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        /* Right Line */
-        content: "";
-        opacity: 1;
-        display: block;
-        height: 100%;
-        width: 1px;
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #parallax-hero {
+      height: 100vh;
+      min-height: calc(800 / 16 * 1rem);
+      
+      .parallax-layer {
+          &[data-speed="0.2"] img {
+              height: 70%;
+          }
+          
+          &[data-speed="0.35"] img {
+              height: 75%;
+          }
+          
+          &[data-speed="0.5"] img {
+              height: 80%;
+          }
+          
+          &[data-speed="0.65"] img {
+              height: 85%;
+          }
+          
+          &[data-speed="0.8"] img {
+              height: 90%;
+          }
+          
+          &[data-speed="0.95"] img {
+              height: 95%;
+          }
+          
+          &[data-speed="1.1"] img {
+              height: 100%;
+          }
       }
     }
-
-    .pinetree {
-
-      mask-size: 1200px;
-
-    }
-
-    .pc-flex-group {
-      padding-top: calc(170 / 16 * 1em);
-
-      .pc-topper {
-        color: #fff;
-      }
-
-      .pc-title {
-        color: #fff;
-      }
-
-      .pc-text {
-        color: #fff;
-      }
-
-      .pc-button-solid {
-        margin-right: calc(20 / 16 * 1rem);
-        margin-bottom: 0;
-      }
-    }
-
-
   }
 }
 
-@media only screen and (min-width: 64rem) {}
-
-/* Desktop Parallax Effect - 1300px */
-@media only screen and (min-width: 81.25em) {
-
-  /* Desktop parallax placeholder removed */
+/* Large Desktop - 1920px */
+@media only screen and (min-width: 120rem) {
+    .parallax-layer {
+        &[data-speed="1.1"] img {
+            height: 100%;
+            max-height: 100vh;
+        }
+    }
 }
 
-/* Dark Mode */
+
+/* Dark mode */
 @media only screen and (min-width: 0rem) {
   body.dark-mode {
-    #hero {
-      background: var(--dark);
-
-      .pinetree {
-        background: linear-gradient(to right, #0a0f1a, #000814);
+    #parallax-hero {
+      // Night time sky gradient
+      background: linear-gradient(to bottom, #0a0e27 0%, #1a1a3e 100%);
+      .stars {
+        display: block;
+      }
+      .parallax-layer {
+        // Darken all layers while keeping purple/blue tones
+        &[data-speed="0.2"] img {
+          filter: hue-rotate(40deg) saturate(0.9) brightness(0.3);
+        }
+        
+        &[data-speed="0.35"] img {
+          filter: hue-rotate(50deg) saturate(0.9) brightness(0.28);
+        }
+        
+        &[data-speed="0.5"] img {
+          filter: hue-rotate(60deg) saturate(1.0) brightness(0.26);
+        }
+        
+        &[data-speed="0.8"] img {
+          filter: hue-rotate(70deg) saturate(1.0) brightness(0.24);
+        }
+        
+        &[data-speed="1.0"] img {
+          filter: hue-rotate(80deg) saturate(1.1) brightness(0.22);
+        }
+        
+        &[data-speed="1.2"] img {
+          filter: hue-rotate(90deg) saturate(1.15) brightness(0.2);
+        }
+        
+        &[data-speed="1.5"] img {
+          // Foreground trees - very dark purple/blue
+          filter: hue-rotate(100deg) saturate(1.2) brightness(0.18);
+        }
+      }
+      .background {
+        background-color: #04070c;
+      }
+      .pc-topper {
+        color: var(--secondaryLight);
       }
     }
   }
 }
+
+
+
+
 
 /*-- -------------------------- -->
 <---          Services          -->
@@ -793,7 +885,7 @@
 
     .card-stack {
       display: flex;
-      justify-content: space-evenly;
+      align-self: center;
       gap: calc(16 / 16 * 1em);
 
       .card {
@@ -832,32 +924,13 @@
     #services {
     background: var(--dark);
     z-index: 2;
-  //   background: linear-gradient(
-  //   to bottom,
-  //   rgba(0, 0, 0, .1) 0%,  /* very dark at top */
-  //   rgba(0, 0, 0, 0.2) 15%, /* hint of white early */
-  //   rgba(0, 0, 0, 0.3) 30%, /* mid fade */
-  //   rgba(0, 0, 0, 0.1) 60%, /* nearly white near bottom */
-  //   var(--dark) 95% /* pure white at bottom */
-  // ),
-  // linear-gradient(
-  //   to bottom,
-  //   #0a0f1a,
-  //   #000814
-  // );
-  .services-bg {
-      //background: var(--dark);
-    }
-
-
-      
       .pc-flex-group {
         
         &::before {
           background: transparent;
         }
         .pc-topper {
-          color: var(--primaryLight);
+          color: var(--secondaryLight);
         }
       }
 

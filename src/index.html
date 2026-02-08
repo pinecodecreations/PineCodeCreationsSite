@@ -1,7 +1,7 @@
 ---
 title: "Custom Web Design & Development | Pinecode Creations | Spokane, WA"
 description: "Custom websites built for small businesses—fully hand-coded, responsive, and optimized for performance, SEO, and growth. Serving Spokane, Coeur d’Alene, and beyond."
-preloadImg: "/assets/svgs/PinecodeCreations Color.svg"
+preloadImg: "/assets/images/parrallax/layer-6.png"
 permalink: "/"
 tags: "sitemap" # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
 eleventyNavigation:
@@ -15,6 +15,8 @@ eleventyNavigation:
 <link rel="stylesheet" href="/assets/css/local.css" />
 <link rel="stylesheet" href="/assets/css/critical.css" />
 
+<!-- Parallax Effect Script -->
+<script defer src="/assets/js/parallax.js"></script>
 
 <!-- Script for Netlify Identity -->
 <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -73,74 +75,69 @@ eleventyNavigation:
 {% endblock %}
 
 {% block body %}
+
 <!-- ============================================ -->
 <!--                    Hero                      -->
 <!-- ============================================ -->
 
-<section id="hero">
+<!-- ============================================ -->
+<!--              Parallax Hero                   -->
+<!-- ============================================ -->
+
+<section id="parallax-hero">
   <div class="stars">
     <div class="small"></div>
     <div class="medium"></div>
     <div class="big"></div>
   </div>
-  
-  <div class="pc-container">
-    <div class="pc-flex-group">
-      <span class="pc-topper">Custom-designed, hand-coded websites that align with your goals</span>
-      <h1 class="pc-title">
-        Small Business Web Design & Development
-      </h1>
-      <p class="pc-text">
-        Stand out with a tailor-made website designed for speed, SEO, and seamless user experience. No templates—just
-        handcrafted designs built to fit your brand perfectly.
-      <!-- </p>
-      <a href="/about" class="pc-button-solid">Explore More</a> -->
-      <!-- <a href="/contact" class="pc-button-transparent">
-        <img class="pc-img" loading="lazy" decoding="async"
-          src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg" alt="play icon" width="17" height="17" />
-        Get in Touch
-      </a> -->
+  <div class="parallax-container">
+      <div class="parallax-layer" data-speed="0.2">
+        <img src="/assets/images/parrallax/layer-0-optimized.png" alt="Background layer">
+      </div>
+      <div class="parallax-layer" data-speed="0.35">
+        <img src="/assets/images/parrallax/layer-1-optimized.png" alt="Layer 1">
+      </div>
+      <div class="parallax-layer" data-speed="0.5">
+        <img src="/assets/images/parrallax/layer-2-optimized.png" alt="Layer 2">
+      </div>
+      <div class="parallax-layer" data-speed="0.8">
+        <img src="/assets/images/parrallax/layer-3.png" alt="Layer 3">
+      </div>
+      <div class="parallax-layer" data-speed="1.0">
+        <img src="/assets/images/parrallax/layer-4.png" alt="Layer 4">
+      </div>
+      <div class="parallax-layer" data-speed="1.2">
+        <img src="/assets/images/parrallax/layer-5.png" alt="Layer 5">
+      </div>
+      <div class="parallax-layer" data-speed="1.5">
+        <img src="/assets/images/parrallax/layer-6.png" alt="Foreground layer">
+        <div class="background"></div>
+      </div>
     </div>
-    <!-- <div class="pc-flex-group">
-      <span class="pc-topper">Custom-designed, hand-coded websites that align with your goals</span>
+
+    <div class="pc-container">
+      <span class="pc-topper">Custom-designed, hand-coded websites</span>
       <h1 class="pc-title">
         Small Business Web Design & Development
       </h1>
       <p class="pc-text">
-        Stand out with a tailor-made website designed for speed, SEO, and seamless user experience. No templates—just
-        handcrafted designs built to fit your brand perfectly. -->
-      <!-- </p>
-      <a href="/about" class="pc-button-solid">Explore More</a> -->
-      <!-- <a href="/contact" class="pc-button-transparent">
-        <img class="pc-img" loading="lazy" decoding="async"
-          src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg" alt="play icon" width="17" height="17" />
-        Get in Touch
-      </a> -->
-    <!-- </div>
-    <div class="pc-flex-group">
-      <span class="pc-topper">Custom-designed, hand-coded websites that align with your goals</span>
-      <h1 class="pc-title">
-        Small Business Web Design & Development
-      </h1>
-      <p class="pc-text">
-        Stand out with a tailor-made website designed for speed, SEO, and seamless user experience. No templates—just
-        handcrafted designs built to fit your brand perfectly. -->
-      <!-- </p>
-      <a href="/about" class="pc-button-solid">Explore More</a> -->
-      <!-- <a href="/contact" class="pc-button-transparent">
-        <img class="pc-img" loading="lazy" decoding="async"
-          src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg" alt="play icon" width="17" height="17" />
-        Get in Touch
-      </a> -->
-    <!-- </div> -->
-  </div>
-
-  <div class="glow-bg"></div>
-  <div class="pinetree"></div>
-
-
-
+        Custom-coded websites starting at $150/month. Faster, cleaner, and more effective than WordPress, with Google Ads and SEO services also available.
+      </p>
+      <div class="parallax-cta-group">
+        <a href="/contact/" class="parallax-button parallax-button-primary">Start Your Project</a>
+        <a href="/pricing/" class="parallax-button parallax-button-secondary">View Our Packages</a>
+      </div>
+    </div>
+    
+    <div class="parallax-scroll-indicator">
+      <span>Scroll to explore</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
 </section>
+
+
 
 <!-- ============================================ -->
 <!--                  Services                    -->
@@ -227,7 +224,7 @@ eleventyNavigation:
             <source media="(max-width: 600px)" srcset="/assets/images/Dallin-Headshot-scaled.jpg">
             <!--Tablet and above Image-->
             <source media="(min-width: 601px)" srcset="/assets/images/Dallin-Headshot-scaled.jpg">
-            <img loading="lazy" decoding="async" src="/assets/images/Dallin-Headshot-scaled.jpg" alt="owner" width="605868" height="690">
+            <img loading="lazy" decoding="async" src="/assets/images/Dallin-Headshot-scaled.jpg" alt="owner" width="658" height="614">
         </picture>
       </div>
       <div class="pc-content">
