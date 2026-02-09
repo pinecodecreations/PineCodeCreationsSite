@@ -296,7 +296,6 @@
     text-align: center;
   }
   #sbs-r .pc-topper {
-    margin-bottom: 0.25rem;
     text-align: center;
   }
   #sbs-r .pc-title {
@@ -854,7 +853,7 @@
     align-items: flex-start;
   }
   #sbsr-1363 .pc-topper {
-    margin: auto;
+    text-align: center;
   }
   #sbsr-1363 .pc-title {
     /* 23 characters wide including spaces */
@@ -1084,7 +1083,7 @@
     right: -6.25rem;
   }
   #sbsr-1363 .pc-topper {
-    margin: 0;
+    text-align: left;
   }
   #sbsr-1363 .pc-title {
     /* 23 characters wide including spaces */

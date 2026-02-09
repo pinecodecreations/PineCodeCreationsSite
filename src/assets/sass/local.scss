@@ -345,7 +345,6 @@
         }
 
         .pc-topper {
-            margin-bottom: calc(4 / 16 * 1rem);
             text-align: center;
         }
 
@@ -1020,7 +1019,7 @@
 
 
       .pc-topper {
-        margin: auto;
+        text-align: center;
       }
       .pc-title {
           /* 23 characters wide including spaces */
@@ -1273,7 +1272,7 @@
       }
 
       .pc-topper {
-        margin: 0;
+        text-align: left;
       }
       .pc-title {
           /* 23 characters wide including spaces */
