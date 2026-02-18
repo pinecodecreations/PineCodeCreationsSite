@@ -165,7 +165,7 @@
     border: 2px solid var(--primary);
   }
   .pc-button-solid:hover {
-    transform: translate(-2px, 0.25em);
+    transform: translate(-1px, 0.3em);
   }
   .pc-button-solid:hover:before {
     box-sizing: border-box;
