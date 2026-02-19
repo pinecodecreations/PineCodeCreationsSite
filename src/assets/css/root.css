@@ -165,11 +165,11 @@
     border: 2px solid var(--primary);
   }
   .pc-button-solid:hover {
-    transform: translate(-1px, 0.3em);
+    transform: translate(0px, 0.3em);
   }
   .pc-button-solid:hover:before {
     box-sizing: border-box;
-    transform: translate3d(-1px, 0.3em, -1em);
+    transform: translate3d(0px, 0em, -1em);
   }
   .pc-button-solid:before {
     background: color-mix(in srgb, var(--primary) 50%, white);
