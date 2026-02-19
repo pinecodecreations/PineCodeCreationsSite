@@ -1,0 +1,64 @@
+{# ------------------------------------------------------------------- #
+  reviewSlider(reviews, id, auto = 5000, perDesk = 3, perMob = 1)
+  – reviews   : array of objects → { text, author }
+  – id        : unique DOM id  (default generated from loop.index0)
+  – auto      : ms between slides (0 = off)
+  – perDesk   : slides shown ≥768 px
+  – perMob    : slides shown <768 px
+# ------------------------------------------------------------------- #}
+{% macro reviewSlider(reviews, id = "review-slider-" + loop.index0,
+                      auto = 5000, perDesk = 2, perMob = 1) %}
+<div id="{{ id }}" class="embla" data-auto="{{ auto }}"
+     data-per-desk="{{ perDesk }}" data-per-mob="{{ perMob }}" class="embla">
+  <div class="embla__viewport">
+    <div class="embla__container">
+      {%- for r in reviews %}
+      <div class="embla__slide">
+        <li class="pc-item">
+          <p class="pc-review">
+            {{ r.text | safe }}
+          </p>
+          <div class="pc-flex-group">
+              <picture class="pc-picture">
+                  <img class="pc-profile" src="{{ r.image }}" decoding="async" alt="profile" width="50" height="50" aria-hidden="true">
+              </picture>
+              <span class="pc-name">
+                  {{ r.author }}
+                  <span class="pc-desc">Google</span>
+              </span>
+          </div>
+        </li>
+        <!-- <li class="pc-item">
+          <img class="pc-icon" src="/assets/images/orange-quote.png" alt="quote icon" aria-hidden="true" width="40" height="38" loading="lazy" decoding="async">
+          <img class="pc-icon" src="/assets/images/orange-quote.png" alt="quote icon" aria-hidden="true" width="40" height="38" loading="lazy" decoding="async">
+          <h3 class="pc-h3">
+              <span class="pc-name-text">{{ r.author }}</span>
+              <img class="pc-google-badge" src="/assets/images/google-logo.png" alt="Google Review" width="24" height="24" loading="lazy" decoding="async">
+              <span class="pc-stars">★★★★★</span>
+          </h3>
+          <p class="pc-item-text">
+              {{ r.text | safe }}
+          </p>
+      </li> -->
+        <!-- <div class="review-card">
+          <div class="review-content" id="review-{{ loop.index0 }}">
+            {{ r.text | safe }}
+          </div>
+          <button class="toggle-btn" data-target="review-{{ loop.index0 }}">Read more</button>
+          <div class="review-author">– {{ r.author }}</div>
+        </div> -->
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+
+  <!-- Previous and Next buttons -->
+  <!-- <div class="controls">
+    <button class="prev" aria-label="Previous Slide">&#10094;</button>
+    <button class="next" aria-label="Next Slide">&#10095;</button>
+  </div> -->
+
+    <!-- Dots container -->
+  <div class="dots"></div>
+</div>
+{% endmacro %}

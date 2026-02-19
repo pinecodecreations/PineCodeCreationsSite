@@ -42,32 +42,32 @@
 
 
 
-        -webkit-mask-image: url("/assets/svgs/tree-vein-background.svg");
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-position: center;
-        -webkit-mask-size: cover;
+        // -webkit-mask-image: url("/assets/svgs/tree-vein-background.svg");
+        // -webkit-mask-repeat: no-repeat;
+        // -webkit-mask-position: center;
+        // -webkit-mask-size: cover;
 
-        mask-image: url("/assets/svgs/tree-vein-background.svg");
-        mask-repeat: no-repeat;
-        mask-position: center;
-        mask-size: cover;
+        // mask-image: url("/assets/svgs/tree-vein-background.svg");
+        // mask-repeat: no-repeat;
+        // mask-position: center;
+        // mask-size: cover;
         z-index: 0;
         background:
           /* bottom fade */
-          linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, .4) 30%,rgba(255, 255, 255, .6) 60%, rgba(255, 255, 255, 1) 100%),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, .4) 30%,rgba(255, 255, 255, .6) 60%, rgba(255, 255, 255, .2) 100%),
           
           /* circular glow */
           radial-gradient(
             circle at 50% 35%, 
-            rgb(255, 255, 255) 30%, 
-            rgba(255, 255, 255, 0.9) 40%, 
-            rgba(255, 255, 255, 0.7) 70%, 
-            rgba(255, 255, 255, 0.3) 90%, 
-            rgba(255, 255, 255, 0) 100%
+            rgb(255, 255, 255) 40%, 
+            rgba(255, 255, 255, .8) 40%, 
+            rgba(255, 255, 255, 0.95) 70%, 
+            rgba(255, 255, 255, 0.98) 90%, 
+            rgba(255, 255, 255) 100%
           ),
 
           /* background colors */
-          linear-gradient(to right, #4e4376, #2b5876);
+          linear-gradient(to right, var(--secondary), var(--primary));
       
     }
       .pc-glow {
@@ -194,7 +194,7 @@
         font-size: calc(16 / 16 * 1rem);
         line-height: calc(50 / 16 * 1em);
         font-weight: bold;
-        border-radius: 50px;
+        border-radius: 8px;
         text-align: center;
         transform-style: preserve-3d;
         transition: transform 0.15s ease-out, background 0.15s ease-out;
@@ -208,6 +208,7 @@
             &:before {
               box-sizing: border-box;
               transform: translate3d(0px, 0em, -1em);
+              width: 100%;
 
             }
         }
@@ -217,12 +218,12 @@
             box-shadow: var(--primary) 0px 0px 0px 2px;
             position: absolute;
             content: "";
-            width: 100%;
+            width: calc(100% + 6px);
             height: 100%;
             inset: 0px;
             border-radius: inherit;
-            transform: translate3d(-1px, 0.5em, -1em);
-            transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+            transform: translate3d(-3px, 0.3em, -1em);
+            transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, width 0.15s ease-out;
         }
     }
 
@@ -243,17 +244,6 @@
 
       /* Primary fallback: vein image blended with gradient */
 
-
-
-        -webkit-mask-image: url("/assets/svgs/tree-vein-background.svg");
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-position: center;
-        -webkit-mask-size: cover;
-
-        mask-image: url("/assets/svgs/tree-vein-background.svg");
-        mask-repeat: no-repeat;
-        mask-position: center;
-        mask-size: cover;
         z-index: 0;
         background:
           /* bottom fade */
@@ -261,12 +251,12 @@
           
           /* circular glow */
           radial-gradient(
-            circle at 50% 35%, 
-            rgb(255, 255, 255) 30%, 
-            rgba(255, 255, 255, 0.9) 40%, 
-            rgba(255, 255, 255, 0.7) 70%, 
-            rgba(255, 255, 255, 0.3) 90%, 
-            rgba(255, 255, 255, 0) 100%
+            circle at 50% 10%, 
+            rgb(255, 255, 255, 1) 12%, 
+            rgba(255, 255, 255, 0) 30%, 
+            rgba(255, 255, 255, 0.2) 50%, 
+            rgba(255, 255, 255, 0.2) 90%, 
+            rgba(255, 255, 255, 0.6) 100%
           ),
 
           /* background colors */
@@ -450,14 +440,15 @@
       rgba(18, 26, 27, 0) 10%, 
       rgba(18, 26, 27, 0.4) 30%, 
       rgba(18, 26, 27, 0.6) 60%, 
-      rgb(18, 26, 27) 100%), 
+      rgb(18, 26, 27, .2) 100%), 
       
-      radial-gradient(circle at 50% 20%, 
-      rgb(18, 26, 27) 30%, 
-      rgba(18, 26, 27, 0.9) 40%, 
-      rgba(18, 26, 27, 0.7) 70%, 
-      rgba(18, 26, 27, 0.3) 90%, 
-      rgba(18, 26, 27, 0) 100%), 
+      radial-gradient(circle at 50% 35%, 
+      rgb(18, 26, 27) 40%, 
+      rgba(18, 26, 27, 0.5) 40%, 
+      rgba(18, 26, 27, 0.75) 70%, 
+      rgba(18, 26, 27, 0.98) 90%, 
+      rgba(18, 26, 27) 100%), 
+
       
       linear-gradient(to right, #4e4376, #2b5876)
     }
@@ -548,13 +539,12 @@
       rgba(18, 26, 27, 0.6) 60%, 
       rgb(18, 26, 27) 100%), 
       
-      radial-gradient(circle at 50% 30%, 
-      rgb(18, 26, 27) 30%, 
-      rgba(18, 26, 27, 0.9) 40%, 
-      rgba(18, 26, 27, 0.7) 70%, 
-      rgba(18, 26, 27, 0.3) 90%, 
-      rgba(18, 26, 27, 0) 100%), 
-      
+      radial-gradient(circle at 50% 10%, 
+      rgb(18, 26, 27) 12%, 
+      rgba(18, 26, 27, 0) 30%, 
+      rgba(18, 26, 27, 0.2) 50%, 
+      rgba(18, 26, 27, 0.2) 90%, 
+      rgba(18, 26, 27, 0.6) 100%), 
       linear-gradient(to right, #4e4376, #2b5876)
     }
     }
@@ -1766,4 +1756,488 @@
             box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 24px;
         }
     }
+}
+
+
+
+/*-- -------------------------- -->
+<---          Reviews           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #reviews-608 {
+    padding: var(--sectionPadding);
+    position: relative;
+        // Futuristic depth layers: aurora glow + geometric rings
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        // Layer 1: soft aurora glow — brand color blobs create atmosphere and depth
+        // &::before {
+        //     background-image:
+        //         radial-gradient(ellipse 65% 80% at 12% 40%, rgba(43, 88, 118, 0.38) 0%, transparent 65%),
+        //         radial-gradient(ellipse 55% 75% at 88% 40%, rgba(78, 67, 118, 0.32) 0%, transparent 65%),
+        // }
+
+        // Layer 2: large overlapping geometric rings — futuristic depth
+        &::after {
+            opacity: 0.55;
+            filter: drop-shadow(0 0 5px rgba(90, 145, 193, 0.3));
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400'><circle cx='160' cy='200' r='290' fill='none' stroke='%232b5876' stroke-width='1.5'/><circle cx='1040' cy='200' r='270' fill='none' stroke='%234e4376' stroke-width='1.5'/><circle cx='600' cy='200' r='340' fill='none' stroke='%235a91c1' stroke-width='0.9' opacity='0.7'/><circle cx='350' cy='200' r='185' fill='none' stroke='%234e4376' stroke-width='1.2' opacity='0.65'/><circle cx='850' cy='200' r='195' fill='none' stroke='%232b5876' stroke-width='1.2' opacity='0.65'/><circle cx='600' cy='-60' r='370' fill='none' stroke='%238176af' stroke-width='1' opacity='0.55'/><circle cx='600' cy='460' r='350' fill='none' stroke='%235a91c1' stroke-width='0.9' opacity='0.5'/></svg>");
+        }
+
+        // Dark mode: deeper glow
+        body.dark-mode & {
+            &::before {
+                background-image:
+                    radial-gradient(ellipse 65% 80% at 12% 40%, rgba(90, 145, 193, 0.45) 0%, transparent 65%),
+                    radial-gradient(ellipse 55% 75% at 88% 40%, rgba(129, 118, 175, 0.4) 0%, transparent 65%),
+            }
+            &::after {
+                opacity: 0.75;
+                filter: drop-shadow(0 0 8px rgba(90, 145, 193, 0.55));
+            }
+        }
+
+        /* ensure content stacks above decorative layers */
+        .pc-container {
+            position: relative;
+            z-index: 1;
+        }
+
+    .pc-container {
+      width: 100%;
+      /* changes to 1440px at tablet */
+      max-width: calc(550 / 16 * 1rem);
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+    }
+
+    .pc-content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: center;
+    }
+
+    .pc-title {
+      max-width: 20ch;
+      color: var(--headerColor)
+    }
+
+    .pc-topper {
+      color: var(--secondary);
+    }
+
+    .pc-slider-wrapper {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: calc(16 / 16 * 1rem);
+    }
+
+    .pc-slider-container {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+      margin: 0 1rem 0 1rem;
+    }
+
+    .pc-card-group {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: calc(20 / 16 * 1rem);
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+      .pc-item {
+            list-style: none;
+            max-width: calc(630 / 16 * 1rem);
+            /* 24px - 64px */
+            padding: clamp(1.5rem, 4.8vw, 4rem);
+            background-color: #fff;
+            border: 1px solid #b4b2c7;
+            /* prevents padding from adding to height and width */
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+          }
+
+        }
+
+        .pc-review {
+            /* 14px - 20px */
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            line-height: 1.5em;
+            margin: 0 0 calc(24 / 16 * 1rem) 0;
+            /* 20px - 44px */
+            padding-bottom: clamp(1.25rem, 3vw, 2.75rem);
+            color: var(--headerColor);
+            border-bottom: 1px solid #b4b2c7;
+        }
+
+        .pc-flex-group {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            /* 12px - 20px */
+            gap: clamp(0.75rem, 2vw, 1.25rem);
+        }
+
+        .pc-profile {
+            /* 48px - 72px */
+            width: clamp(3rem, 6vw, 4.5rem);
+            height: clamp(3rem, 6vw, 4.5rem);
+            border: 1px solid #b4b2c7;
+            /* prevents border from adding to height and width */
+            box-sizing: border-box;
+            background-color: #b4b2c7;
+            border-radius: 50%;
+            /* clips image corners to make circle */
+            overflow: hidden;
+            position: relative;
+            display: block;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* makes the image behave like a background image */
+                object-fit: cover;
+            }
+        }
+
+        .pc-name {
+            /* 16px - 25px */
+            font-size: clamp(1rem, 2.2vw, 1.5625rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            /* in case one card has more text than the other, this pushes up against the review text so the name and title are always at the bottom. Only works if parent is a flexbox */
+            margin-top: auto;
+            color: var(--primary);
+            display: block;
+        }
+
+        .pc-desc {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.6vw, 1rem);
+            line-height: 1.5em;
+            font-weight: 400;
+            margin: calc(4 / 16 * 1rem) 0 0 0;
+            color: var(--headerColor);
+            display: block;
+        }
+
+
+
+    .mobile-navigation {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .pc-prev,
+      .pc-next {
+        display: flex;
+      }
+    }
+
+    .pc-prev,
+    .pc-next {
+      width: calc(64 / 16 * 1rem);
+      height: calc(64 / 16 * 1rem);
+      border: none;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      flex-shrink: 0;
+
+      &:hover {
+        background-color: var(--secondary);
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+
+      svg {
+        width: calc(24 / 16 * 1rem);
+        height: calc(24 / 16 * 1rem);
+      }
+    }
+
+    .pc-dots {
+      display: flex;
+      gap: calc(12 / 16 * 1rem);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pc-dot {
+      width: calc(12 / 16 * 1rem);
+      height: calc(12 / 16 * 1rem);
+      border: none;
+      background-color: #d1d1d1;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      padding: 0;
+
+      &.pc-active {
+        background-color: var(--primary);
+        transform: scale(1.3);
+      }
+
+      &:hover {
+        background-color: var(--secondary);
+      }
+    }
+
+
+    .pc-stars {
+      font-size: calc(14 / 16 * 1rem);
+      color: #FFC107;
+      letter-spacing: calc(2 / 16 * 1rem);
+      text-shadow:
+        0 calc(1 / 16 * 1rem) calc(2 / 16 * 1rem) rgba(0, 0, 0, 0.1),
+        0 calc(1 / 16 * 1rem) calc(4 / 16 * 1rem) rgba(255, 193, 7, 0.3);
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      line-height: 1;
+    }
+
+    .embla {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .embla__viewport {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .embla__container {
+      display: flex;
+      gap: 20px;
+      /* Space between slides */
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+
+    .embla__slide {
+      position: relative;
+      min-width: calc(100% / 3);
+      /* Show 3 slides per row on desktop */
+      padding: 10px;
+      border-radius: 5px;
+
+    }
+
+    /* Styling for 3 items per row on desktop */
+    @media (min-width: 768px) {
+      .embla__slide {
+        min-width: calc(33.33% - 20px);
+        /* Adjust for gap on desktop */
+      }
+    }
+
+    /* Styling for 1 item per row on mobile */
+    @media (max-width: 767px) {
+      .embla__slide {
+        min-width: 100%;
+        /* Show 1 slide per row on mobile */
+      }
+    }
+
+    /* Add margin to the first slide */
+    .embla__container .embla__slide:first-child {
+      margin-left: 10px;
+      /* Space to the left of the first slide */
+    }
+
+    /* Add margin to the last slide */
+    .embla__container .embla__slide:last-child {
+      margin-right: 10px;
+      /* Space to the right of the last slide */
+    }
+
+    /* Controls container */
+    .controls {
+      display: flex;
+      gap: 1rem;
+    }
+
+    /* Buttons styling */
+    button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      font-size: 1rem;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      z-index: 10;
+    }
+
+    /* Dots container */
+    .dots {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      z-index: 10;
+    }
+
+    /* Dot button styling */
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #bbb;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dot.active {
+      background-color: #333;
+    }
+
+    .dot:hover {
+      background-color: #555;
+    }
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #reviews-608 {
+    .pc-container {
+      max-width: calc(1440 / 16 * 1rem);
+    }
+
+    .pc-item {
+      //flex: 0 0 calc(50% - calc(10 / 16 * 1rem));
+    }
+
+    .pc-prev,
+    .pc-next {
+      display: flex;
+      width: calc(56 / 16 * 1rem);
+      height: calc(56 / 16 * 1rem);
+    }
+
+    .mobile-navigation {
+      display: none;
+
+      .pc-prev,
+      .pc-next {
+        display: none;
+      }
+    }
+
+    .pc-review-platforms-header {
+      flex-wrap: nowrap;
+      max-width: calc(900 / 16 * 1rem);
+    }
+  }
+}
+
+/* Small Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #reviews-608 {
+    .pc-slider-wrapper {
+      gap: calc(24 / 16 * 1rem);
+    }
+
+    .pc-card-group {
+      gap: calc(24 / 16 * 1rem);
+    }
+
+    .pc-item {
+      //flex: 0 0 calc(33.333% - calc(16 / 16 * 1rem));
+    }
+
+    .pc-prev,
+    .pc-next {
+      width: calc(64 / 16 * 1rem);
+      height: calc(64 / 16 * 1rem);
+    }
+  }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode {
+    #reviews-608 {
+      .pc-title,
+      .pc-text,
+      .pc-review {
+          color: var(--bodyTextColorWhite);
+      }
+
+      .pc-item {
+          background-color: var(--medium);
+      }
+
+      .pc-desc {
+          color: var(--bodyTextColorWhite);
+          opacity: 0.7;
+      }
+
+      .pc-topper {
+        color: var(--secondaryLight);
+      }
+
+      .pc-text {
+        opacity: 0.8;
+      }
+
+      .pc-item {
+        background-color: var(--medium);
+      }
+    }
+  }
 }

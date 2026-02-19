@@ -17,9 +17,7 @@
       console.warn('Parallax elements not found');
       return;
     }
-    
-    console.log('Parallax initialized with', parallaxLayers.length, 'layers');
-    
+        
     let ticking = false;
     
     function updateParallax() {

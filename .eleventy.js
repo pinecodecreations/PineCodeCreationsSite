@@ -87,6 +87,9 @@ module.exports = function (eleventyConfig) {
     });
     eleventyConfig.addPassthroughCopy("./src/admin");
     eleventyConfig.addPassthroughCopy("./src/_redirects");
+    eleventyConfig.addPassthroughCopy({
+	    "node_modules/embla-carousel/embla-carousel.umd.js": "assets/js/embla-carousel.umd.js"
+    });
     /**=====================================================================
                               END PASSTHROUGHS
     =======================================================================*/
