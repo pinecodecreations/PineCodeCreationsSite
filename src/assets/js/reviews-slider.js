@@ -5,77 +5,85 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
   const emblaNode = document.querySelector('.embla');
-  
+
   // Exit if carousel doesn't exist on this page
   if (!emblaNode) return;
-  
+
   const viewportNode = emblaNode.querySelector('.embla__viewport');
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
-  const dotsContainer = emblaNode.querySelector('.dots'); // Dots container
+  const dotsContainer = emblaNode.querySelector('.dots');
 
-  // Initialize Embla
   let embla;
-  const createEmbla = () => {
-    // Detect screen width to set the number of slides shown
-    const isDesktop = window.matchMedia('(min-width: 768px)').matches;
-    const perSlide = isDesktop ? 2 : 1; // Show 3 slides on desktop, 1 on mobile
 
-    embla = EmblaCarousel(viewportNode, {
-      loop: true,               // Enable looping
-      slidesToScroll: 1,        // Scroll only one slide at a time
-      containScroll: 'trimSnaps', // Keep the carousel aligned
-    });
+  // ---------- Dots ----------
 
-    // Update number of visible slides when window is resized
-    window.addEventListener('resize', () => {
-      const isDesktop = window.matchMedia('(min-width: 768px)').matches;
-      embla.reInit(); // Re-initialize the carousel
-    });
+  const buildDots = () => {
+    // Clear existing dots
+    dotsContainer.innerHTML = '';
 
-    // Create dots based on the number of slides
-    const slideCount = embla.scrollSnapList().length;
+    const snapCount = embla.scrollSnapList().length;
 
-    // Hide dots if there's only one snap position
-    if (slideCount <= 1) {
-      dotsContainer.style.display = 'none';
-    }
+    // Hide dot container entirely when only one snap position
+    dotsContainer.style.display = snapCount <= 1 ? 'none' : '';
 
-    for (let i = 0; i < slideCount; i++) {
+    for (let i = 0; i < snapCount; i++) {
       const dot = document.createElement('button');
       dot.classList.add('dot');
       dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-      dot.addEventListener('click', () => embla.scrollTo(i)); // Scroll to specific slide when clicked
+      dot.addEventListener('click', () => embla.scrollTo(i));
       dotsContainer.appendChild(dot);
     }
 
-    // Update dots' active state on slide change
-    embla.on('select', () => {
-      const index = embla.selectedScrollSnap();
-      const dots = dotsContainer.querySelectorAll('.dot');
-      dots.forEach(dot => dot.classList.remove('active')); // Remove active state from all dots
-      dots[index].classList.add('active'); // Add active state to the current dot
-    });
+    updateActiveDot();
+  };
 
-    // Initially update active dot
-    embla.on('init', () => {
-      const index = embla.selectedScrollSnap();
-      const dots = dotsContainer.querySelectorAll('.dot');
-      dots[index].classList.add('active');
+  const updateActiveDot = () => {
+    const index = embla.selectedScrollSnap();
+    dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
     });
   };
 
-  createEmbla();
+  // ---------- Init ----------
 
+  const initEmbla = () => {
+    if (embla) embla.destroy();
 
-  // Auto loop: automatically scroll to the next slide every 5 seconds
-  const autoLoop = () => {
-    setInterval(() => {
-      embla.scrollNext(); // Auto-scroll every 5 seconds
-    }, 5000);
+    embla = EmblaCarousel(viewportNode, {
+      loop: true,
+      slidesToScroll: 1,
+      containScroll: 'trimSnaps',
+      align: 'start',
+    });
+
+    buildDots();
+
+    embla.on('select', updateActiveDot);
+    embla.on('reInit', buildDots);
   };
 
-  autoLoop(); // Start auto-loop
+  initEmbla();
+
+  // ---------- Breakpoint change detection ----------
+  // Only rebuild when crossing a breakpoint, not on every pixel of resize
+
+  const breakpoints = [
+    window.matchMedia('(max-width: 767px)'),
+    window.matchMedia('(min-width: 768px) and (max-width: 1199px)'),
+    window.matchMedia('(min-width: 1200px)'),
+  ];
+
+  breakpoints.forEach(mq => {
+    mq.addEventListener('change', e => {
+      if (e.matches) {
+        // Breakpoint crossed — reInit so Embla recalculates snap list, then rebuild dots
+        embla.reInit();
+      }
+    });
+  });
+
+  // ---------- Auto-scroll ----------
+
+  setInterval(() => embla.scrollNext(), 5000);
+
 });
