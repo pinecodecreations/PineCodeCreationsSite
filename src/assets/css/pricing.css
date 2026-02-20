@@ -55,7 +55,7 @@
     width: 100%;
     max-width: 25.8125rem;
     border-radius: 1rem;
-    background: #fff;
+    background: #f7f7f7;
     border: 1px solid #e8e8e8;
     /* prevents padding from adding to height and width */
     box-sizing: border-box;
