@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* PAGE-SPECIFIC STYLES FOR THE HOME PAGE */
 /*-- -------------------------- -->
 <---       Side By Side         -->
@@ -1382,6 +1383,283 @@
   }
   body.dark-mode #reviews-981 .pc-item:after {
     opacity: 0.2;
+  }
+}
+/*-- -------------------------- -->
+<---          Pricing           -->
+<--- -------------------------- -*/
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+  #pricing-357 {
+    padding: var(--sectionPadding);
+  }
+  #pricing-357 .pc-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #pricing-357 .pc-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #pricing-357 .pc-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 56.25rem;
+    margin: 0 0 1.5rem 0;
+    color: var(--headerColor);
+    position: relative;
+  }
+  #pricing-357 .pc-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* 16px - 20px */
+    gap: clamp(1.5rem, 2vw, 1.75rem);
+  }
+  #pricing-357 .pc-item {
+    list-style: none;
+    /* 20px - 32px top & bottom */
+    /* 16px - 32px left & right */
+    padding: clamp(1.25rem, 3vw, 2rem) clamp(1rem, 2.4vw, 2rem);
+    width: 100%;
+    max-width: 25.8125rem;
+    border-radius: 1rem;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    /* prevents padding from adding to height and width */
+    box-sizing: border-box;
+    /* flexbox to push button to bottom */
+    display: flex;
+    flex-direction: column;
+  }
+  #pricing-357 .pc-item:nth-of-type(2) .pc-option2-text,
+  #pricing-357 .pc-item:nth-of-type(2) .pc-option1-text {
+    transition-delay: 0.1s;
+  }
+  #pricing-357 .pc-item:nth-of-type(3) .pc-option2-text,
+  #pricing-357 .pc-item:nth-of-type(3) .pc-option1-text {
+    transition-delay: 0.2s;
+  }
+  #pricing-357 .pc-popular {
+    background: linear-gradient(145deg, #0d1f3c 0%, var(--primary) 100%);
+    position: relative;
+    /* clips the popular tag */
+    overflow: hidden;
+    /* send to the top */
+    order: -1;
+    border-color: rgba(0, 220, 255, 0.35);
+    box-shadow: 0 0 0 1px rgba(0, 220, 255, 0.2), 0 8px 32px rgba(0, 180, 255, 0.15), inset 0 1px 0 rgba(0, 220, 255, 0.1);
+  }
+  #pricing-357 .pc-popular:before {
+    /* Most Popular Tag — futuristic glow ribbon */
+    content: "MOST POPULAR";
+    font-size: 0.625rem;
+    text-align: center;
+    line-height: 1.75em;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    width: 12.25rem;
+    padding: 0 0.75rem;
+    color: #e0faff;
+    background: linear-gradient(90deg, rgba(30, 10, 80, 0.9) 0%, rgba(0, 140, 200, 0.95) 50%, rgba(30, 10, 80, 0.9) 100%);
+    border-top: 1px solid rgba(0, 220, 255, 0.6);
+    border-bottom: 1px solid rgba(0, 220, 255, 0.6);
+    position: absolute;
+    display: block;
+    top: 2rem;
+    right: -3.25rem;
+    transform: rotate(42deg);
+    text-shadow: 0 0 6px rgba(0, 220, 255, 0.9), 0 0 12px rgba(0, 220, 255, 0.6);
+  }
+  #pricing-357 .pc-popular .pc-h3,
+  #pricing-357 .pc-popular .pc-item-text,
+  #pricing-357 .pc-popular .pc-price,
+  #pricing-357 .pc-popular .pc-included,
+  #pricing-357 .pc-popular .pc-li,
+  #pricing-357 .pc-popular .pc-small {
+    color: var(--bodyTextColorWhite);
+  }
+  #pricing-357 .pc-popular .pc-li-img {
+    /* turns the check mark white */
+    filter: brightness(10000%);
+  }
+  #pricing-357 .pc-popular .pc-button-solid {
+    background: linear-gradient(135deg, rgba(0, 100, 160, 0.9), rgba(0, 40, 100, 0.95));
+    color: #c8f4ff;
+    border-color: rgba(0, 220, 255, 0.5);
+    box-shadow: 0 0 8px rgba(0, 220, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  #pricing-357 .pc-popular .pc-button-solid:before {
+    background: rgba(0, 180, 255, 0.25);
+    box-shadow: rgba(0, 220, 255, 0.6) 0px 0px 0px 2px;
+  }
+  #pricing-357 .pc-h3 {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+    padding: 0;
+    color: var(--headerColor);
+  }
+  #pricing-357 .pc-item-text {
+    font-size: 0.875rem;
+    line-height: 1.5em;
+    /* 16px - 24px */
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+    padding: 0;
+    color: var(--bodyTextColor);
+  }
+  #pricing-357 .pc-option-group {
+    position: relative;
+  }
+  #pricing-357 .pc-option-group:after {
+    /* top right box */
+    content: "";
+    width: 100%;
+    height: 1px;
+    /* 32px - 40px */
+    margin-bottom: clamp(2rem, 4vw, 2.5rem);
+    background: linear-gradient(90deg, rgba(232, 232, 232, 0.2) 0%, #e8e8e8 53.78%, rgba(232, 232, 232, 0.2) 100%);
+    opacity: 1;
+    position: relative;
+    display: block;
+  }
+  #pricing-357 .pc-price {
+    font-size: 3.0625rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--headerColor);
+    /* spans are inline, need to add block for margin to work */
+    display: block;
+  }
+  #pricing-357 .pc-small {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #4e4b66;
+  }
+  #pricing-357 .pc-included {
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-weight: 700;
+    /* 16px - 24px */
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    color: var(--headerColor);
+    display: block;
+  }
+  #pricing-357 .pc-ul {
+    padding: 0;
+    margin: 0;
+    /* 32px - 40px */
+    margin-bottom: clamp(2rem, 4vw, 2.5rem);
+  }
+  #pricing-357 .pc-li {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.75rem;
+    color: var(--bodyTextColor);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  #pricing-357 .pc-li:last-of-type {
+    margin-bottom: 0;
+  }
+  #pricing-357 .pc-disabled {
+    /* fades out list items that are disabled from the price tier */
+    opacity: 0.6;
+  }
+  #pricing-357 .pc-li-img {
+    width: 1.25rem;
+    height: auto;
+    margin-top: 0.1875rem;
+    margin-right: 0.5rem;
+  }
+  #pricing-357 .pc-button-solid {
+    /* pc-button-solid override */
+    width: 100%;
+    margin: 0 0 1rem 0;
+    /* push to bottom of card */
+    margin-top: auto;
+  }
+}
+/* Tablet 768px */
+@media only screen and (min-width: 48rem) {
+  #pricing-357 .pc-card-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+  #pricing-357 .pc-item {
+    width: 100%;
+    /* ensures they stay the same height if you add more content */
+    align-self: stretch;
+  }
+  #pricing-357 .pc-popular {
+    /* send back to its original order */
+    order: unset;
+  }
+  #pricing-357 #pc-option2-357:before {
+    top: -0.625rem;
+  }
+  #pricing-357 #pc-option2-357:after {
+    top: -2.1875rem;
+    right: -6.25rem;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #pricing-357 {
+    background-color: var(--dark);
+  }
+  body.dark-mode #pricing-357 .pc-topper {
+    color: var(--secondaryLight);
+  }
+  body.dark-mode #pricing-357 .pc-title,
+  body.dark-mode #pricing-357 .pc-text {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #pricing-357 .pc-plan {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #pricing-357 .pc-item {
+    background: var(--accent);
+    border-color: var(--medium);
+  }
+  body.dark-mode #pricing-357 .pc-popular {
+    background: linear-gradient(145deg, #0d1f3c 0%, var(--primary) 50%, #1a1040 100%);
+    border-color: rgba(0, 220, 255, 0.35);
+    box-shadow: 0 0 20px rgba(43, 88, 118, 0.9), 0 0 50px rgba(78, 67, 118, 0.75), 0 0 80px rgba(78, 67, 118, 0.4), inset 0 1px 0 rgba(43, 88, 118, 0.4);
+  }
+  body.dark-mode #pricing-357 .pc-h3,
+  body.dark-mode #pricing-357 .pc-item-text,
+  body.dark-mode #pricing-357 .pc-price,
+  body.dark-mode #pricing-357 .pc-included,
+  body.dark-mode #pricing-357 .pc-li,
+  body.dark-mode #pricing-357 .pc-small {
+    color: var(--bodyTextColorWhite);
   }
 }
 

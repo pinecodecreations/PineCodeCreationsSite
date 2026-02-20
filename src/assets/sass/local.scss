@@ -1641,3 +1641,350 @@
     }
 }
                                 
+
+/*-- -------------------------- -->
+<---          Pricing           -->
+<--- -------------------------- -*/
+
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+    #pricing-357 {
+        padding: var(--sectionPadding);
+
+        .pc-container {
+            width: 100%;
+            max-width: calc(1280 / 16 * 1rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .pc-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+
+        .pc-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.2em;
+            text-align: inherit;
+            max-width: calc(900 / 16 * 1rem);
+            margin: 0 0 calc(24 / 16 * 1rem) 0;
+            color: var(--headerColor);
+            position: relative;
+        }
+
+        .pc-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* 16px - 20px */
+            gap: clamp(1.5rem, 2vw, 1.75rem);
+        }
+
+        .pc-item {
+            list-style: none;
+            /* 20px - 32px top & bottom */
+            /* 16px - 32px left & right */
+            padding: clamp(1.25rem, 3vw, 2rem) clamp(1rem, 2.4vw, 2rem);
+            width: 100%;
+            max-width: calc(413 / 16 * 1rem);
+            border-radius: calc(16 / 16 * 1rem);
+            background: #fff;
+            border: 1px solid #e8e8e8;
+            /* prevents padding from adding to height and width */
+            box-sizing: border-box;
+            /* flexbox to push button to bottom */
+            display: flex;
+            flex-direction: column;
+
+            &:nth-of-type(2) {
+                .pc-option2-text,
+                .pc-option1-text {
+                    transition-delay: 0.1s;
+                }
+            }
+
+            &:nth-of-type(3) {
+                .pc-option2-text,
+                .pc-option1-text {
+                    transition-delay: 0.2s;
+                }
+            }
+        }
+
+        .pc-popular {
+            background: linear-gradient(145deg, #0d1f3c 0%, var(--primary) 100%);
+            position: relative;
+            /* clips the popular tag */
+            overflow: hidden;
+            /* send to the top */
+            order: -1;
+            border-color: rgba(0, 220, 255, 0.35);
+            box-shadow:
+                0 0 0 1px rgba(0, 220, 255, 0.2),
+                0 8px 32px rgba(0, 180, 255, 0.15),
+                inset 0 1px 0 rgba(0, 220, 255, 0.1);
+
+            &:before {
+                /* Most Popular Tag — futuristic glow ribbon */
+                content: "MOST POPULAR";
+                font-size: calc(10 / 16 * 1rem);
+                text-align: center;
+                line-height: calc(28 / 16 * 1em);
+                font-weight: 800;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                width: calc(196 / 16 * 1rem);
+                padding: 0 calc(12 / 16 * 1rem);
+                color: #e0faff;
+                background: linear-gradient(
+                    90deg,
+                    rgba(30, 10, 80, 0.9) 0%,
+                    rgba(0, 140, 200, 0.95) 50%,
+                    rgba(30, 10, 80, 0.9) 100%
+                );
+                border-top: 1px solid rgba(0, 220, 255, 0.6);
+                border-bottom: 1px solid rgba(0, 220, 255, 0.6);
+                position: absolute;
+                display: block;
+                top: calc(32 / 16 * 1rem);
+                right: calc(-52 / 16 * 1rem);
+                transform: rotate(42deg);
+                text-shadow:
+                    0 0 6px rgba(0, 220, 255, 0.9),
+                    0 0 12px rgba(0, 220, 255, 0.6);
+            }
+
+            .pc-h3,
+            .pc-item-text,
+            .pc-price,
+            .pc-included,
+            .pc-li,
+            .pc-small {
+                color: var(--bodyTextColorWhite);
+            }
+
+
+            .pc-li-img {
+                /* turns the check mark white */
+                filter: brightness(10000%);
+            }
+
+            .pc-button-solid {
+                background: linear-gradient(135deg, rgba(0, 100, 160, 0.9), rgba(0, 40, 100, 0.95));
+                color: #c8f4ff;
+                border-color: rgba(0, 220, 255, 0.5);
+                box-shadow:
+                    0 0 8px rgba(0, 220, 255, 0.3),
+                    0 4px 12px rgba(0, 0, 0, 0.4);
+
+                &:before {
+                    background: rgba(0, 180, 255, 0.25);
+                    box-shadow: rgba(0, 220, 255, 0.6) 0px 0px 0px 2px;
+                }
+            }
+        }
+
+        .pc-h3 {
+            font-size: calc(20 / 16 * 1rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0 0 calc(4 / 16 * 1rem);
+            padding: 0;
+            color: var(--headerColor);
+        }
+
+        .pc-item-text {
+            font-size: calc(14 / 16 * 1rem);
+            line-height: 1.5em;
+            /* 16px - 24px */
+            margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+            padding: 0;
+            color: var(--bodyTextColor);
+        }
+
+        .pc-option-group {
+            position: relative;
+            &:after {
+                /* top right box */
+                content: "";
+                width: 100%;
+                height: 1px;
+                /* 32px - 40px */
+                margin-bottom: clamp(2rem, 4vw, 2.5rem);
+                background: linear-gradient(
+                    90deg,
+                    rgba(232, 232, 232, 0.2) 0%,
+                    #e8e8e8 53.78%,
+                    rgba(232, 232, 232, 0.2) 100%
+                );
+                opacity: 1;
+                position: relative;
+                display: block;
+            }
+        }
+
+        .pc-price {
+            font-size: calc(49 / 16 * 1rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin-bottom: calc(24 / 16 * 1rem);
+            color: var(--headerColor);
+            /* spans are inline, need to add block for margin to work */
+            display: block;
+        }
+
+        .pc-small {
+            font-size: calc(14 / 16 * 1rem);
+            font-weight: 400;
+            color: #4e4b66;
+        }
+
+        .pc-included {
+            font-size: calc(16 / 16 * 1rem);
+            line-height: 1.5em;
+            font-weight: 700;
+            /* 16px - 24px */
+            margin-bottom: clamp(1rem, 3vw, 1.5rem);
+            color: var(--headerColor);
+            display: block;
+        }
+
+        .pc-ul {
+            padding: 0;
+            margin: 0;
+            /* 32px - 40px */
+            margin-bottom: clamp(2rem, 4vw, 2.5rem);
+        }
+
+        .pc-li {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            line-height: 1.5em;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 calc(12 / 16 * 1rem);
+            color: var(--bodyTextColor);
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        .pc-disabled {
+            /* fades out list items that are disabled from the price tier */
+            opacity: 0.6;
+        }
+
+        .pc-li-img {
+            width: calc(20 / 16 * 1rem);
+            height: auto;
+            margin-top: calc(3 / 16 * 1rem);
+            margin-right: calc(8 / 16 * 1rem);
+        }
+
+
+        .pc-button-solid {
+            /* pc-button-solid override */
+            width: 100%;
+            margin: 0 0 calc(16 / 16 * 1rem) 0;
+            /* push to bottom of card */
+            margin-top: auto;
+        }
+    }
+}
+
+/* Tablet 768px */
+@media only screen and (min-width: 48rem) {
+    #pricing-357 {
+        .pc-card-group {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+
+        .pc-item {
+            width: 100%;
+            /* ensures they stay the same height if you add more content */
+            align-self: stretch;
+        }
+
+        .pc-popular {
+            /* send back to its original order */
+            order: unset;
+        }
+
+        #pc-option2-357 {
+            &:before {
+                top: calc(-10 / 16 * 1rem);
+            }
+            &:after {
+                top: calc(-35 / 16 * 1rem);
+                right: calc(-100 / 16 * 1rem);
+            }
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #pricing-357 {
+            background-color: var(--dark);
+            .pc-topper {
+                color: var(--secondaryLight);
+            }
+            .pc-title,
+            .pc-text {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .pc-plan {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .pc-item {
+                background: var(--accent);
+                border-color: var(--medium);
+            }
+            .pc-popular {
+                background: linear-gradient(145deg, #0d1f3c 0%, var(--primary) 50%, #1a1040 100%);
+                border-color: rgba(0, 220, 255, 0.35);
+                box-shadow:
+                    0 0 20px rgba(43, 88, 118, 0.9),
+                    0 0 50px rgba(78, 67, 118, 0.75),
+                    0 0 80px rgba(78, 67, 118, 0.4),
+                    inset 0 1px 0 rgba(43, 88, 118, 0.4);
+            }
+
+            .pc-h3,
+            .pc-item-text,
+            .pc-price,
+            .pc-included,
+            .pc-li,
+            .pc-small {
+                color: var(--bodyTextColorWhite);
+            }
+        }
+    }
+}
+                                

@@ -6,7 +6,6 @@
 @media only screen and (min-width: 0rem) {
     #pricing-357 {
         padding: var(--sectionPadding);
-        background-color: #f7f7f7;
 
         .pc-container {
             width: 100%;
@@ -50,7 +49,7 @@
             align-items: center;
             flex-direction: column;
             /* 16px - 20px */
-            gap: clamp(1rem, 2vw, 1.25rem);
+            gap: clamp(1.5rem, 2vw, 1.75rem);
         }
 
         .pc-item {
@@ -85,29 +84,46 @@
         }
 
         .pc-popular {
-            background: var(--primary);
+            background: linear-gradient(145deg, #0d1f3c 0%, var(--primary) 100%);
             position: relative;
             /* clips the popular tag */
             overflow: hidden;
             /* send to the top */
             order: -1;
+            border-color: rgba(0, 220, 255, 0.35);
+            box-shadow:
+                0 0 0 1px rgba(0, 220, 255, 0.2),
+                0 8px 32px rgba(0, 180, 255, 0.15),
+                inset 0 1px 0 rgba(0, 220, 255, 0.1);
 
             &:before {
-                /* Most Popular Tag */
-                content: "Most Popular";
-                font-size: calc(14 / 16 * 1rem);
+                /* Most Popular Tag — futuristic glow ribbon */
+                content: "MOST POPULAR";
+                font-size: calc(10 / 16 * 1rem);
                 text-align: center;
-                line-height: calc(29 / 16 * 1em);
-                font-weight: 700;
-                width: calc(190 / 16 * 1rem);
+                line-height: calc(28 / 16 * 1em);
+                font-weight: 800;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                width: calc(196 / 16 * 1rem);
                 padding: 0 calc(12 / 16 * 1rem);
-                color: var(--bodyTextColorWhite);
-                background-color: var(--secondary);
+                color: #e0faff;
+                background: linear-gradient(
+                    90deg,
+                    rgba(30, 10, 80, 0.9) 0%,
+                    rgba(0, 140, 200, 0.95) 50%,
+                    rgba(30, 10, 80, 0.9) 100%
+                );
+                border-top: 1px solid rgba(0, 220, 255, 0.6);
+                border-bottom: 1px solid rgba(0, 220, 255, 0.6);
                 position: absolute;
                 display: block;
                 top: calc(32 / 16 * 1rem);
                 right: calc(-52 / 16 * 1rem);
                 transform: rotate(42deg);
+                text-shadow:
+                    0 0 6px rgba(0, 220, 255, 0.9),
+                    0 0 12px rgba(0, 220, 255, 0.6);
             }
 
             .pc-h3,
@@ -126,14 +142,16 @@
             }
 
             .pc-button-solid {
-                background-color: color-mix(in srgb, var(--primary) 80%, black);
-                color: color-mix(in srgb, var(--primary) 10%, white);
-                border-color: black;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                background: linear-gradient(135deg, rgba(0, 100, 160, 0.9), rgba(0, 40, 100, 0.95));
+                color: #c8f4ff;
+                border-color: rgba(0, 220, 255, 0.5);
+                box-shadow:
+                    0 0 8px rgba(0, 220, 255, 0.3),
+                    0 4px 12px rgba(0, 0, 0, 0.4);
 
                 &:before {
-                  background: color-mix(in srgb, var(--primary) 50%, black);
-                  box-shadow: black 0px 0px 0px 2px;
+                    background: rgba(0, 180, 255, 0.25);
+                    box-shadow: rgba(0, 220, 255, 0.6) 0px 0px 0px 2px;
                 }
             }
         }
@@ -305,7 +323,13 @@
                 border-color: var(--medium);
             }
             .pc-popular {
-                background: var(--primary);
+                background: linear-gradient(145deg, #0d1f3c 0%, var(--primary) 50%, #1a1040 100%);
+                border-color: rgba(0, 220, 255, 0.35);
+                box-shadow:
+                    0 0 20px rgba(43, 88, 118, 0.9),
+                    0 0 50px rgba(78, 67, 118, 0.75),
+                    0 0 80px rgba(78, 67, 118, 0.4),
+                    inset 0 1px 0 rgba(43, 88, 118, 0.4);
             }
 
             .pc-h3,
