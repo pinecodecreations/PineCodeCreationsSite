@@ -1792,10 +1792,11 @@
 
         // Layer 2: large overlapping geometric rings — futuristic depth
         &::after {
-            opacity: 0.45;
+            opacity: 0.18;
             filter: drop-shadow(0 0 5px rgba(90, 145, 193, 0.3));
             background-repeat: no-repeat;
-            background-size: 100% 100%;
+            background-size: 150% 150%;
+            background-position: center;
             background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 600'><circle cx='200' cy='300' r='280' fill='none' stroke='%232b5876' stroke-width='1.5'/><circle cx='200' cy='300' r='200' fill='none' stroke='%234e4376' stroke-width='1.2' opacity='0.7'/><circle cx='200' cy='300' r='115' fill='none' stroke='%235a91c1' stroke-width='0.9' opacity='0.6'/><circle cx='40' cy='120' r='180' fill='none' stroke='%234e4376' stroke-width='1' opacity='0.5'/><circle cx='360' cy='480' r='180' fill='none' stroke='%232b5876' stroke-width='1' opacity='0.5'/><circle cx='200' cy='-30' r='270' fill='none' stroke='%238176af' stroke-width='1' opacity='0.45'/><circle cx='200' cy='630' r='260' fill='none' stroke='%235a91c1' stroke-width='0.9' opacity='0.4'/></svg>");
         }
 
@@ -2163,11 +2164,11 @@
   #reviews-608 {
 
   &::after {
-        opacity: 0.55;
+        opacity: 0.45;
         filter: drop-shadow(0 0 5px rgba(90, 145, 193, 0.3));
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400'><circle cx='160' cy='200' r='290' fill='none' stroke='%232b5876' stroke-width='1.5'/><circle cx='1040' cy='200' r='270' fill='none' stroke='%234e4376' stroke-width='1.5'/><circle cx='600' cy='200' r='340' fill='none' stroke='%235a91c1' stroke-width='0.9' opacity='0.7'/><circle cx='350' cy='200' r='185' fill='none' stroke='%234e4376' stroke-width='1.2' opacity='0.65'/><circle cx='850' cy='200' r='195' fill='none' stroke='%232b5876' stroke-width='1.2' opacity='0.65'/><circle cx='600' cy='-60' r='370' fill='none' stroke='%238176af' stroke-width='1' opacity='0.55'/><circle cx='600' cy='460' r='350' fill='none' stroke='%235a91c1' stroke-width='0.9' opacity='0.5'/></svg>");
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400'><circle cx='160' cy='200' r='290' fill='none' stroke='%232b5876' stroke-width='1.5' opacity='.7'/><circle cx='1040' cy='200' r='270' fill='none' stroke='%234e4376' stroke-width='1.5' opacity='0.7'/><circle cx='600' cy='200' r='340' fill='none' stroke='%235a91c1' stroke-width='0.9' opacity='0.5'/><circle cx='350' cy='200' r='185' fill='none' stroke='%234e4376' stroke-width='1.2' opacity='0.65'/><circle cx='850' cy='200' r='195' fill='none' stroke='%232b5876' stroke-width='1.2' opacity='0.45'/><circle cx='600' cy='-60' r='370' fill='none' stroke='%238176af' stroke-width='1' opacity='0.55'/><circle cx='600' cy='460' r='350' fill='none' stroke='%235a91c1' stroke-width='0.9' opacity='0.5'/></svg>");
     }
     .pc-container {
       max-width: calc(1440 / 16 * 1rem);
