@@ -84,6 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---------- Auto-scroll ----------
 
-  setInterval(() => embla.scrollNext(), 5000);
+  setInterval(() => embla.scrollNext(), 10000);
 
 });
