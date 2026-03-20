@@ -1770,6 +1770,8 @@
     padding-top: clamp(3.75rem, 7.82vw, 6.25rem);
     padding-bottom: clamp(3.75rem, 7.82vw, 6.25rem);
     position: relative;
+    padding-right: 1rem;
+    padding-left: 1rem;
         // Futuristic depth layers: aurora glow + geometric rings
         &::before,
         &::after {
@@ -1792,7 +1794,7 @@
 
         // Layer 2: large overlapping geometric rings — futuristic depth
         &::after {
-            opacity: 0.18;
+            opacity: 0.1;
             filter: drop-shadow(0 0 5px rgba(90, 145, 193, 0.3));
             background-repeat: no-repeat;
             background-size: 150% 150%;
@@ -2049,7 +2051,7 @@
 
     .embla {
       position: relative;
-      overflow: hidden;
+      overflow: visible;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -2058,7 +2060,7 @@
 
     .embla__viewport {
       width: 100%;
-      overflow: hidden;
+      overflow: visible;
     }
 
     .embla__container {

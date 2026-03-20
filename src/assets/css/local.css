@@ -306,7 +306,7 @@
   #sbs-r .pc-text {
     margin-bottom: 1rem;
     max-width: 46.875rem;
-    text-align: left;
+    text-align: center;
   }
   #sbs-r .pc-text:last-of-type {
     margin-bottom: 2rem;
