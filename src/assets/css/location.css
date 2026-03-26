@@ -671,12 +671,14 @@
 }
 
 .pc-step-item h3 {
+  grid-column: 2;
   font-size: 1.15rem;
   color: var(--headerColor);
   margin: 0 0 0.5rem;
 }
 
 .pc-step-item p {
+  grid-column: 2;
   font-size: 0.95rem;
   line-height: 1.65;
   color: var(--bodyTextColor);
@@ -849,6 +851,10 @@
   }
   .pc-step-item:first-of-type {
     border-top: none;
+  }
+  .pc-step-item h3,
+  .pc-step-item p {
+    grid-column: auto;
   }
   .pc-step-num {
     font-size: 3rem;
