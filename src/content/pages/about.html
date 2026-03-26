@@ -20,27 +20,24 @@ eleventyNavigation:
     <!--                    LANDING                   -->
     <!-- ============================================ -->
 
-    <section id="int-hero">
-        <h1 id="home-h">About Us</h1>
-        <picture>
-            <source
-                media="(max-width: 600px)"
-                srcset="/assets/images/trees.jpg"
-            />
-            <source
-                media="(min-width: 601px)"
-                srcset="/assets/images/trees.jpg"
-            />
-            <img
-                aria-hidden="true"
-                decoding="async"
-                src="/assets/images/trees.jpg"
-                alt="pine trees"
-                loading="eager"
-                width="2500"
-                height="1667"
-            />
-        </picture>
+    <section id="pc-location-hero">
+        <div class="pc-container">
+            <nav class="pc-breadcrumbs" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <span aria-hidden="true">/</span>
+                <span aria-current="page">About Us</span>
+            </nav>
+            <div class="pc-hero-copy">
+                <span class="pc-topper">About Us</span>
+                <h1 class="pc-title">About Pinecode Creations</h1>
+                <p class="pc-text">{{ city.heroCopy }}</p>
+                <div class="pc-chip-group">
+                    <span class="pc-chip">Pacific NW Based</span>
+                    <span class="pc-chip">10+ Years Experience</span>
+                    <span class="pc-chip">Custom Hand-Coded Websites</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- ============================================ -->

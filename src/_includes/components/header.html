@@ -38,6 +38,7 @@
             <div class="pc-ul-wrapper">
                 <ul id="pc-expanded" class="pc-ul">
                     {% set navPages = collections.all | eleventyNavigation %}
+                    {% set isLocationPage = '-web-design/' in page.url %}
 
                     {# Loop through all pages with a eleventyNavigation in the frontmatter #}
                     {% for entry in navPages %}
@@ -115,6 +116,47 @@
                             {% endif %}
                         </li>
                     {% endfor %}
+
+                    <li class="pc-li pc-dropdown">
+                        <button
+                            class="pc-li-link pc-dropdown-button {% if isLocationPage %}pc-active{% endif %}"
+                            aria-expanded="false"
+                            aria-controls="dropdown-top-locations"
+                            aria-label="dropdown-top-locations"
+                        >
+                            Top Locations
+                            <img
+                                class="pc-drop-icon"
+                                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg"
+                                alt="dropdown icon"
+                                width="15"
+                                height="15"
+                                decoding="async"
+                                aria-hidden="true"
+                            />
+                        </button>
+
+                        <ul class="pc-drop-ul pc-drop-ul-locations" id="dropdown-top-locations">
+                            {% for state in serviceAreas.states %}
+                                <li class="pc-drop-li pc-drop-li-state">
+                                    <span class="pc-state-heading">{{ state.name }}</span>
+                                    <ul class="pc-drop-ul-nested">
+                                        {% for city in state.cities %}
+                                            <li class="pc-drop-li-city">
+                                                <a
+                                                    href="{{ city.path }}"
+                                                    class="pc-li-link pc-drop-link pc-drop-link-city {% if city.path == page.url %}pc-active{% endif %}"
+                                                    {% if city.path == page.url %}aria-current="page"{% endif %}
+                                                >
+                                                    {{ city.name }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </nav>

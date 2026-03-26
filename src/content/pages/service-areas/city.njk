@@ -1,0 +1,281 @@
+---
+pagination:
+    data: serviceAreas.cities
+    size: 1
+    alias: city
+permalink: "{{ city.slug }}-web-design/"
+eleventyComputed:
+    title: "{{ city.metaTitle }}"
+    description: "{{ city.metaDescription }}"
+preloadImg: "/assets/images/programming.jpg"
+---
+
+{% extends "layouts/base.html" %}
+{% from "components/review-slider.html" import reviewSlider %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location.css" />
+    <link rel="stylesheet" href="/assets/css/reviews.css" />
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "{{ client.name }}",
+            "serviceType": "Web Design and Development",
+            "url": "{{ client.domain }}{{ page.url }}",
+            "description": "{{ city.metaDescription }}",
+            "areaServed": {
+                "@type": "City",
+                "name": "{{ city.city }}",
+                "containedInPlace": {
+                    "@type": "State",
+                    "name": "{{ city.state }}"
+                }
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "{{ client.domain }}/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Top Locations",
+                    "item": "{{ client.domain }}/top-locations/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "{{ city.city }}, {{ city.stateAbbr }}",
+                    "item": "{{ client.domain }}{{ page.url }}"
+                }
+            ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {% for item in city.faq %}
+                    {
+                        "@type": "Question",
+                        "name": "{{ item.question }}",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "{{ item.answer }}"
+                        }
+                    }{% if not loop.last %},{% endif %}
+                {% endfor %}
+            ]
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+    <section id="pc-location-hero">
+        <div class="pc-container">
+            <nav class="pc-breadcrumbs" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <span aria-hidden="true">/</span>
+                <span aria-current="page">{{ city.city }}, {{ city.stateAbbr }}</span>
+            </nav>
+            <div class="pc-hero-copy">
+                <span class="pc-topper">{{ city.state }} Web Design</span>
+                <h1 class="pc-title">Web Design in {{ city.city }}, {{ city.stateAbbr }}</h1>
+                <p class="pc-text">{{ city.heroCopy }}</p>
+                <div class="pc-chip-group">
+                    <span class="pc-chip">Custom-coded pages</span>
+                    <span class="pc-chip">SEO foundations built in</span>
+                    <span class="pc-chip">Serving {{ city.region }}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pc-location-intro">
+        <div class="pc-container pc-grid-2">
+            <div>
+                <span class="pc-topper">Local Focus</span>
+                <h2 class="pc-title">Custom Websites for {{ city.city }} Businesses</h2>
+                {% for paragraph in city.intro %}
+                    <p class="pc-text">{{ paragraph }}</p>
+                {% endfor %}
+            </div>
+            <div class="pc-callout-card">
+                <h3>Good fit for businesses in {{ city.city }}</h3>
+                <ul class="pc-check-list">
+                    {% for industry in serviceAreas.industries %}
+                        <li>{{ industry }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    {% if city.customCodeAdvantage %}
+    <section id="pc-location-custom-code">
+        <div class="pc-container">
+            <div class="pc-section-heading">
+                <span class="pc-topper">{{ city.customCodeAdvantage.topper }}</span>
+                <h2 class="pc-title">{{ city.customCodeAdvantage.title }}</h2>
+            </div>
+            <div class="pc-rich-text">
+                {% for paragraph in city.customCodeAdvantage.paragraphs %}
+                    <p>{{ paragraph }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    {% if city.customCodeBenefits %}
+    <section id="pc-location-benefits">
+        <div class="pc-container">
+            <div class="pc-section-heading">
+                <span class="pc-topper">The Custom Code Advantage</span>
+                <h2 class="pc-title">What You Get With Hand-Coded Websites</h2>
+            </div>
+            <div class="pc-benefits-grid">
+                {% for benefit in city.customCodeBenefits %}
+                          <article class="pc-benefit-card pc-benefit-card--{{ loop.index }}">
+                        <h3>{{ benefit.title }}</h3>
+                        <p>{{ benefit.description }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <section id="pc-location-pain-points">
+        <div class="pc-container">
+            <div class="pc-pain-points-layout">
+                <div class="pc-pain-points-image">
+                    <img
+                        src="{{ city.painPointImage }}"
+                        alt="Web design for {{ city.city }} small businesses"
+                        width="600"
+                        height="700"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="pc-pain-points-content">
+                    <span class="pc-topper">Why It Matters</span>
+                    <h2 class="pc-title">What a Strong {{ city.city }} Website Needs</h2>
+                    <div class="pc-card-grid">
+                        {% for point in city.painPoints %}
+                            <article class="pc-feature-card">
+                                <h3>{{ point.title }}</h3>
+                                <p>{{ point.text }}</p>
+                            </article>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pc-location-pricing">
+        <div class="pc-container">
+            <div class="pc-section-heading">
+                <span class="pc-topper">Transparent Pricing</span>
+                <h2 class="pc-title">Premium Custom Coded Websites</h2>
+                <p class="pc-text">Professional web design without agency prices. No setup fees, no surprises.</p>
+            </div>
+            <div class="pc-pricing-card">
+                <div class="pc-price-panel">
+                    <p class="pc-price-label">Starting at</p>
+                    <div class="pc-price-figure">$150<span class="pc-price-per">/mo</span></div>
+                    <p class="pc-price-note">No setup fee. <br> No hidden costs.</p>
+                    <a href="/pricing/" class="pc-price-cta">See All Pricing &rarr;</a>
+                </div>
+                <div class="pc-features-panel">
+                    <p class="pc-pricing-highlight">Plan includes:</p>
+                    <ul class="pc-package-features">
+                        <li>Custom-coded website development</li>
+                        <li>Professional hosting and security</li>
+                        <li>Unlimited content updates</li>
+                        <li>24/7 technical support</li>
+                        <li>Ongoing optimization</li>
+                        <li>Regular performance monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pc-location-nearby">
+        <div class="pc-container">
+            <div class="pc-section-heading">
+                <span class="pc-topper">The Process</span>
+                <h2 class="pc-title">Getting Started Is Easy</h2>
+                <p class="pc-text">No pressure, no confusing contracts up front. Here's exactly what working together looks like from first contact to launch.</p>
+            </div>
+            <div class="pc-steps-grid">
+                <div class="pc-step-item">
+                    <div class="pc-step-num">01</div>
+                    <h3>Discovery Call</h3>
+                    <p>We hop on a free, no-obligation call to talk about your business, your goals, and what you need from a website. No sales pitch — just a real conversation.</p>
+                </div>
+                <div class="pc-step-connector" aria-hidden="true"></div>
+                <div class="pc-step-item">
+                    <div class="pc-step-num">02</div>
+                    <h3>Proposal &amp; Contract</h3>
+                    <p>You get a clear proposal with pricing and a plain-English contract. Once you're happy with everything, we sign and lock in your spot.</p>
+                </div>
+                <div class="pc-step-connector" aria-hidden="true"></div>
+                <div class="pc-step-item">
+                    <div class="pc-step-num">03</div>
+                    <h3>Design &amp; Build</h3>
+                    <p>We design and hand-code your site, keeping you in the loop throughout. You'll review and give feedback before anything goes live.</p>
+                </div>
+                <div class="pc-step-connector" aria-hidden="true"></div>
+                <div class="pc-step-item">
+                    <div class="pc-step-num">04</div>
+                    <h3>Launch &amp; Grow</h3>
+                    <p>Your site goes live. We handle hosting, updates, and ongoing support so you can focus on running your {{ city.city }} business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                  Reviews                     -->
+    <!-- ============================================ -->
+    {% include 'components/reviews.html' %} 
+
+    <section id="pc-location-faq">
+        <div class="pc-container">
+            <div class="pc-section-heading">
+                <span class="pc-topper">FAQ</span>
+                <h2 class="pc-title">Questions About Web Design in {{ city.city }}</h2>
+            </div>
+            <div class="pc-faq-list">
+                {% for item in city.faq %}
+                    <details class="pc-faq-item">
+                        <summary>{{ item.question }}</summary>
+                        <p>{{ item.answer }}</p>
+                    </details>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+
+    {% include 'components/cta.html' %} 
+
+
+
+{% endblock %}

@@ -18,6 +18,13 @@ function toggleMenu() {
     navbarMenu.classList.toggle("pc-active");
     bodyElement.classList.toggle("pc-open");
     toggleAriaExpanded(hamburgerMenu);
+
+    // Keep the scrolled styling while the mobile menu is open.
+    if (navbarMenu.classList.contains("pc-active")) {
+        navbarMenu.classList.add("pc-navigation-scrolled");
+    } else if (window.scrollY === 0) {
+        navbarMenu.classList.remove("pc-navigation-scrolled");
+    }
 }
 
 // Add click event listener to the hamburger menu
@@ -120,17 +127,16 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
-if (window.scrollY > 0){
-  navbarMenu.classList.add('pc-navigation-scrolled');
+function syncNavigationScrolledState() {
+    if (window.scrollY > 0 || navbarMenu.classList.contains('pc-active')) {
+        navbarMenu.classList.add('pc-navigation-scrolled');
+    } else {
+        navbarMenu.classList.remove('pc-navigation-scrolled');
+    }
 }
 
-window.addEventListener('scroll', function() {
-  if (window.scrollY > 0) {
-    navbarMenu.classList.add('pc-navigation-scrolled');
-  } else {
-    navbarMenu.classList.remove('pc-navigation-scrolled');
-  }
-});
+syncNavigationScrolledState();
+window.addEventListener('scroll', syncNavigationScrolledState);
 
 //CONTACT FORM
 if (window.location.pathname === '/contact/') {

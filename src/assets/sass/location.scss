@@ -1,0 +1,973 @@
+/*-- -------------------------- -->
+<---       Service Areas       -->
+<--- -------------------------- -*/
+
+#pc-location-intro,
+#pc-location-custom-code,
+#pc-location-benefits,
+#pc-location-pain-points,
+#pc-location-pricing,
+#pc-location-nearby,
+#pc-location-reviews,
+#pc-location-faq,
+#pc-location-final-cta {
+    padding: clamp(3.75rem, 6vw, 6rem) 1rem;
+}
+
+#pc-location-intro .pc-container,
+#pc-location-custom-code .pc-container,
+#pc-location-benefits .pc-container,
+#pc-location-pain-points .pc-container,
+#pc-location-pricing .pc-container,
+#pc-location-nearby .pc-container,
+#pc-location-reviews .pc-container,
+#pc-location-faq .pc-container,
+#pc-location-final-cta .pc-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.pc-grid-2 {
+    display: grid;
+    gap: 2rem;
+}
+
+.pc-callout-card,
+.pc-process-card,
+.pc-feature-card {
+    border: 1px solid rgba(43, 88, 118, 0.14);
+    border-radius: 1.5rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f3f7fb 100%);
+    box-shadow: 0 18px 45px rgba(10, 32, 52, 0.08);
+}
+
+.pc-callout-card,
+.pc-process-card,
+.pc-feature-card {
+    padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+.pc-callout-card h3,
+.pc-process-card h3,
+.pc-feature-card h3 {
+    margin: 0 0 1rem;
+    color: var(--headerColor);
+}
+
+.pc-check-list,
+.pc-step-list,
+.pc-link-list,
+.pc-pill-list,
+.pc-faq-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pc-check-list li,
+.pc-step-list li {
+    position: relative;
+    padding-left: 1.6rem;
+    color: var(--bodyTextColor);
+}
+
+.pc-check-list li + li,
+.pc-step-list li + li {
+    margin-top: 0.85rem;
+}
+
+.pc-check-list li::before,
+.pc-step-list li::before {
+    content: "";
+    position: absolute;
+    top: 0.55rem;
+    left: 0;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--secondary);
+}
+
+.pc-section-heading {
+    max-width: 42rem;
+    margin-bottom: 2rem;
+    text-align: -webkit-center;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.pc-card-grid {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.pc-feature-card p {
+    margin: 0;
+}
+
+.pc-pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.pc-pill-list li {
+    padding: 0.7rem 1rem;
+    border-radius: 999rem;
+    background-color: #eef4f8;
+    color: var(--headerColor);
+    font-weight: 700;
+    line-height: 1.2em;
+}
+
+.pc-process-card {
+    height: 100%;
+}
+
+.pc-step-list {
+    counter-reset: step;
+}
+
+.pc-step-list li {
+    padding-left: 2rem;
+}
+
+.pc-step-list li::before {
+    top: 0.2rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    content: counter(step);
+    counter-increment: step;
+}
+
+#pc-location-reviews {
+    background: linear-gradient(180deg, #0c1e2b 0%, #132e43 100%);
+}
+
+#pc-location-reviews .pc-title,
+#pc-location-reviews .pc-topper,
+#pc-location-reviews .pc-text {
+    color: var(--bodyTextColorWhite);
+}
+
+#pc-location-reviews .embla {
+    margin-top: 2rem;
+}
+
+#pc-location-faq {
+    background-color: #f7fafc;
+}
+
+.pc-faq-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.pc-faq-item {
+    border: 1px solid rgba(43, 88, 118, 0.12);
+    border-radius: 1rem;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.pc-faq-item summary {
+    cursor: pointer;
+    padding: 1.15rem 1.25rem;
+    font-weight: 700;
+    color: var(--headerColor);
+    list-style: none;
+}
+
+.pc-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.pc-faq-item p {
+    margin: 0;
+    padding: 1.15rem 1.25rem 1.15rem 1.25rem;
+}
+
+.pc-benefits-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.pc-benefit-card {
+    padding: 1.5rem;
+    border-radius: 0.9rem;
+    background-color: #f3f7fb;
+    border: 1px solid #e0ecf7;
+}
+
+.pc-benefit-card h3 {
+    font-size: 1.1rem;
+    color: var(--headerColor);
+    margin-bottom: 0.6rem;
+}
+
+.pc-benefit-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--bodyTextColor);
+}
+
+/* ---- Pricing card — two-panel layout ---- */
+
+.pc-pricing-card {
+    max-width: 860px;
+    margin: 2.5rem auto 0;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+        0 0 0 1px rgba(0, 220, 255, 0.18),
+        0 24px 64px rgba(0, 0, 0, 0.45);
+}
+
+.pc-price-panel {
+    background: linear-gradient(150deg, #0d3f68 0%, #0a2b47 100%);
+    padding: clamp(2rem, 5vw, 3rem) 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.85rem;
+    border-bottom: 2px solid rgba(0, 220, 255, 0.35);
+}
+
+.pc-price-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7dd3fc;
+    margin: 0;
+}
+
+.pc-price-figure {
+    font-size: clamp(3.75rem, 10vw, 5.5rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    margin: 0;
+}
+
+.pc-price-per {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: #7dd3fc;
+    vertical-align: super;
+}
+
+.pc-price-note {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.pc-features-panel {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(0, 220, 255, 0.12);
+    border-top: none;
+    padding: clamp(1.75rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.pc-pricing-highlight {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7dd3fc;
+    margin: 0 0 1.25rem;
+}
+
+.pc-package-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+.pc-package-features li {
+    padding: 0.7rem 0 0.7rem 1.75rem;
+    position: relative;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    &:last-child, &:nth-child(5n) {
+        border-bottom: none;
+    }
+}
+
+.pc-package-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #7dd3fc;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.pc-rich-text {
+    margin-top: 1.5rem;
+}
+
+.pc-rich-text p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: var(--bodyTextColor);
+}
+
+/* ================================================================
+   SECTION VISUAL RHYTHM & THEMED ENHANCEMENTS
+   ================================================================ */
+
+/* ---- Intro section ---- */
+
+#pc-location-intro {
+}
+
+.pc-callout-card {
+    border-top: 4px solid var(--primary);
+}
+
+.pc-callout-card h3 {
+    color: var(--primary);
+}
+
+/* ---- Custom Code section — dark, cinematic streaks ---- */
+
+#pc-location-custom-code {
+    background:
+        linear-gradient(118deg, rgba(0, 198, 255, 0.16) 0%, transparent 36%),
+        linear-gradient(145deg, transparent 22%, rgba(125, 211, 252, 0.12) 52%, transparent 74%),
+        linear-gradient(200deg, rgba(255, 255, 255, 0.06) 0%, transparent 28%),
+        linear-gradient(162deg, #050c14 0%, #0b1b2c 52%, #102741 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* soft horizontal glow for depth */
+#pc-location-custom-code::before {
+    content: "";
+    position: absolute;
+    top: 12%;
+    left: -8%;
+    width: 70%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(121, 61, 240, 0.18) 20%,
+        rgba(172, 125, 255, 0.85) 50%,
+        rgba(121, 61, 240, 0.18) 80%,
+        transparent 100%
+    );
+    box-shadow: 0 0 8px rgba(172, 125, 255, 0.6), 0 0 20px rgba(121, 61, 240, 0.45);
+    transform: rotate(-8deg);
+    opacity: 0.75;
+}
+
+/* secondary streak near the lower edge */
+#pc-location-custom-code::after {
+    content: "";
+    position: absolute;
+    bottom: 10%;
+    right: -10%;
+    width: 62%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(114, 45, 228, 0.16) 18%,
+        rgba(187, 149, 255, 0.82) 50%,
+        rgba(114, 45, 228, 0.16) 82%,
+        transparent 100%
+    );
+    box-shadow: 0 0 8px rgba(187, 149, 255, 0.58), 0 0 18px rgba(114, 45, 228, 0.42);
+    transform: rotate(-7deg);
+    opacity: 0.65;
+}
+
+/* left glowing rule beside the text block */
+#pc-location-custom-code .pc-rich-text {
+    position: relative;
+    padding-left: clamp(1.25rem, 3vw, 2rem);
+    border-left: 2px solid rgba(0, 180, 255, 0.35);
+    z-index: 1;
+}
+
+#pc-location-custom-code .pc-rich-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 2px;
+    height: 40%;
+    background: linear-gradient(to bottom, var(--secondary), transparent);
+}
+
+#pc-location-custom-code .pc-topper,
+#pc-location-custom-code .pc-title {
+    color: var(--bodyTextColorWhite);
+    position: relative;
+    z-index: 1;
+}
+
+#pc-location-custom-code .pc-topper {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#pc-location-custom-code .pc-rich-text p {
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.8;
+}
+
+/* ---- Benefits section ---- */
+
+#pc-location-benefits {
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.pc-benefit-card {
+    padding: 1.5rem;
+    border-radius: 0.9rem;
+    background-color: #fff;
+    border: 1px solid #e0ecf7;
+    position: relative;
+    //border-top: 3px solid var(--primary);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.pc-benefit-card::before {
+    content: "";
+    display: block;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-bottom: 1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.pc-benefit-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #4e4376, #2b5876);
+  transform: rotate(3deg) scale(1);
+  z-index: -1;
+  pointer-events: none;
+  will-change: transform, opacity;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 1 — Instant Load Times: lightning bolt */
+.pc-benefit-card--1::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232b5876' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E");
+}
+
+/* 2 — 100/100 PageSpeed: gauge */
+.pc-benefit-card--2::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232b5876' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2a10 10 0 1 0 10 10'/%3E%3Cpath d='M12 12 L18 6'/%3E%3Ccircle cx='12' cy='12' r='1.5' fill='%232b5876'/%3E%3C/svg%3E");
+}
+
+/* 3 — Bulletproof Security: shield */
+.pc-benefit-card--3::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232b5876' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3Cpolyline points='9 12 11 14 15 10'/%3E%3C/svg%3E");
+}
+
+/* 4 — Complete Design Freedom: pen nib */
+.pc-benefit-card--4::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232b5876' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 19l7-7 3 3-7 7-3-3z'/%3E%3Cpath d='M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z'/%3E%3Cpath d='M2 2l7.586 7.586'/%3E%3Ccircle cx='11' cy='11' r='2'/%3E%3C/svg%3E");
+}
+
+/* 5 — Mobile-First: smartphone */
+.pc-benefit-card--5::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232b5876' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='2' width='14' height='20' rx='2' ry='2'/%3E%3Cline x1='12' y1='18' x2='12.01' y2='18'/%3E%3C/svg%3E");
+}
+
+/* 6 — Zero Technical Debt: clean code brackets */
+.pc-benefit-card--6::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232b5876' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='16 18 22 12 16 6'/%3E%3Cpolyline points='8 6 2 12 8 18'/%3E%3Cline x1='15' y1='4' x2='9' y2='20'/%3E%3C/svg%3E");
+}
+
+.pc-benefit-card:hover {
+  &::after {
+    transform: rotate(0deg) scale(1.05);
+  }
+
+}
+
+.pc-benefit-card h3 {
+    color: var(--primary);
+}
+
+/* ---- Pain Points section ---- */
+
+#pc-location-pain-points {
+    background-color: #f7fafd;
+    position: relative;
+    overflow: hidden;
+}
+
+.pc-pain-points-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.pc-pain-points-image {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(10, 32, 52, 0.14);
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 4 / 5;
+    }
+}
+
+.pc-pain-points-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.pc-pain-points-content .pc-topper {
+    margin-bottom: 0.5rem;
+    width: fit-content;
+}
+
+.pc-pain-points-content .pc-title {
+    margin-bottom: 1.75rem;
+}
+
+
+#pc-location-pain-points .pc-card-grid {
+    counter-reset: pain-points;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+#pc-location-pain-points .pc-feature-card {
+    counter-increment: pain-points;
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: clamp(1.25rem, 3vw, 1.75rem) 0 clamp(1.25rem, 3vw, 1.75rem) clamp(1.5rem, 4vw, 2.5rem);
+    border-bottom: 1px solid rgba(43, 88, 118, 0.1);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+
+    &:first-child {
+        border-top: 1px solid rgba(43, 88, 118, 0.1);
+    }
+
+    &::before {
+        content: "0" counter(pain-points);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        color: var(--secondary);
+        line-height: 1;
+    }
+}
+
+#pc-location-pain-points .pc-feature-card h3 {
+    color: var(--headerColor);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+#pc-location-pain-points .pc-feature-card p {
+    color: var(--bodyTextColor);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.65;
+}
+
+/* ---- Pricing section — diagonal stripe dark ---- */
+
+#pc-location-pricing {
+    background:
+        repeating-linear-gradient(
+            -55deg,
+            transparent,
+            transparent 48px,
+            rgba(255, 255, 255, 0.016) 48px,
+            rgba(255, 255, 255, 0.016) 49px
+        ),
+        radial-gradient(ellipse at 90% 10%, rgba(0, 180, 255, 0.13), transparent 45%),
+        radial-gradient(ellipse at 5% 90%, rgba(43, 88, 118, 0.22), transparent 45%),
+        linear-gradient(160deg, #070e17 0%, #0d2640 55%, #091a2e 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#pc-location-pricing .pc-topper,
+#pc-location-pricing .pc-title,
+#pc-location-pricing .pc-text {
+    color: var(--bodyTextColorWhite);
+}
+
+#pc-location-pricing .pc-topper {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+
+
+/* ---- FAQ improvements ---- */
+
+.pc-faq-item summary {
+    position: relative;
+    padding-right: 3rem;
+}
+
+.pc-faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.pc-faq-item[open] summary {
+    color: var(--primary);
+    background-color: #f0f6fb;
+    border-bottom: 1px solid rgba(43, 88, 118, 0.1);
+}
+
+.pc-faq-item[open] summary::after {
+    content: "−";
+}
+
+/* ---- Related links ---- */
+
+/* ---- Getting Started steps ---- */
+
+#pc-location-nearby {
+    background-color: #f7fafd;
+}
+
+.pc-steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 0;
+    margin-top: 2.5rem;
+}
+
+.pc-step-item {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 0 1.5rem;
+    align-items: start;
+    padding: clamp(1.5rem, 3vw, 2rem) 0;
+    border-bottom: 1px solid rgba(43, 88, 118, 0.1);
+
+    &:first-of-type {
+        border-top: 1px solid rgba(43, 88, 118, 0.1);
+    }
+}
+
+.pc-step-num {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--primary);
+    opacity: 0.18;
+    text-align: right;
+    padding-top: 0.2rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.pc-step-item h3 {
+    font-size: 1.15rem;
+    color: var(--headerColor);
+    margin: 0 0 0.5rem;
+}
+
+.pc-step-item p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--bodyTextColor);
+    margin: 0;
+}
+
+.pc-step-connector {
+    display: none;
+}
+
+/* ---- Dark Mode: Location Pages ---- */
+
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #pc-location-intro,
+        #pc-location-benefits,
+        #pc-location-nearby,
+        #pc-location-faq {
+            background-color: var(--dark);
+        }
+
+        .pc-step-item {
+            border-color: rgba(255, 255, 255, 0.1);
+
+            &:first-of-type {
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        .pc-step-item h3 {
+            color: var(--bodyTextColorWhite);
+        }
+
+        .pc-step-item p {
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        .pc-step-num {
+            color: var(--secondaryLight);
+            opacity: 0.52;
+        }
+
+        #pc-location-pain-points {
+            background-color: var(--dark);
+        }
+
+        .pc-pain-points-image {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+        }
+
+        #pc-location-pain-points::before {
+            opacity: 0.08;
+        }
+
+        #pc-location-pain-points::after {
+            background: linear-gradient(to bottom, transparent, var(--dark));
+        }
+
+        #pc-location-benefits::after {
+            color: rgba(255, 255, 255, 0.06);
+        }
+
+        #pc-feature-card::before {
+          color: var(--secondaryLight)
+        }
+
+        .pc-topper {
+          color: var(--secondaryLight);
+        }
+
+
+        .pc-title,
+        .pc-text,
+        .pc-rich-text p,
+        .pc-feature-card p,
+        .pc-benefit-card p,
+        .pc-faq-item p,
+        .pc-check-list li,
+        .pc-step-list li {
+            color: var(--bodyTextColorWhite);
+        }
+
+        #pc-location-pricing {
+            background:
+                repeating-linear-gradient(
+                    -55deg,
+                    transparent,
+                    transparent 48px,
+                    rgba(255, 255, 255, 0.018) 48px,
+                    rgba(255, 255, 255, 0.018) 49px
+                ),
+                radial-gradient(ellipse at 85% 15%, rgba(44, 57, 75, 0.85), transparent 55%),
+                radial-gradient(ellipse at 10% 85%, rgba(18, 26, 27, 0.9), transparent 50%),
+                linear-gradient(160deg, var(--dark) 0%, var(--medium) 55%, var(--dark) 100%);
+        }
+
+        .pc-price-panel {
+            background: linear-gradient(150deg, #132e43 0%, #0c1e2b 100%);
+            border-color: rgba(255, 255, 255, 0.18);
+        }
+
+        .pc-pricing-card{
+          box-shadow: 0 0 20px rgba(43, 88, 118, 0.9), 0 0 50px rgba(78, 67, 118, 0.75), 0 0 80px rgba(78, 67, 118, 0.4), inset 0 1px 0 rgba(43, 88, 118, 0.4);
+        }
+
+        .pc-callout-card,
+        .pc-process-card,
+        .pc-benefit-card,
+        .pc-faq-item,
+        .pc-pill-list li {
+            background: var(--medium);
+            border-color: rgba(255, 255, 255, 0.12);
+            box-shadow: none;
+        }
+
+        /* pain-point rows have no card bg — keep them transparent in dark mode */
+        #pc-location-pain-points .pc-feature-card {
+            background: none;
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: none;
+        }
+
+        /* all other feature-card instances keep the card treatment */
+        .pc-feature-card:not(#pc-location-pain-points .pc-feature-card) {
+            background: var(--medium);
+            border-color: rgba(255, 255, 255, 0.12);
+            box-shadow: none;
+        }
+
+        .pc-callout-card h3,
+        .pc-process-card h3,
+        .pc-feature-card h3,
+        .pc-benefit-card h3,
+        .pc-faq-item summary {
+            color: var(--bodyTextColorWhite);
+        }
+
+        #pc-location-pain-points .pc-feature-card h3, #pc-location-pain-points .pc-feature-card p {
+            color: var(--bodyTextColorWhite);
+        }
+
+        .pc-faq-item[open] summary {
+            color: #9bdcff;
+            background-color: rgba(255, 255, 255, 0.06);
+            border-bottom-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .pc-faq-item summary::after {
+            color: #9bdcff;
+        }
+
+        #pc-location-final-cta::after {
+            opacity: 0.2;
+            filter: grayscale(1) brightness(1.1);
+        }
+    }
+}
+
+@media only screen and (min-width: 48rem) {
+    .pc-pricing-card {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .pc-price-panel {
+        flex: 0 0 280px;
+        justify-content: center;
+        border-bottom: none;
+        border-right: 2px solid rgba(0, 220, 255, 0.35);
+    }
+
+    .pc-features-panel {
+        flex: 1;
+        border-top: 1px solid rgba(0, 220, 255, 0.12);
+        border-left: none;
+    }
+
+    .pc-package-features {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1.5rem;
+    }
+
+    .pc-grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pc-card-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pc-pain-points-layout {
+        grid-template-columns: 1fr 1.4fr;
+        gap: 4rem;
+    }
+
+    .pc-pain-points-image img {
+        aspect-ratio: 3 / 4;
+    }
+
+    .pc-benefits-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+    }
+
+    .pc-steps-grid {
+        grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+        align-items: start;
+        gap: 0 1rem;
+    }
+
+    .pc-step-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        border-bottom: none;
+        border-top: none !important;
+        padding: 0;
+
+        &:first-of-type {
+            border-top: none;
+        }
+    }
+
+    .pc-step-num {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 0.85rem;
+    }
+
+    .pc-step-connector {
+        display: block;
+        align-self: start;
+        margin-top: 1.75rem;
+        width: 2rem;
+        height: 2px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        opacity: 0.35;
+    }
+}

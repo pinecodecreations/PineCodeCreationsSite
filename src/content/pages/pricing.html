@@ -18,30 +18,29 @@ eleventyNavigation:
     <!-- ============================================ -->
     <!--                    LANDING                   -->
     <!-- ============================================ -->
-    <section id="int-hero">
-      <h1 id="home-h">Pricing</h1>
-      <picture>
-          <source
-              media="(max-width: 600px)"
-              srcset="/assets/images/computer.jpg"
-          />
-          <source
-              media="(min-width: 601px)"
-              srcset="/assets/images/computer.jpg"
-          />
-          <img
-              aria-hidden="true"
-              decoding="async"
-              src="/assets/images/computer.jpg"
-              alt="computer code"
-              loading="eager"
-              width="2500"
-              height="1667"
-          />
-      </picture>
-  </section>
+    <section id="pc-location-hero">
+        <div class="pc-container">
+            <nav class="pc-breadcrumbs" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <span aria-hidden="true">/</span>
+                <span aria-current="page">Pricing</span>
+            </nav>
+            <div class="pc-hero-copy">
+                <span class="pc-topper">Pricing</span>
+                <h1 class="pc-title">Affordable Web Design & SEO Packages</h1>
+                <p class="pc-text">{{ city.heroCopy }}</p>
+                <div class="pc-chip-group">
+                    <span class="pc-chip">Transparent Pricing</span>
+                    <span class="pc-chip">No Setup Fees</span>
+                    <span class="pc-chip">No Hidden Fees</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
   {% include 'components/pricing.html' %}
+
+  {% include 'components/cta.html' %} 
 
 {% endblock %}
